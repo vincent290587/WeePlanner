@@ -9,7 +9,7 @@ enum WorkoutFocus {
   Zone6 = 5;
 }
 
-message Interval {
+message RawInterval {
   uint32 duration = 1;
   uint32 powerStart = 2;
   uint32 powerEnd = 3;
@@ -17,7 +17,7 @@ message Interval {
 }
 
 message Repetition {
-  repeated Interval intervals = 1;
+  repeated RawInterval intervals = 1;
 }
 
 message RawWorkout {
@@ -28,9 +28,7 @@ message RawWorkout {
   uint32 duration = 5;
   WorkoutFocus focus = 6;
 
-  Interval warmup = 10;
-  repeated Repetition reps = 11;
-  Interval cooldown = 12;
+  repeated Repetition reps = 10;
 }
 
 message RawWorkoutDB {

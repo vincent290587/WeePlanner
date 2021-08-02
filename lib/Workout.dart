@@ -2,6 +2,8 @@
 
 import 'dart:math';
 
+import 'package:flutter/foundation.dart';
+
 import 'constants.dart';
 import 'nanopb/Workout.pb.dart';
 
@@ -71,6 +73,8 @@ class Workout {
     NP = calculateNP(rawWorkout).round();
     IF = ((100 * NP) / FTP).round();
     TSS = (duration * NP * IF / (FTP * 3600)).round();
+
+    debugPrint('Computed TSS: ${TSS}');
   }
 
   String toString() {

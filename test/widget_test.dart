@@ -9,7 +9,7 @@ void main() {
   group('WorkoutSimple', () {
     List<Repetition> reps = [
       Repetition(intervals: [
-        Interval(duration: 3600, powerStart: FTP, powerEnd: FTP, cadence: 85),
+        RawInterval(duration: 3600, powerStart: FTP, powerEnd: FTP, cadence: 85),
       ]),
     ];
     Workout workout = Workout(RawWorkout(reps: reps));
@@ -30,7 +30,7 @@ void main() {
   group('WorkoutRamp1', () {
     List<Repetition> reps = [
       Repetition(intervals: [
-        Interval(duration: 3600, powerStart: 0, powerEnd: FTP, cadence: 85),
+        RawInterval(duration: 3600, powerStart: 0, powerEnd: FTP, cadence: 85),
       ]),
     ];
     Workout workout = Workout(RawWorkout(reps: reps));
@@ -45,7 +45,7 @@ void main() {
   group('WorkoutRamp2', () {
     List<Repetition> reps = [
       Repetition(intervals: [
-        Interval(duration: 3600, powerStart: FTP, powerEnd: 0, cadence: 85),
+        RawInterval(duration: 3600, powerStart: FTP, powerEnd: 0, cadence: 85),
       ]),
     ];
     Workout workout = Workout(RawWorkout(reps: reps));
@@ -60,12 +60,12 @@ void main() {
   group('Workout1', () {
     List<Repetition> reps = [
       Repetition(intervals: [
-        Interval(duration: 360, powerStart: 252, powerEnd: 252, cadence: 85),
-        Interval(duration: 180, powerStart: 154, powerEnd: 154, cadence: 85),
-        Interval(duration: 360, powerStart: 252, powerEnd: 252, cadence: 85),
-        Interval(duration: 180, powerStart: 154, powerEnd: 154, cadence: 85),
-        Interval(duration: 360, powerStart: 252, powerEnd: 252, cadence: 85),
-        Interval(duration: 180, powerStart: 154, powerEnd: 154, cadence: 85),
+        RawInterval(duration: 360, powerStart: 252, powerEnd: 252, cadence: 85),
+        RawInterval(duration: 180, powerStart: 154, powerEnd: 154, cadence: 85),
+        RawInterval(duration: 360, powerStart: 252, powerEnd: 252, cadence: 85),
+        RawInterval(duration: 180, powerStart: 154, powerEnd: 154, cadence: 85),
+        RawInterval(duration: 360, powerStart: 252, powerEnd: 252, cadence: 85),
+        RawInterval(duration: 180, powerStart: 154, powerEnd: 154, cadence: 85),
       ]),
     ];
     Workout workout = Workout(RawWorkout(reps: reps));

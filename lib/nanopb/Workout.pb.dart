@@ -3,7 +3,7 @@
 //  source: Workout.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_this,unused_import,unused_shown_name
+// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
 
 import 'dart:core' as $core;
 
@@ -13,8 +13,8 @@ import 'Workout.pbenum.dart';
 
 export 'Workout.pbenum.dart';
 
-class Interval extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Interval', createEmptyInstance: create)
+class RawInterval extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'RawInterval', createEmptyInstance: create)
     ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'duration', $pb.PbFieldType.OU3)
     ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'powerStart', $pb.PbFieldType.OU3, protoName: 'powerStart')
     ..a<$core.int>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'powerEnd', $pb.PbFieldType.OU3, protoName: 'powerEnd')
@@ -22,8 +22,8 @@ class Interval extends $pb.GeneratedMessage {
     ..hasRequiredFields = false
   ;
 
-  Interval._() : super();
-  factory Interval({
+  RawInterval._() : super();
+  factory RawInterval({
     $core.int? duration,
     $core.int? powerStart,
     $core.int? powerEnd,
@@ -44,26 +44,26 @@ class Interval extends $pb.GeneratedMessage {
     }
     return _result;
   }
-  factory Interval.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Interval.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  factory RawInterval.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RawInterval.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  Interval clone() => Interval()..mergeFromMessage(this);
+  RawInterval clone() => RawInterval()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Interval copyWith(void Function(Interval) updates) => super.copyWith((message) => updates(message as Interval)) as Interval; // ignore: deprecated_member_use
+  RawInterval copyWith(void Function(RawInterval) updates) => super.copyWith((message) => updates(message as RawInterval)) as RawInterval; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static Interval create() => Interval._();
-  Interval createEmptyInstance() => create();
-  static $pb.PbList<Interval> createRepeated() => $pb.PbList<Interval>();
+  static RawInterval create() => RawInterval._();
+  RawInterval createEmptyInstance() => create();
+  static $pb.PbList<RawInterval> createRepeated() => $pb.PbList<RawInterval>();
   @$core.pragma('dart2js:noInline')
-  static Interval getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Interval>(create);
-  static Interval? _defaultInstance;
+  static RawInterval getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RawInterval>(create);
+  static RawInterval? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.int get duration => $_getIZ(0);
@@ -104,13 +104,13 @@ class Interval extends $pb.GeneratedMessage {
 
 class Repetition extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Repetition', createEmptyInstance: create)
-    ..pc<Interval>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'intervals', $pb.PbFieldType.PM, subBuilder: Interval.create)
+    ..pc<RawInterval>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'intervals', $pb.PbFieldType.PM, subBuilder: RawInterval.create)
     ..hasRequiredFields = false
   ;
 
   Repetition._() : super();
   factory Repetition({
-    $core.Iterable<Interval>? intervals,
+    $core.Iterable<RawInterval>? intervals,
   }) {
     final _result = create();
     if (intervals != null) {
@@ -140,7 +140,7 @@ class Repetition extends $pb.GeneratedMessage {
   static Repetition? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<Interval> get intervals => $_getList(0);
+  $core.List<RawInterval> get intervals => $_getList(0);
 }
 
 class RawWorkout extends $pb.GeneratedMessage {
@@ -151,9 +151,7 @@ class RawWorkout extends $pb.GeneratedMessage {
     ..a<$core.int>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'TSS', $pb.PbFieldType.OU3, protoName: 'TSS')
     ..a<$core.int>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'duration', $pb.PbFieldType.OU3)
     ..e<WorkoutFocus>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'focus', $pb.PbFieldType.OE, defaultOrMaker: WorkoutFocus.Zone1, valueOf: WorkoutFocus.valueOf, enumValues: WorkoutFocus.values)
-    ..aOM<Interval>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'warmup', subBuilder: Interval.create)
-    ..pc<Repetition>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'reps', $pb.PbFieldType.PM, subBuilder: Repetition.create)
-    ..aOM<Interval>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'cooldown', subBuilder: Interval.create)
+    ..pc<Repetition>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'reps', $pb.PbFieldType.PM, subBuilder: Repetition.create)
     ..hasRequiredFields = false
   ;
 
@@ -165,9 +163,7 @@ class RawWorkout extends $pb.GeneratedMessage {
     $core.int? tSS,
     $core.int? duration,
     WorkoutFocus? focus,
-    Interval? warmup,
     $core.Iterable<Repetition>? reps,
-    Interval? cooldown,
   }) {
     final _result = create();
     if (name != null) {
@@ -188,14 +184,8 @@ class RawWorkout extends $pb.GeneratedMessage {
     if (focus != null) {
       _result.focus = focus;
     }
-    if (warmup != null) {
-      _result.warmup = warmup;
-    }
     if (reps != null) {
       _result.reps.addAll(reps);
-    }
-    if (cooldown != null) {
-      _result.cooldown = cooldown;
     }
     return _result;
   }
@@ -275,29 +265,7 @@ class RawWorkout extends $pb.GeneratedMessage {
   void clearFocus() => clearField(6);
 
   @$pb.TagNumber(10)
-  Interval get warmup => $_getN(6);
-  @$pb.TagNumber(10)
-  set warmup(Interval v) { setField(10, v); }
-  @$pb.TagNumber(10)
-  $core.bool hasWarmup() => $_has(6);
-  @$pb.TagNumber(10)
-  void clearWarmup() => clearField(10);
-  @$pb.TagNumber(10)
-  Interval ensureWarmup() => $_ensure(6);
-
-  @$pb.TagNumber(11)
-  $core.List<Repetition> get reps => $_getList(7);
-
-  @$pb.TagNumber(12)
-  Interval get cooldown => $_getN(8);
-  @$pb.TagNumber(12)
-  set cooldown(Interval v) { setField(12, v); }
-  @$pb.TagNumber(12)
-  $core.bool hasCooldown() => $_has(8);
-  @$pb.TagNumber(12)
-  void clearCooldown() => clearField(12);
-  @$pb.TagNumber(12)
-  Interval ensureCooldown() => $_ensure(8);
+  $core.List<Repetition> get reps => $_getList(6);
 }
 
 class RawWorkoutDB extends $pb.GeneratedMessage {
