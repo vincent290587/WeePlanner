@@ -17,6 +17,7 @@ class WorkoutDB extends ChangeNotifier {
 
   List<Workout> ComputeWeek(int targetScore, int amount) {
 
+    // TODO
     List<Repetition> reps = [
       Repetition(intervals: [
         RawInterval(duration: 30, powerStart: 1.40, powerEnd: 1.40, cadence: 85),

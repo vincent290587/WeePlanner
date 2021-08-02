@@ -112,18 +112,19 @@ class _MyHomePageState extends State<MyHomePage> {
                 children: [
                   Text('Dur.: ${item.duration/60} min', style: TextStyle(fontSize: 12)),
                   Text('IF:  ${item.IF}'),
+                  Text('TSS:  ${item.TSS}'),
                 ],
               ),
             ),
-            Expanded(
-                child: Container(
-                  padding: const EdgeInsets.all(20.0),
-                  child: FittedBox(
-                      fit: BoxFit.fitWidth,
-                      child: Text('Filler')
-                  ),
-                )
-            ),
+            // Expanded(
+            //     child: Container(
+            //       padding: const EdgeInsets.all(20.0),
+            //       child: FittedBox(
+            //           fit: BoxFit.fitWidth,
+            //           child: Text('Filler')
+            //       ),
+            //     )
+            // ),
           ],
         ),
       );
@@ -141,6 +142,17 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         )
     );
+
+    widgets.add(Text('-- Summary --', style: TextStyle(fontSize: 20)));
+
+    num sum = 0;
+    workouts.forEach((var w){sum += w.TSS;});
+    widgets.add(Text('Total TSS: ${sum}', style: TextStyle(fontSize: 20)));
+
+    sum = 0;
+    workouts.forEach((var w){sum += w.duration;});
+    sum /= 3600;
+    widgets.add(Text('Total time: ${sum.toStringAsFixed(1)} hours', style: TextStyle(fontSize: 20)));
 
     var plannedWeek = Column(
       children: widgets,
@@ -163,26 +175,32 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Target TSS:'),
-                  TextField(
+                  Text(' '),
+                  //Text('Target TSS:'),
+                  TextFormField(
+                    initialValue: _score.toString(),
                     textInputAction: TextInputAction.newline,
                     keyboardType: TextInputType.numberWithOptions(),
-                    // minLines: null,
-                    // maxLines: null,  // If this is null, there is no limit to the number of lines, and the text container will start with enough vertical space for one line and automatically grow to accommodate additional lines as they are entered.
-                    // expands: true,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'TSS',
+                    ),
                     onChanged: (text) {
                       setState(() {
                         _score = int.parse(text);
                       });
                     },
                   ),
-                  Text('# days:'),
-                  TextField(
+                  Text(' '),
+                  //Text('# days:'),
+                  TextFormField(
+                    initialValue: _amount.toString(),
                     textInputAction: TextInputAction.newline,
                     keyboardType: TextInputType.numberWithOptions(),
-                    // minLines: null,
-                    // maxLines: null,  // If this is null, there is no limit to the number of lines, and the text container will start with enough vertical space for one line and automatically grow to accommodate additional lines as they are entered.
-                    // expands: true,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'TSS',
+                    ),
                     onChanged: (text) {
                       setState(() {
                         _amount = int.parse(text);
