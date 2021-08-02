@@ -9,30 +9,25 @@ enum WorkoutFocus {
   Zone6 = 5;
 }
 
-message Ramp {
+message Interval {
   uint32 powerStart = 1;
   uint32 powerEnd = 2;
-  uint32 cadenceStart = 3;
-  uint32 cadenceEnd = 4;
-}
-
-message Interval {
-  uint32 power = 1;
-  uint32 cadence = 2;
+  uint32 cadence = 3;
 }
 
 message Repetition {
   repeated Interval intervals = 1;
 }
 
-message Workout {
+message RawWorkout {
   string name = 1;
-  string description = 2;
-  uint32 TSS = 3;
-  uint32 duration = 4;
-  WorkoutFocus focus = 5;
+  string author = 2;
+  string description = 3;
+  uint32 TSS = 4;
+  uint32 duration = 5;
+  WorkoutFocus focus = 6;
 
-  Ramp warmup = 10;
+  Interval warmup = 10;
   repeated Repetition reps = 11;
-  Ramp cooldown = 12;
+  Interval cooldown = 12;
 }
