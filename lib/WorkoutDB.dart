@@ -15,6 +15,25 @@ class WorkoutDB extends ChangeNotifier {
 
   WorkoutDB();
 
+  List<Workout> ComputeWeek(int targetScore, int amount) {
+
+    List<Repetition> reps = [
+      Repetition(intervals: [
+        RawInterval(duration: 30, powerStart: 1.40, powerEnd: 1.40, cadence: 85),
+        RawInterval(duration: 240, powerStart: 0.55, powerEnd: 0.55, cadence: 85),
+        RawInterval(duration: 30, powerStart: 1.40, powerEnd: 1.40, cadence: 85),
+        RawInterval(duration: 240, powerStart: 0.55, powerEnd: 0.55, cadence: 85),
+        RawInterval(duration: 30, powerStart: 1.40, powerEnd: 1.40, cadence: 85),
+        RawInterval(duration: 240, powerStart: 0.55, powerEnd: 0.55, cadence: 85),
+      ]),
+    ];
+    Workout workout = Workout(RawWorkout(name: 'Workout1',reps: reps));
+
+    List<Workout> ret = [workout, workout, workout, workout, workout];
+
+    return ret;
+  }
+
   Future<void> startDB() async {
 
     workoutDB.clear();

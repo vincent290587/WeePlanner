@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'Workout.dart';
 import 'WorkoutDB.dart';
 
 void main() {
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false, // do not display the debug banner
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -28,9 +30,9 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.deepOrange,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Workout planner'),
     );
   }
 }
@@ -54,70 +56,161 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  int _score = 400;
+  int _amount = 5;
 
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
+  Widget getCard(Widget? icon, String text, String value) {
+    return Card(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          ListTile(
+            leading: icon,
+            title: Text(text, style: TextStyle(fontSize: 30)),
+          ),
+          Expanded(
+              child: Container(
+                padding: const EdgeInsets.all(20.0),
+                child: FittedBox(
+                    fit: BoxFit.fitWidth,
+                    child: Text(value, style: TextStyle(fontSize: 25))
+                ),
+              )
+          ),
+        ],
+      ),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
+
+    var widgets = <Widget>[];
+    List<Workout> workouts = Provider.of<WorkoutDB>(context, listen: false).ComputeWeek(_score, _amount);
+
+    List<Widget> cards = workouts.map((item) {
+
+      // return Card(
+      //   child: ListTile(
+      //     key: ObjectKey(item.rawWorkout.name),
+      //     leading: Text(item.rawWorkout.name),
+      //     title: Text('Dur.: ${item.duration}'),
+      //     subtitle: Text('IF:  ${item.IF}'),
+      //   ),
+      // );
+
+      return Card(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            ListTile(
+              leading: null,
+              isThreeLine: false,
+              title: Text(item.rawWorkout.name, style: TextStyle(fontSize: 20)),
+              subtitle: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Dur.: ${item.duration/60} min', style: TextStyle(fontSize: 12)),
+                  Text('IF:  ${item.IF}'),
+                ],
+              ),
+            ),
+            Expanded(
+                child: Container(
+                  padding: const EdgeInsets.all(20.0),
+                  child: FittedBox(
+                      fit: BoxFit.fitWidth,
+                      child: Text('Filler')
+                  ),
+                )
+            ),
+          ],
+        ),
+      );
+
+    }).toList();
+
+    widgets.add(
+        Expanded(
+          child: GridView.count(
+            primary: false,
+            padding: const EdgeInsets.all(5.0),
+            crossAxisSpacing: 1.0,
+            crossAxisCount: 7,
+            children: cards,
+          ),
+        )
+    );
+
+    var plannedWeek = Column(
+      children: widgets,
+    );
+
     return Scaffold(
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
+      body:
+      Row(
+        children: [
+          Flexible(
+            flex: 1,
+            child: Container(
+              // width: 600.0,
+              // height: 800.0,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Target TSS:'),
+                  TextField(
+                    textInputAction: TextInputAction.newline,
+                    keyboardType: TextInputType.numberWithOptions(),
+                    // minLines: null,
+                    // maxLines: null,  // If this is null, there is no limit to the number of lines, and the text container will start with enough vertical space for one line and automatically grow to accommodate additional lines as they are entered.
+                    // expands: true,
+                    onChanged: (text) {
+                      setState(() {
+                        _score = int.parse(text);
+                      });
+                    },
+                  ),
+                  Text('# days:'),
+                  TextField(
+                    textInputAction: TextInputAction.newline,
+                    keyboardType: TextInputType.numberWithOptions(),
+                    // minLines: null,
+                    // maxLines: null,  // If this is null, there is no limit to the number of lines, and the text container will start with enough vertical space for one line and automatically grow to accommodate additional lines as they are entered.
+                    // expands: true,
+                    onChanged: (text) {
+                      setState(() {
+                        _amount = int.parse(text);
+                      });
+                    },
+                  ),
+                ],
+              ),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+          ),
+          VerticalDivider(),
+          Flexible(
+            flex: 5,
+            child: Container(
+              // width: 600.0,
+              // height: 800.0,
+              child: plannedWeek,
             ),
-          ],
-        ),
+          ),
+        ],
       ),
+
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Provider.of<WorkoutDB>(context, listen: false).startDB();
-          _incrementCounter();
         },
         tooltip: 'Increment',
-        child: Icon(Icons.add),
+        child: Icon(Icons.refresh),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }

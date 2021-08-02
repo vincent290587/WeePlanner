@@ -73,7 +73,7 @@ class Workout {
     IF = _NP;
     TSS = (duration * _NP * IF / 360000).round();
 
-    debugPrint('Computed TSS: ${TSS}');
+    //debugPrint('Computed TSS: ${TSS}');
   }
 
   String toString() {

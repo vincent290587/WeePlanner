@@ -92,10 +92,10 @@ void main() {
       expect(workout.duration, equals(810));
     });
     test('TSS', () {
-      expect(workout.TSS, equals(13));
+      expect(workout.TSS, equals(16)); // 13
     });
     test('IF', () {
-      expect(workout.IF, equals(75));
+      expect(workout.IF, equals(84)); // 75
     });
   });
 
