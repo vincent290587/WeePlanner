@@ -1,0 +1,102 @@
+<workout_file>
+    <author>V.Golle</author>
+    <name>Lavender Unicorn</name>
+    <description>The lighter Purple Unicorn workout featuring sweet spot over/unders, and a finish to remember!</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="300" PowerLow="0.5" PowerHigh="0.75" pace="1128505344" Cadence="90">
+            <textevent timeoffset="0" message="Welcome to Lavendar Unicorn!"/>
+            <textevent timeoffset="10" message="We&apos;ll start off with a 5min warmup."/>
+            <textevent timeoffset="20" message="Keep your cadence comfortable at 85 RPM."/>
+            <textevent timeoffset="150" message="Halfway through the warmup! Let&apos;s talk a bit about today&apos;s workout, shall we?"/>
+            <textevent timeoffset="160" message="Today&apos;s workout is an over/under workout, but with a kicker after the over."/>
+            <textevent timeoffset="170" message="This is a challenging workout, but is excellent for improving your FTP."/>
+            <textevent timeoffset="180" message="And a fun method that has been proven by the Zwift community."/>
+            <textevent timeoffset="240" message="1 more minute of warmup, then we are going into 3 priming efforts."/>
+            <textevent timeoffset="250" message="Primers help ready the body and legs for the work ahead."/>
+            <textevent timeoffset="260" message="The 1st one is @95 RPM @85% FTP, 2nd is @105 RPM @95% FTP, and 3rd is @115 RPM @115% FTP."/>
+            <textevent timeoffset="290" message="Ready? Start bringing your cadence up to 95 RPM."/>
+        </Warmup>
+        <IntervalsT Repeat="1" OnDuration="30.000002" OffDuration="30.000002" OnPower="0.85000002" OffPower="0.5" pace="1128505344" Cadence="95" CadenceResting="85">
+            <textevent timeoffset="0" message="And let&apos;s hit it! Keep it smooth here."/>
+            <textevent timeoffset="30" message="Awesome! Now, bring it down easy again."/>
+            <textevent timeoffset="50" message="All right, up to 105 RPM next!"/>
+        </IntervalsT>
+        <IntervalsT Repeat="1" OnDuration="30.000002" OffDuration="30.000002" OnPower="1.05" OffPower="0.5" pace="1128505344" Cadence="105" CadenceResting="85">
+            <textevent timeoffset="0" message="GO GO GO! Keep the cadence up nice and high here."/>
+            <textevent timeoffset="30" message="Way to go! Let&apos;s take a quick rest again."/>
+            <textevent timeoffset="50" message="Start bringing your cadence up to 115 RPM!"/>
+        </IntervalsT>
+        <IntervalsT Repeat="1" OnDuration="30.000002" OffDuration="30.000002" OnPower="1.15" OffPower="0.5" pace="1128505344" Cadence="115" CadenceResting="85">
+            <textevent timeoffset="0" message="FAST FEET! Let&apos;s go!"/>
+            <textevent timeoffset="30" message="Woot woot! That&apos;s it for today&apos;s warmup. Let&apos;s take it easy for a bit."/>
+            <textevent timeoffset="40" message="Then we&apos;ll start the main set."/>
+        </IntervalsT>
+        <SteadyState Duration="120.00001" Power="0.5" pace="1128505344" Cadence="85">
+            <textevent timeoffset="0" message="Keep breathing here, nice and easy."/>
+            <textevent timeoffset="30" message="Make sure you&apos;re taking frequent sips of fluid today."/>
+            <textevent timeoffset="90" message="30sec to go, then it&apos;s time to make the donuts!"/>
+            <textevent timeoffset="100" message="We&apos;ll start @85% FTP @85 RPM for 3min."/>
+        </SteadyState>
+        <SteadyState Duration="180" Power="0.85107523" pace="1128505344" Cadence="85">
+            <textevent timeoffset="0" message="Here we go! Starting off easy at zone 3 and comfortable cadence."/>
+            <textevent timeoffset="60" message="Settle into this now and keep your shoulders relaxed."/>
+            <textevent timeoffset="150" message="In 30sec, we&apos;ll increase the effort and cadence to 100 RPM."/>
+        </SteadyState>
+        <SteadyState Duration="60.000004" Power="1.05" pace="1128505344" Cadence="100">
+            <textevent timeoffset="0" message="Pick it up! Increase the cadence to 100 RPM!"/>
+            <textevent timeoffset="50" message="Up next we&apos;ll surge well over threshold at 110 RPM!"/>
+        </SteadyState>
+        <SteadyState Duration="30.000002" Power="1.15" pace="1128505344" Cadence="110">
+            <textevent timeoffset="0" message="GO GO GO!"/>
+        </SteadyState>
+        <SteadyState Duration="180.00002" Power="0.85000002" pace="1128505344" Cadence="85">
+            <textevent timeoffset="0" message="Awesome work! Lower it back to zone 3 again and resume a comfortable cadence."/>
+            <textevent timeoffset="60" message="Work on your ability to recover after a hard effort."/>
+            <textevent timeoffset="150" message="Get ready to push it over threshold again."/>
+        </SteadyState>
+        <SteadyState Duration="60.000004" Power="1.05" pace="1128505344" Cadence="100">
+            <textevent timeoffset="0" message="UP UP! Get those legs spinning up again."/>
+            <textevent timeoffset="50" message="Here we go with the zone 5 push!"/>
+        </SteadyState>
+        <SteadyState Duration="30.000002" Power="1.15" pace="1128505344" Cadence="110">
+            <textevent timeoffset="0" message="PUSH IT!"/>
+        </SteadyState>
+        <SteadyState Duration="180.00002" Power="0.85000002" pace="1128505344" Cadence="85">
+            <textevent timeoffset="0" message="Way to go! Back down to zone 3 again."/>
+            <textevent timeoffset="10" message="Breathe and relax as best you can here."/>
+            <textevent timeoffset="120" message="1min to go then we&apos;re back up again."/>
+            <textevent timeoffset="170" message="Start bringing the leg speed up to 100 RPM."/>
+        </SteadyState>
+        <SteadyState Duration="60.000004" Power="1.05" pace="1128505344" Cadence="100">
+            <textevent timeoffset="0" message="Push it! C&apos;mon!"/>
+            <textevent timeoffset="50" message="Start bringing the cadence up again to 110 RPM."/>
+        </SteadyState>
+        <SteadyState Duration="30.000002" Power="1.15" pace="1128505344" Cadence="110">
+            <textevent timeoffset="0" message="Let&apos;s go! FAST FEET!"/>
+        </SteadyState>
+        <SteadyState Duration="180.00002" Power="0.85000002" pace="1128505344" Cadence="85">
+            <textevent timeoffset="0" message="Take it easy again here, breathe and relax."/>
+            <textevent timeoffset="60" message="Take a few deep breaths and sip some fluids."/>
+            <textevent timeoffset="120" message="This final over effort finishes even higher, prepare yourself!"/>
+        </SteadyState>
+        <SteadyState Duration="60.000004" Power="1.05" pace="1128505344" Cadence="100">
+            <textevent timeoffset="0" message="Let&apos;s go! Get the power and cadence up here!"/>
+            <textevent timeoffset="30" message="PUSH IT!"/>
+            <textevent timeoffset="50" message="Get ready to really push it over threshold!"/>
+        </SteadyState>
+        <SteadyState Duration="30.000002" Power="1.5" pace="1128505344" Cadence="110">
+            <textevent timeoffset="0" message="GO GO GO!"/>
+            <textevent timeoffset="20" message="GET TO THE ARCH!"/>
+        </SteadyState>
+        <SteadyState Duration="120.00001" Power="0.5" pace="1128505344" Cadence="85">
+            <textevent timeoffset="0" message="Way to go! That was a hard workout, but you looked GREAT!"/>
+            <textevent timeoffset="10" message="We&apos;re going to take a couple minutes and cooldown now."/>
+            <textevent timeoffset="20" message="Then, hop off the bike and start refueling and rehydrating."/>
+            <textevent timeoffset="30" message="Enjoy the rest of the cooldown."/>
+            <textevent timeoffset="40" message="And see you next time :-)"/>
+        </SteadyState>
+    </workout>
+</workout_file>
+                                                                                                     

@@ -1,0 +1,28 @@
+<workout_file>
+    <author>S.Gaffney (GC Coaching)</author>
+    <name>Downright Bitter! (Sweet Spot)</name>
+    <description>WARM-UP
+-Start with 10 minutes gradually increasing your power and cadence, then 3x 30 seconds @110+ RPM @115% FTP with 3 minutes active recovery to ready the legs, and finally 2 minutes free ride to ready the mind.
+
+DOWNRIGHT BITTER (SWEET SPOT)
+-This is a 2 x 20 workout, BUT I want big changes in cadence and power at the halfway mark.  So, we are going to be spinning like a hummingbird beats its wings, then trudging through the mud, only to finish spinning again.  DON'T GET SLOPPY ON ME HERE!
+-5 minutes cool-down then stretch! </description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="SweetSpot"/>
+    </tags>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.25449997" PowerHigh="0.75449997"/>
+        <IntervalsT Repeat="3" OnDuration="30.000002" OffDuration="30.000002" OnPower="1.1544999" OffPower="0.50449997"/>
+        <FreeRide Duration="120.00001" FlatRoad="1"/>
+        <SteadyState Duration="480" Power="0.85449994" Cadence="100"/>
+        <SteadyState Duration="240" Power="0.97449994" Cadence="55"/>
+        <SteadyState Duration="480" Power="0.85449994" Cadence="100"/>
+        <SteadyState Duration="300" Power="0.50449997"/>
+        <SteadyState Duration="480" Power="0.85449994" Cadence="100"/>
+        <SteadyState Duration="240" Power="0.97449994" Cadence="55"/>
+        <SteadyState Duration="480" Power="0.85449994" Cadence="100"/>
+        <Cooldown Duration="300" PowerLow="0.75449997" PowerHigh="0.2545"/>
+    </workout>
+</workout_file>
+                           

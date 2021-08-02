@@ -1,0 +1,20 @@
+<workout_file>
+    <author>Vincent Golle</author>
+    <name>Build me up - 15.9</name>
+    <description></description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="INTERVALS"/>
+    </tags>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.37261483" PowerHigh="0.75" pace="1125572608"/>
+        <IntervalsT Repeat="1" OnDuration="30" OffDuration="30" OnPower="0.94999999" OffPower="0.5" pace="1125572608" Cadence="95" CadenceResting="85"/>
+        <IntervalsT Repeat="1" OnDuration="30" OffDuration="30" OnPower="1.05" OffPower="0.5" pace="1125572608" Cadence="105" CadenceResting="85"/>
+        <IntervalsT Repeat="1" OnDuration="30" OffDuration="30" OnPower="1.15" OffPower="0.5" pace="1125572608" Cadence="115" CadenceResting="85"/>
+        <SteadyState Duration="120" Power="0.5" pace="1125572608" Cadence="85"/>
+        <IntervalsT Repeat="5" OnDuration="150" OffDuration="180" OnPower="1.1500001" OffPower="0.54929328" pace="1125572608" Cadence="105" CadenceResting="85"/>
+        <SteadyState Duration="600" Power="0.89999998" pace="1125572608" Cadence="90"/>
+        <Cooldown Duration="450" PowerLow="0.89911658" PowerHigh="0.35494697" pace="1125572608"/>
+    </workout>
+</workout_file>
+                   

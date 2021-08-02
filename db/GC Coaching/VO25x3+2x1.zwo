@@ -1,0 +1,44 @@
+<workout_file>
+    <author>Shayne Gaffney</author>
+    <name>VO2: 5x3 + 2x10 SST</name>
+    <description>WARM UP:
+-10 minutes gradually progressing from Active Recovery zone to Endurance zone.
+-3x30 seconds Spin Ups (110+ RPM) @Threshold zone+, 30 seconds easy.
+-2 minutes easy
+———
+MAIN SET
+-5x 3 minutes @VO2 Max Zone @85-95 RPM.
+-Rest for 3 minutes between sets, and take 5 minutes rest after the 5th interval.
+-Then 2x 10 minutes @SST with 5 minutes rest between.
+———
+COOL DOWN:
+-10 minutes gradually reducing from Endurance zone to Active Recovery zone</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="420" PowerLow="0.3606227" PowerHigh="0.89908421" pace="0"/>
+        <SteadyState Duration="30" Power="1.2" pace="0"/>
+        <SteadyState Duration="120" Power="0.89999998" pace="0"/>
+        <SteadyState Duration="30" Power="0.5" pace="0"/>
+        <SteadyState Duration="30" Power="1.2" pace="0"/>
+        <SteadyState Duration="30" Power="0.5" pace="0"/>
+        <SteadyState Duration="30" Power="1.2" pace="0"/>
+        <SteadyState Duration="150" Power="0.5" pace="0"/>
+        <SteadyState Duration="180" Power="1.15" pace="0"/>
+        <SteadyState Duration="180" Power="0.55000001" pace="0"/>
+        <SteadyState Duration="180" Power="1.15" pace="0"/>
+        <SteadyState Duration="180" Power="0.55000001" pace="0"/>
+        <SteadyState Duration="180" Power="1.15" pace="0"/>
+        <SteadyState Duration="180" Power="0.55000001" pace="0"/>
+        <SteadyState Duration="180" Power="1.15" pace="0"/>
+        <SteadyState Duration="180" Power="0.55000001" pace="0"/>
+        <SteadyState Duration="180" Power="1.15" pace="0"/>
+        <SteadyState Duration="180" Power="0.55000001" pace="0"/>
+        <SteadyState Duration="120" Power="0.55000001" pace="0"/>
+        <SteadyState Duration="600" Power="0.89999998" pace="0"/>
+        <SteadyState Duration="300" Power="0.55000001" pace="0"/>
+        <SteadyState Duration="600" Power="0.89999998" pace="0"/>
+        <Ramp Duration="600" PowerLow="0.40000001" PowerHigh="0.40000001" pace="0"/>
+    </workout>
+</workout_file>
+                                           

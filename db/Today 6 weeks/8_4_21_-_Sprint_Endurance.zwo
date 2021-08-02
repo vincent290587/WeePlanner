@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<workout_file xsi:schemaLocation="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <author>Today's Plan</author>
+    <name>Today's Plan - Sprint Endurance</name>
+    <description>&#13;
+ In most bike races or group rides, it is not your peak sprint output when fresh that will assist you in getting a result. It is more often your ability to produce a strong sprint when fatigued that will set you apart from the rest of the field. Being able to accelerate and maintain power when you've already accumulated significant time on the bike is a skill in itself and the focus of this session.&#13;
+ These sessions differ from the regular sprint sessions in that they contain some consistent time on the pedals before getting into the sprint work. So you can't expect to be able to break all your sprint personal bests in this session, but the adaptations from practicing fatigued sprints will assist you massively when the time comes at the end of a hard ride or race.&#13;
+&#13;
+&#13;
+</description>
+    <tags>
+        <tag name="Today's Plan"/>
+    </tags>
+    <sportType>ride</sportType>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.491228" PowerHigh="0.642105">
+            <textevent timeoffset="0" message="Warm up - Low endurance, easy very little load, you can talk easily"/>
+        </Warmup>
+        <SteadyState Duration="4500" Power="0.684211">
+            <textevent timeoffset="0" message="Pre-Fatigue Endurance - Endurance, light load, more rhythmic breathing"/>
+        </SteadyState>
+        <IntervalsT Repeat="4" OnDuration="10" OffDuration="300" OnPower="3.0" OffPower="0.554386">
+            <textevent timeoffset="0" message="Sprint Interval - Full gas, frothing at the nostrils, high fatigue"/>
+        </IntervalsT>
+        <Cooldown Duration="600" PowerLow="0.6" PowerHigh="0.459649">
+            <textevent timeoffset="0" message="Cool Down - Recovery, very easy no load, like an easy walk on the bike"/>
+        </Cooldown>
+    </workout>
+</workout_file>

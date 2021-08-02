@@ -1,0 +1,25 @@
+<workout_file>
+    <author>Vincent Golle</author>
+    <name>VG - ULTIMATE WARM UP</name>
+    <description></description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="INTERVALS"/>
+        <tag name="warmup"/>
+        <tag name="ultimatewarmup"/>
+    </tags>
+    <workout>
+        <FreeRide Duration="420.00003" FlatRoad="1"/>
+        <SteadyState Duration="240" Power="0.85449994" pace="1118666752"/>
+        <SteadyState Duration="60" Power="0.65000004" pace="0"/>
+        <SteadyState Duration="10" Power="1.5047379" pace="1118666752"/>
+        <SteadyState Duration="60" Power="1.0052347" pace="1118666752"/>
+        <SteadyState Duration="60" Power="0.5" pace="0"/>
+        <SteadyState Duration="10" Power="1.5047379" pace="1118666752"/>
+        <FreeRide Duration="120" FlatRoad="1"/>
+        <SteadyState Duration="10" Power="1.5047379" pace="1118666752"/>
+        <FreeRide Duration="25.000002" FlatRoad="1"/>
+        <SteadyState Duration="10" Power="1.5034297" pace="1118666752"/>
+        <FreeRide Duration="25.000002" FlatRoad="1"/>
+    </workout>
+</workout_file>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<workout_file xsi:schemaLocation="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <author>Today's Plan</author>
+    <name>Today's Plan - Pre-race</name>
+    <description>The aim of this pre-race session is to get a small amount of load into your legs to make sure you come into the event in the best possible condition. Ideally you can get the specified intervals for this session done on the same terrain you will be racing on. Whether that be the course for a criterium race, a trail for a mountain bike race or up a climb for a hilly gran fondo.  We encourage you to push hard for these efforts, don’t feel like you need to hold back. The efforts are short in length, particularly the threshold efforts so you can dig deep for those without having an impact on your legs for your event. In fact, most people find they perform their best after having done short hard efforts the day before.  Keep in mind your nutrition and hydration for this ride, you should be eating and drinking more than you usually would for a ride of this duration to keep your fuel stores high for your event. Remember this rule: you should finish the ride with some food you didn’t need to eat and some drink in your bottle you didn’t need to drink. Finally, this session can be used as a good way to do a final equipment check so we recommend using your full intended race setup to make sure all your equipment is running smoothly and is fit for purpose.&#13;
+</description>
+    <tags>
+        <tag name="Today's Plan"/>
+    </tags>
+    <sportType>ride</sportType>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.298246" PowerHigh="0.705263">
+            <textevent timeoffset="0" message="Warmup - Recovery, very easy no load, like an easy walk on the bike"/>
+        </Warmup>
+        <SteadyState Duration="1170" Power="0.617544">
+            <textevent timeoffset="0" message="Main interval - Endurance, light load, still easy to hold a conversation"/>
+        </SteadyState>
+        <IntervalsT Repeat="1" OnDuration="600" OffDuration="300" OnPower="0.8" OffPower="0.6" Cadence="70">
+            <textevent timeoffset="0" message="Tempo Interval - Solid tempo, rolling turns, group ride, deeper rhythmic breathing "/>
+        </IntervalsT>
+        <IntervalsT Repeat="2" OnDuration="240" OffDuration="240" OnPower="0.978947" OffPower="0.459649" Cadence="65">
+            <textevent timeoffset="0" message="Threshold Interval - Threshold, very deep rhythmic breathing, high concentration in effort"/>
+        </IntervalsT>
+        <SteadyState Duration="1170" Power="0.617544">
+            <textevent timeoffset="0" message="Main interval - Endurance, light load, still easy to hold a conversation"/>
+        </SteadyState>
+        <SteadyState Duration="600" Power="0.449123">
+            <textevent timeoffset="0" message="Cool down - Recovery, very easy no load, like an easy walk on the bike"/>
+        </SteadyState>
+    </workout>
+</workout_file>

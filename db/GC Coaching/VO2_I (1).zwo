@@ -1,0 +1,23 @@
+<workout_file>
+    <author>S.Gaffney (GC Coaching)</author>
+    <name>VO2 I - Ouch!</name>
+    <description>WARM-UP
+For this workout, we start with the GC Coaching warm-up that involves: a 10 minute gradual increase in power and cadence, 3x fast-spins@110+ RPM @115% FTP to get the legs primed, then 2 minutes free ride to ready the mind for what is ahead.
+
+VO2 I
+-5 x 3 minutes @Vo2 Max with 3 minutes recovery between
+-10 minutes @SST to polish the legs to a shiny finish.
+-5 minutes cool-down then stretch!</description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="VO2Max"/>
+    </tags>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.2545" PowerHigh="0.75449997"/>
+        <IntervalsT Repeat="3" OnDuration="30" OffDuration="30" OnPower="1.1544999" OffPower="0.50449997"/>
+        <FreeRide Duration="120" FlatRoad="1"/>
+        <IntervalsT Repeat="5" OnDuration="180" OffDuration="180" OnPower="1.1044999" OffPower="0.50449997"/>
+        <SteadyState Duration="600" Power="0.90449995"/>
+        <Cooldown Duration="300" PowerLow="0.75449997" PowerHigh="0.2545"/>
+    </workout>
+</workout_file>

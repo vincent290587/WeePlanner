@@ -1,0 +1,11 @@
+<workout_file>
+    <author>V.Golle</author>
+    <name>Cooldown</name>
+    <description></description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <SteadyState Duration="180" Power="0.50166667" pace="0"/>
+        <Cooldown Duration="540" PowerLow="0.77944446" PowerHigh="0.33499998" pace="0"/>
+    </workout>
+</workout_file>

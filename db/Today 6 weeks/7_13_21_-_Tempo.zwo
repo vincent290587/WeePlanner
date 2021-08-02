@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<workout_file xsi:schemaLocation="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <author>Today's Plan</author>
+    <name>Today's Plan - Tempo</name>
+    <description>Tempo training sessions target your muscular endurance and aerobic efficiency in a more demanding and time effective manner than regular endurance training. Riding at tempo output is the first intensity where most riders consider themselves to be “working” and it is moderately uncomfortable when done for extended periods of time.  You can generally not sustain a conversation while doing a specific tempo effort so these rides are best done solo to allow full focus on the effort. If you are doing a longer tempo ride over 90 minutes total riding time you will burn through significant glycogen and will quickly fatigue if you are not fueling correctly throughout the ride. So ensure you take plenty of ride specific food and drink with you and consume it at regular intervals.  You may have heard people say training at tempo output is a dead zone and is wasted training, and this can be true if you are under fueling and causing significant fatigue which reduces the quality of your following higher intensity workouts. So ensure you follow the rule to arrive home with some food you didn’t need to eat, and some drink in your bottle you didn’t need to drink, to make sure you are getting full benefit from these sessions.&#13;
+&#13;
+</description>
+    <tags>
+        <tag name="Today's Plan"/>
+    </tags>
+    <sportType>ride</sportType>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.459649" PowerHigh="0.8">
+            <textevent timeoffset="0" message="Warmup - Endurance, light load, still easy to hold a conversation"/>
+        </Warmup>
+        <SteadyState Duration="900" Power="0.652632" Cadence="95">
+            <textevent timeoffset="0" message="Base interval - Endurance, light load, more rhythmic breathing"/>
+        </SteadyState>
+        <IntervalsT Repeat="2" OnDuration="300" OffDuration="300" OnPower="0.852632" OffPower="0.6" Cadence="65">
+            <textevent timeoffset="0" message="Tempo Interval - Tempo/SST, rolling turns, group ride, difficult to talk"/>
+        </IntervalsT>
+        <SteadyState Duration="900" Power="0.652632" Cadence="95">
+            <textevent timeoffset="0" message="Base interval - Endurance, light load, more rhythmic breathing"/>
+        </SteadyState>
+        <SteadyState Duration="600" Power="0.6">
+            <textevent timeoffset="0" message="Cool down - Low endurance, easy very little load, you can talk easily"/>
+        </SteadyState>
+    </workout>
+</workout_file>

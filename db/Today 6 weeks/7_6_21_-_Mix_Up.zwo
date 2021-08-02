@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<workout_file xsi:schemaLocation="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <author>Today's Plan</author>
+    <name>Today's Plan - Mix Up</name>
+    <description>Mix-up sessions target a range of intensities which can be similar to the demands of road racing, criteriums, mountain bike racing and hard group rides. Each session is different but you will likely have a mix of tempo, threshold, VO2max or sprinting efforts throughout the ride. These are key sessions in the week so be prepared to work hard and focus when these sessions come up.  Before starting a mix up session ensure you have enough food and drink with you as the workload for the sessions is high and you will likely be spending a lot of time at and above threshold. Remember this rule- you should finish the ride with some food you didn’t need to eat and some drink in your bottle you didn’t need to drink.  These sessions can be done on any outdoor terrain or indoor trainer, but if you are doing it outdoors ensure that you have checked the interval lengths of each effort for the session and have uninterrupted road or trail to get them done. To keep motivation high it can be useful to share the efforts you have with a friend and complete the session with them so you have someone to compete against for the harder efforts.&#13;
+</description>
+    <tags>
+        <tag name="Today's Plan"/>
+    </tags>
+    <sportType>ride</sportType>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.459649" PowerHigh="0.705263">
+            <textevent timeoffset="0" message="Warmup"/>
+        </Warmup>
+        <SteadyState Duration="740" Power="0.617544" Cadence="97">
+            <textevent timeoffset="0" message="Main Interval"/>
+        </SteadyState>
+        <IntervalsT Repeat="8" OnDuration="240" OffDuration="30" OnPower="0.824561" OffPower="0.6" Cadence="65">
+            <textevent timeoffset="0" message="Tempo"/>
+        </IntervalsT>
+        <IntervalsT Repeat="8" OnDuration="60" OffDuration="10" OnPower="0.94386" OffPower="0.6" Cadence="95">
+            <textevent timeoffset="0" message="Threshold"/>
+        </IntervalsT>
+        <SteadyState Duration="740" Power="0.617544" Cadence="97">
+            <textevent timeoffset="0" message="Main Interval"/>
+        </SteadyState>
+        <SteadyState Duration="600" Power="0.582456">
+            <textevent timeoffset="0" message="Cool down"/>
+        </SteadyState>
+    </workout>
+</workout_file>

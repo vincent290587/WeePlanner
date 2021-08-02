@@ -1,0 +1,31 @@
+<workout_file>
+    <author>Vincent Golle</author>
+    <name>Build me up - Serrated</name>
+    <description></description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="300" PowerLow="0.40000001" PowerHigh="0.64999998" pace="1125572608"/>
+        <SteadyState Duration="300" Power="0.64999998" pace="1125572608" Cadence="95"/>
+        <SteadyState Duration="180" Power="0.80000001" pace="1125572608" Cadence="100"/>
+        <SteadyState Duration="120" Power="0.55000001" pace="1125572608" Cadence="85"/>
+        <Ramp Duration="120" PowerLow="1.1" PowerHigh="1.3" pace="1125572608"/>
+        <SteadyState Duration="120" Power="0.55000001" pace="1125572608" Cadence="85"/>
+        <Ramp Duration="120" PowerLow="1.1" PowerHigh="1.3" pace="1125572608"/>
+        <SteadyState Duration="120" Power="0.55000001" pace="1125572608" Cadence="85"/>
+        <Ramp Duration="120" PowerLow="1.1" PowerHigh="1.3" pace="1125572608"/>
+        <SteadyState Duration="120" Power="0.55000001" pace="1125572608" Cadence="85"/>
+        <Ramp Duration="120" PowerLow="1.1" PowerHigh="1.3" pace="1125572608"/>
+        <SteadyState Duration="120" Power="0.55000001" pace="1125572608" Cadence="85"/>
+        <Ramp Duration="120" PowerLow="1.1" PowerHigh="1.3" pace="1125572608"/>
+        <SteadyState Duration="120" Power="0.55000001" pace="1125572608" Cadence="85"/>
+        <Ramp Duration="120" PowerLow="1.1" PowerHigh="1.3" pace="1125572608"/>
+        <SteadyState Duration="480" Power="0.55000001" pace="1125572608" Cadence="85"/>
+        <Ramp Duration="30" PowerLow="1.3" PowerHigh="1.5" pace="1125572608"/>
+        <IntervalsT Repeat="5" OnDuration="180" OffDuration="60" OnPower="0.88" OffPower="1" pace="1125572608" OverUnder="1" Cadence="90" CadenceResting="90"/>
+        <Ramp Duration="30" PowerLow="1.3" PowerHigh="1.5" pace="1125572608"/>
+        <IntervalsT Repeat="5" OnDuration="180" OffDuration="60" OnPower="0.88" OffPower="1" pace="1125572608" OverUnder="1" Cadence="90" CadenceResting="90"/>
+        <SteadyState Duration="240" Power="0.45035335" pace="1125572608"/>
+    </workout>
+</workout_file>
+                              

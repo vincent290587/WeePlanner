@@ -1,0 +1,31 @@
+<workout_file>
+    <author>Vincent Golle</author>
+    <name>High torque hills</name>
+    <description></description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="INTERVALS"/>
+    </tags>
+    <workout>
+        <SteadyState Duration="240" Power="0.85" pace="0"/>
+        <SteadyState Duration="60" Power="1.1" pace="0" Cadence="110"/>
+        <SteadyState Duration="120" Power="0.55000001" pace="0"/>
+        <SteadyState Duration="240" Power="0.85" pace="0"/>
+        <SteadyState Duration="60" Power="1.1" pace="0" Cadence="110"/>
+        <SteadyState Duration="120" Power="0.55000001" pace="0"/>
+        <SteadyState Duration="240" Power="0.85" pace="0"/>
+        <SteadyState Duration="60" Power="1.1" pace="0" Cadence="110"/>
+        <SteadyState Duration="120" Power="0.55000001" pace="0"/>
+        <SteadyState Duration="240" Power="0.85" pace="0"/>
+        <SteadyState Duration="60" Power="1.1" pace="0" Cadence="110"/>
+        <SteadyState Duration="120" Power="0.55000001" pace="0"/>
+        <SteadyState Duration="240" Power="0.85" pace="0"/>
+        <SteadyState Duration="60" Power="1.1" pace="0" Cadence="110"/>
+        <SteadyState Duration="120" Power="0.55000001" pace="0"/>
+        <SteadyState Duration="240" Power="0.85" pace="0"/>
+        <SteadyState Duration="60" Power="1.1" pace="0" Cadence="110"/>
+        <SteadyState Duration="120" Power="0.55000001" pace="0"/>
+        <Cooldown Duration="420" PowerLow="0.77944446" PowerHigh="0.30166665" pace="0"/>
+    </workout>
+</workout_file>
+                              

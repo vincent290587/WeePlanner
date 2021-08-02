@@ -1,0 +1,66 @@
+<workout_file>
+    <author>Vincent Golle</author>
+    <name>Build me up - Purple unicorn</name>
+    <description></description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.25" PowerHigh="0.75" pace="1125572608"/>
+        <IntervalsT Repeat="1" OnDuration="30" OffDuration="30" OnPower="0.85000002" OffPower="0.5" pace="1125572608" Cadence="95" CadenceResting="85"/>
+        <IntervalsT Repeat="1" OnDuration="30" OffDuration="30" OnPower="0.94999999" OffPower="0.5" pace="1125572608" Cadence="105" CadenceResting="85"/>
+        <IntervalsT Repeat="1" OnDuration="30" OffDuration="30" OnPower="1.15" OffPower="0.5" pace="1125572608" Cadence="115" CadenceResting="85"/>
+        <SteadyState Duration="120" Power="0.5" pace="1125572608" Cadence="85"/>
+        <SteadyState Duration="180" Power="0.85000002" pace="1125572608" Cadence="90"/>
+        <SteadyState Duration="60" Power="1.05" pace="1125572608" Cadence="65"/>
+        <SteadyState Duration="30" Power="1.15" pace="1125572608" Cadence="65"/>
+        <SteadyState Duration="180" Power="0.85000002" pace="1125572608" Cadence="90"/>
+        <SteadyState Duration="60" Power="1.05" pace="1125572608" Cadence="65"/>
+        <SteadyState Duration="30" Power="1.15" pace="1125572608" Cadence="65"/>
+        <SteadyState Duration="180" Power="0.85000002" pace="1125572608" Cadence="90"/>
+        <SteadyState Duration="60" Power="1.05" pace="1125572608" Cadence="65"/>
+        <SteadyState Duration="30" Power="1.15" pace="1125572608" Cadence="65"/>
+        <SteadyState Duration="180" Power="0.85000002" pace="1125572608" Cadence="90"/>
+        <SteadyState Duration="60" Power="1.05" pace="1125572608" Cadence="65"/>
+        <SteadyState Duration="30" Power="1.15" pace="1125572608" Cadence="65"/>
+        <SteadyState Duration="300" Power="0.55000001" pace="1125572608" Cadence="85"/>
+        <SteadyState Duration="180" Power="0.85000002" pace="1125572608" Cadence="75"/>
+        <SteadyState Duration="60" Power="1.05" pace="1125572608" Cadence="90"/>
+        <SteadyState Duration="30" Power="1.15" pace="1125572608" Cadence="105"/>
+        <SteadyState Duration="180" Power="0.85000002" pace="1125572608" Cadence="75"/>
+        <SteadyState Duration="60" Power="1.05" pace="1125572608" Cadence="90"/>
+        <SteadyState Duration="30" Power="1.15" pace="1125572608" Cadence="105"/>
+        <SteadyState Duration="180" Power="0.85000002" pace="1125572608" Cadence="75"/>
+        <SteadyState Duration="60" Power="1.05" pace="1125572608" Cadence="90"/>
+        <SteadyState Duration="30" Power="1.15" pace="1125572608" Cadence="105"/>
+        <SteadyState Duration="180" Power="0.85000002" pace="1125572608" Cadence="75"/>
+        <SteadyState Duration="60" Power="1.05" pace="1125572608" Cadence="90"/>
+        <SteadyState Duration="30" Power="1.15" pace="1125572608" Cadence="105"/>
+        <SteadyState Duration="300" Power="0.55000001" pace="1125572608" Cadence="85"/>
+        <SteadyState Duration="180" Power="0.85000002" pace="1125572608" Cadence="90"/>
+        <SteadyState Duration="60" Power="1.05" pace="1125572608" Cadence="75"/>
+        <SteadyState Duration="30" Power="1.15" pace="1125572608" Cadence="65"/>
+        <SteadyState Duration="180" Power="0.85000002" pace="1125572608" Cadence="90"/>
+        <SteadyState Duration="60" Power="1.05" pace="1125572608" Cadence="75"/>
+        <SteadyState Duration="30" Power="1.15" pace="1125572608" Cadence="65"/>
+        <SteadyState Duration="180" Power="0.85000002" pace="1125572608" Cadence="90"/>
+        <SteadyState Duration="60" Power="1.05" pace="1125572608" Cadence="75"/>
+        <SteadyState Duration="30" Power="1.15" pace="1125572608" Cadence="65"/>
+        <SteadyState Duration="180" Power="0.85000002" pace="1125572608" Cadence="90"/>
+        <SteadyState Duration="60" Power="1.05" pace="1125572608" Cadence="75"/>
+        <SteadyState Duration="30" Power="1.15" pace="1125572608" Cadence="65"/>
+        <SteadyState Duration="300" Power="0.55000001" pace="1125572608" Cadence="85"/>
+        <SteadyState Duration="180" Power="0.75" pace="1125572608" Cadence="90"/>
+        <SteadyState Duration="60" Power="0.94999999" pace="1125572608" Cadence="100"/>
+        <SteadyState Duration="30" Power="1.05" pace="1125572608" Cadence="65"/>
+        <SteadyState Duration="180" Power="0.80000001" pace="1125572608" Cadence="90"/>
+        <SteadyState Duration="60" Power="1" pace="1125572608" Cadence="100"/>
+        <SteadyState Duration="30" Power="1.1" pace="1125572608" Cadence="65"/>
+        <SteadyState Duration="180" Power="0.85000002" pace="1125572608" Cadence="90"/>
+        <SteadyState Duration="60" Power="1.05" pace="1125572608" Cadence="100"/>
+        <SteadyState Duration="30" Power="1.15" pace="1125572608" Cadence="65"/>
+        <SteadyState Duration="180" Power="0.89999998" pace="1125572608" Cadence="90"/>
+        <SteadyState Duration="60" Power="1.1" pace="1125572608" Cadence="100"/>
+        <SteadyState Duration="30" Power="1.2" pace="1125572608" Cadence="100"/>
+        <Cooldown Duration="180" PowerLow="0.55000001" PowerHigh="0.25" pace="1125572608"/>
+    </workout>
+</workout_file>

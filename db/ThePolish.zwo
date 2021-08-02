@@ -1,0 +1,26 @@
+<workout_file>
+    <author>Vincent Golle</author>
+    <name>TT#1 The Polish</name>
+    <description></description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="INTERVALS"/>
+    </tags>
+    <workout>
+        <Warmup Duration="300" PowerLow="0.4545283" PowerHigh="0.65452832" pace="1125572608"/>
+        <SteadyState Duration="180" Power="0.68000001" pace="1125572608"/>
+        <SteadyState Duration="120" Power="0.85000002" pace="1125572608"/>
+        <SteadyState Duration="60" Power="0.98000002" pace="1125572608"/>
+        <SteadyState Duration="30" Power="1.13" pace="1125572608"/>
+        <SteadyState Duration="300" Power="0.55449998" pace="1125572608"/>
+        <IntervalsT Repeat="4" OnDuration="30" OffDuration="120" OnPower="1.0599999" OffPower="0.94999999" pace="1125572608" OverUnder="1"/>
+        <SteadyState Duration="300" Power="0.55449998" pace="1125572608"/>
+        <IntervalsT Repeat="4" OnDuration="30" OffDuration="120" OnPower="1.0599999" OffPower="0.94999999" pace="1125572608" OverUnder="1"/>
+        <SteadyState Duration="300" Power="0.55449998" pace="1125572608"/>
+        <IntervalsT Repeat="4" OnDuration="30" OffDuration="120" OnPower="1.0599999" OffPower="0.94999999" pace="1125572608" OverUnder="1"/>
+        <SteadyState Duration="300" Power="0.55449998" pace="1125572608"/>
+        <IntervalsT Repeat="4" OnDuration="30" OffDuration="120" OnPower="1.0599999" OffPower="0.94999999" pace="1125572608" OverUnder="1"/>
+        <SteadyState Duration="300" Power="0.55449998" pace="1125572608"/>
+        <Cooldown Duration="300" PowerLow="0.82449996" PowerHigh="0.44999999" pace="1125572608"/>
+    </workout>
+</workout_file>

@@ -1,0 +1,35 @@
+<workout_file>
+    <author>Vincent Golle</author>
+    <name>Build me up - Vieux bricolage</name>
+    <description></description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.35494697" PowerHigh="0.75" pace="1125572608"/>
+        <IntervalsT Repeat="1" OnDuration="30" OffDuration="30" OnPower="0.94999999" OffPower="0.5" pace="1125572608" Cadence="95" CadenceResting="85"/>
+        <SteadyState Duration="30" Power="0.5" pace="1125572608" Cadence="85"/>
+        <IntervalsT Repeat="1" OnDuration="30" OffDuration="30" OnPower="1.05" OffPower="0.5" pace="1125572608" Cadence="105" CadenceResting="85"/>
+        <SteadyState Duration="30" Power="0.5" pace="1125572608" Cadence="85"/>
+        <IntervalsT Repeat="1" OnDuration="30" OffDuration="30" OnPower="1.15" OffPower="0.5" pace="1125572608" Cadence="115" CadenceResting="85"/>
+        <SteadyState Duration="30" Power="0.5" pace="1125572608" Cadence="85"/>
+        <SteadyState Duration="120" Power="0.5" pace="1125572608" Cadence="85"/>
+        <Ramp Duration="480" PowerLow="0.94233453" PowerHigh="1.0468642" pace="1125572608"/>
+        <SteadyState Duration="120" Power="0.5" pace="1125572608" Cadence="85"/>
+        <SteadyState Duration="180" Power="0.64999998" pace="1125572608" Cadence="90"/>
+        <IntervalsT Repeat="4" OnDuration="60" OffDuration="60" OnPower="0.64999998" OffPower="0.64999998" pace="1125572608" OverUnder="1" Cadence="100" CadenceResting="70"/>
+        <SteadyState Duration="60" Power="0.64999998" pace="1125572608" Cadence="70"/>
+        <SteadyState Duration="120" Power="0.64999998" pace="1125572608" Cadence="90"/>
+        <IntervalsT Repeat="6" OnDuration="180" OffDuration="20" OnPower="0.76999998" OffPower="1.2" pace="1125572608" Cadence="90" CadenceResting="110"/>
+        <SteadyState Duration="20" Power="1.2" pace="1125572608" Cadence="110"/>
+        <SteadyState Duration="120" Power="0.5" pace="1125572608" Cadence="85"/>
+        <SteadyState Duration="180" Power="0.64999998" pace="1125572608" Cadence="90"/>
+        <IntervalsT Repeat="4" OnDuration="60" OffDuration="60" OnPower="0.64965159" OffPower="0.64965159" pace="1125572608" OverUnder="1" Cadence="100" CadenceResting="70"/>
+        <SteadyState Duration="60" Power="0.64999998" pace="1125572608" Cadence="70"/>
+        <SteadyState Duration="120" Power="0.64999998" pace="1125572608" Cadence="90"/>
+        <IntervalsT Repeat="4" OnDuration="60" OffDuration="120" OnPower="1.2001742" OffPower="0.54860628" pace="1125572608" Cadence="100" CadenceResting="85"/>
+        <SteadyState Duration="120" Power="0.55000001" pace="1125572608" Cadence="85"/>
+        <SteadyState Duration="900" Power="0.64999998" pace="1125572608" Cadence="90"/>
+        <Ramp Duration="480" PowerLow="0.94233453" PowerHigh="1.0468642" pace="1125572608"/>
+        <Cooldown Duration="300" PowerLow="0.81431097" PowerHigh="0.35141343" pace="1125572608"/>
+    </workout>
+</workout_file>

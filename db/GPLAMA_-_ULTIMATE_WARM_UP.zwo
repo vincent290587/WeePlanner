@@ -1,0 +1,34 @@
+<workout_file>
+    <author>S.Miller | GPLama</author>
+    <name>GPLAMA - ULTIMATE WARM UP</name>
+    <description>GPLAMA - ULTIMATE WARM UP! 
+
+Refnined, tried, tested, and proven. The best warm up protocol I've used over the years to achieve the best performance in time trials, criteriums, road races, even FTP tests! 
+
+See the full run-down on YouTube (Shane Miller - GPLama)</description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="INTERVALS"/>
+        <tag name="warmup"/>
+        <tag name="ultimatewarmup"/>
+        <tag name="gplama"/>
+    </tags>
+    <workout>
+        <FreeRide Duration="420" FlatRoad="1"/>
+        <SteadyState Duration="480" Power="0.85449994"/>
+        <FreeRide Duration="150" FlatRoad="1"/>
+        <SteadyState Duration="60" Power="1.0050701"/>
+        <FreeRide Duration="150" FlatRoad="1"/>
+        <SteadyState Duration="10" Power="1.5047379"/>
+        <FreeRide Duration="25" FlatRoad="1"/>
+        <SteadyState Duration="10" Power="1.5047379"/>
+        <FreeRide Duration="25" FlatRoad="1"/>
+        <SteadyState Duration="10" Power="1.5047379"/>
+        <FreeRide Duration="25" FlatRoad="1"/>
+        <SteadyState Duration="10" Power="1.5047379"/>
+        <FreeRide Duration="25" FlatRoad="1"/>
+        <SteadyState Duration="10" Power="1.5047379"/>
+        <FreeRide Duration="150" FlatRoad="1"/>
+    </workout>
+</workout_file>
+

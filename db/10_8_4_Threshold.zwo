@@ -1,0 +1,45 @@
+<workout_file>
+    <author>V.Golle</author>
+    <name>10/8/4 Threshold</name>
+    <description></description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="INTERVALS"/>
+    </tags>
+    <workout>
+        <Warmup Duration="440.00003" PowerLow="0.49003905" PowerHigh="0.6658203" pace="1122314923">
+            <textevent timeoffset="59" message="Hello and welcome !"/>
+        </Warmup>
+        <SteadyState Duration="60.000004" Power="0.7048828" pace="1122314923"/>
+        <SteadyState Duration="60.000004" Power="0.80253905" pace="1122314923"/>
+        <SteadyState Duration="60.000004" Power="0.9001953" pace="1122314923"/>
+        <SteadyState Duration="60.000004" Power="0.5095703" pace="1122314923"/>
+        <SteadyState Duration="60.000004" Power="0.7048828" pace="1122314923"/>
+        <SteadyState Duration="60.000004" Power="0.80253905" pace="1122314923"/>
+        <SteadyState Duration="60.000004" Power="0.9001953" pace="1122314923"/>
+        <SteadyState Duration="60.000004" Power="0.5017578" pace="1122314923"/>
+        <SteadyState Duration="60.000004" Power="0.7048828" pace="1122314923"/>
+        <SteadyState Duration="60.000004" Power="0.80253905" pace="1122314923"/>
+        <SteadyState Duration="60.000004" Power="0.9001953" pace="1122314923"/>
+        <SteadyState Duration="60.000004" Power="0.5017578" pace="1122314923"/>
+        <SteadyState Duration="20" Power="0.81035155" pace="1122314923"/>
+        <SteadyState Duration="20" Power="0.9001953" pace="1122314923"/>
+        <SteadyState Duration="20" Power="0.99785155" pace="1122314923"/>
+        <SteadyState Duration="60.000004" Power="0.5017578" pace="1122314923"/>
+        <SteadyState Duration="20" Power="0.9001953" pace="1122314923"/>
+        <SteadyState Duration="20" Power="0.99785155" pace="1122314923"/>
+        <SteadyState Duration="20" Power="1.0994141" pace="1122314923"/>
+        <SteadyState Duration="60.000004" Power="0.5017578" pace="1122314923"/>
+        <SteadyState Duration="20" Power="0.99785155" pace="1122314923"/>
+        <SteadyState Duration="20" Power="1.0999999" pace="1122314923"/>
+        <SteadyState Duration="20" Power="1.1931641" pace="1122314923"/>
+        <SteadyState Duration="300" Power="0.5486328" pace="1122314923"/>
+        <SteadyState Duration="600" Power="1.001568" pace="1122314923"/>
+        <SteadyState Duration="240.00002" Power="0.5486328" pace="1122314923"/>
+        <SteadyState Duration="480" Power="1.0468642" pace="1122314923"/>
+        <SteadyState Duration="240.00002" Power="0.5486328" pace="1122314923"/>
+        <SteadyState Duration="240" Power="1.099129" pace="1122314923"/>
+        <Cooldown Duration="420.00003" PowerLow="0.6267578" PowerHigh="0.4705078" pace="1122314923"/>
+    </workout>
+</workout_file>
+                                            

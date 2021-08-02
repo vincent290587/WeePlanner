@@ -1,0 +1,65 @@
+<workout_file>
+	<author>Shayne Gaffney | GC Coaching</author>
+	<name>SST: 4x15 Varied</name>
+	<description>WARM UP:
+-10 minutes gradually progressing from Active Recovery zone to Endurance zone.
+-3x30 seconds Spin Ups (110+ RPM) @Threshold zone+, 30 seconds easy.
+-2 minutes easy
+------
+MAIN SET:
+-4x 15 minutes @SST performing various duration&apos;s between 75 and 90% FTP.
+-Rest for 3 minutes between.
+-Keep your cadence between 85-95 RPM.
+------
+COOL DOWN:
+-6 minutes gradually reducing from Endurance zone to Active Recovery zone</description>
+	<sportType>bike</sportType>
+	<tags/>
+	<workout>
+		<SteadyState Duration="120" PowerLow="0.6" PowerHigh="0.6">
+		</SteadyState>
+		<SteadyState Duration="120" PowerLow="0.68" PowerHigh="0.68">
+		</SteadyState>
+		<SteadyState Duration="120" PowerLow="0.75" PowerHigh="0.75">
+		</SteadyState>
+		<SteadyState Duration="120" PowerLow="0.83" PowerHigh="0.83">
+		</SteadyState>
+		<SteadyState Duration="120" PowerLow="0.9" PowerHigh="0.9">
+		</SteadyState>
+        <IntervalsT Repeat="3" OnDuration="30" OffDuration="30" OnPower="1.2" OffPower="0.55" />
+		<SteadyState Duration="120" PowerLow="0.55" PowerHigh="0.55">
+		</SteadyState>
+		<SteadyState Duration="300" PowerLow="0.75" PowerHigh="0.75">
+		</SteadyState>
+		<SteadyState Duration="300" PowerLow="0.8" PowerHigh="0.8">
+		</SteadyState>
+		<SteadyState Duration="300" PowerLow="0.85" PowerHigh="0.85">
+		</SteadyState>
+		<SteadyState Duration="180" PowerLow="0.55" PowerHigh="0.55">
+		</SteadyState>
+		<SteadyState Duration="300" PowerLow="0.9" PowerHigh="0.9">
+		</SteadyState>
+		<SteadyState Duration="300" PowerLow="0.85" PowerHigh="0.85">
+		</SteadyState>
+		<SteadyState Duration="300" PowerLow="0.8" PowerHigh="0.8">
+		</SteadyState>
+		<SteadyState Duration="180" PowerLow="0.55" PowerHigh="0.55">
+		</SteadyState>
+		<SteadyState Duration="300" PowerLow="0.85" PowerHigh="0.85">
+		</SteadyState>
+		<SteadyState Duration="300" PowerLow="0.9" PowerHigh="0.9">
+		</SteadyState>
+		<SteadyState Duration="300" PowerLow="0.8" PowerHigh="0.8">
+		</SteadyState>
+		<SteadyState Duration="180" PowerLow="0.55" PowerHigh="0.55">
+		</SteadyState>
+		<SteadyState Duration="300" PowerLow="0.75" PowerHigh="0.75">
+		</SteadyState>
+		<SteadyState Duration="300" PowerLow="0.8" PowerHigh="0.8">
+		</SteadyState>
+		<SteadyState Duration="300" PowerLow="0.85" PowerHigh="0.85">
+		</SteadyState>
+		<Cooldown Duration="360" PowerLow="0.4" PowerHigh="0.4">
+		</Cooldown>
+	</workout>
+</workout_file>                                                                

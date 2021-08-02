@@ -1,0 +1,24 @@
+<workout_file>
+    <author>Vincent Golle</author>
+    <name>Wild Starts</name>
+    <description></description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="INTERVALS"/>
+    </tags>
+    <workout>
+        <Warmup Duration="480" PowerLow="0.37130281" PowerHigh="0.80088025" pace="0"/>
+        <SteadyState Duration="120" Power="0.55000001" pace="0"/>
+        <SteadyState Duration="60" Power="1.5" pace="0" Cadence="110"/>
+        <Ramp Duration="540" PowerLow="0.88" PowerHigh="0.94999999" pace="0" Cadence="85"/>
+        <SteadyState Duration="300" Power="0.55000001" pace="0"/>
+        <SteadyState Duration="45" Power="1.5" pace="0" Cadence="110"/>
+        <Ramp Duration="555" PowerLow="0.88" PowerHigh="0.94999999" pace="0" Cadence="85"/>
+        <SteadyState Duration="300" Power="0.55000001" pace="0"/>
+        <SteadyState Duration="30" Power="1.5" pace="0" Cadence="110"/>
+        <Ramp Duration="570" PowerLow="0.88" PowerHigh="0.94999999" pace="0" Cadence="85"/>
+        <SteadyState Duration="180" Power="0.50166667" pace="0"/>
+        <Cooldown Duration="420" PowerLow="0.77944446" PowerHigh="0.30166665" pace="0"/>
+    </workout>
+</workout_file>
+                       

@@ -1,0 +1,32 @@
+<workout_file>
+    <author></author>
+    <name>Build me up - Tenacity</name>
+    <description></description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="INTERVALS"/>
+    </tags>
+    <workout>
+        <Warmup Duration="300" PowerLow="0.25" PowerHigh="0.64999998" pace="1128505344"/>
+        <Ramp Duration="300" PowerLow="0.64999998" PowerHigh="0.64999998" pace="1128505344" Cadence="95"/>
+        <SteadyState Duration="60" Power="0.75" pace="1128505344" Cadence="100"/>
+        <SteadyState Duration="60" Power="0.80000001" pace="1128505344" Cadence="100"/>
+        <SteadyState Duration="60" Power="0.55000001" pace="1128505344" Cadence="85"/>
+        <SteadyState Duration="60" Power="0.85000002" pace="1128505344" Cadence="105"/>
+        <SteadyState Duration="60" Power="0.89999998" pace="1128505344" Cadence="105"/>
+        <SteadyState Duration="60" Power="0.55000001" pace="1128505344"/>
+        <SteadyState Duration="60" Power="0.94999999" pace="1128505344" Cadence="110"/>
+        <SteadyState Duration="60" Power="1" pace="1128505344" Cadence="110"/>
+        <SteadyState Duration="180" Power="0.55000001" pace="1128505344" Cadence="90"/>
+        <IntervalsT Repeat="5" OnDuration="300" OffDuration="10" OnPower="0.84825784" OffPower="2.0015681" pace="1128505344" Cadence="90" CadenceResting="110"/>
+        <SteadyState Duration="360" Power="0.55000001" pace="1128505344"/>
+        <IntervalsT Repeat="5" OnDuration="300" OffDuration="5" OnPower="0.85000002" OffPower="2" pace="1128505344" Cadence="90" CadenceResting="110"/>
+        <SteadyState Duration="360" Power="0.55000001" pace="1128505344"/>
+        <IntervalsT Repeat="4" OnDuration="60" OffDuration="60" OnPower="1.15" OffPower="0.55000001" pace="1128505344" Cadence="100" CadenceResting="85"/>
+        <SteadyState Duration="120" Power="0.40000001" pace="1128505344"/>
+        <IntervalsT Repeat="4" OnDuration="60" OffDuration="60" OnPower="1.15" OffPower="0.55000001" pace="1128505344" Cadence="100" CadenceResting="85"/>
+        <SteadyState Duration="90" Power="0.55000001" pace="1128505344"/>
+        <Cooldown Duration="540" PowerLow="0.55000001" PowerHigh="0.25" pace="1128505344"/>
+    </workout>
+</workout_file>
+                               

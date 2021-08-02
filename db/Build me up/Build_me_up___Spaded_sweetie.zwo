@@ -1,0 +1,49 @@
+<workout_file>
+    <author>Vincent Golle</author>
+    <name>Build me up - Spaded sweetie</name>
+    <description>Modified the intensity of the last interval</description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="INTERVALS"/>
+    </tags>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.37261483" PowerHigh="0.75" pace="1125572608"/>
+        <SteadyState Duration="30" Power="0.94999999" pace="1125572608" Cadence="95"/>
+        <SteadyState Duration="30" Power="0.5" pace="1125572608" Cadence="85"/>
+        <SteadyState Duration="30" Power="1.05" pace="1125572608" Cadence="105"/>
+        <SteadyState Duration="30" Power="0.5" pace="1125572608" Cadence="85"/>
+        <SteadyState Duration="30" Power="1.15" pace="1125572608" Cadence="115"/>
+        <SteadyState Duration="150" Power="0.5" pace="1125572608" Cadence="85"/>
+        <SteadyState Duration="15" Power="1.5" pace="1125572608" Cadence="110"/>
+        <SteadyState Duration="30" Power="0.5" pace="1125572608" Cadence="85"/>
+        <SteadyState Duration="30" Power="1.35" pace="1125572608" Cadence="110"/>
+        <SteadyState Duration="60" Power="0.5" pace="1125572608" Cadence="85"/>
+        <SteadyState Duration="60" Power="1.2" pace="1125572608" Cadence="110"/>
+        <SteadyState Duration="60" Power="0.5" pace="1125572608" Cadence="85"/>
+        <SteadyState Duration="30" Power="1.35" pace="1125572608" Cadence="110"/>
+        <SteadyState Duration="60" Power="0.5" pace="1125572608" Cadence="85"/>
+        <SteadyState Duration="15" Power="1.5" pace="1125572608" Cadence="110"/>
+        <SteadyState Duration="120" Power="0.5" pace="1125572608" Cadence="85"/>
+        <Ramp Duration="30" PowerLow="0.70449996" PowerHigh="0.80449992" pace="1125572608"/>
+        <SteadyState Duration="240" Power="0.87961674" pace="1125572608" Cadence="95"/>
+        <SteadyState Duration="60" Power="1.05" pace="1125572608" Cadence="105"/>
+        <SteadyState Duration="15" Power="0.64999998" pace="1125572608" Cadence="85"/>
+        <Ramp Duration="30" PowerLow="0.75449997" PowerHigh="0.82449996" pace="1125572608"/>
+        <SteadyState Duration="240" Power="0.92449993" pace="1125572608" Cadence="95"/>
+        <SteadyState Duration="60" Power="1.05" pace="1125572608" Cadence="105"/>
+        <SteadyState Duration="30" Power="0.64999998" pace="1125572608" Cadence="85"/>
+        <Ramp Duration="30" PowerLow="0.74449998" PowerHigh="0.85449994" pace="1125572608"/>
+        <SteadyState Duration="240" Power="0.95999998" pace="1125572608" Cadence="95"/>
+        <SteadyState Duration="60" Power="1.0599999" pace="1125572608" Cadence="105"/>
+        <SteadyState Duration="60" Power="0.64999998" pace="1125572608" Cadence="85"/>
+        <Ramp Duration="30" PowerLow="0.75449997" PowerHigh="0.90449995" pace="1125572608"/>
+        <SteadyState Duration="240" Power="1" pace="1125572608" Cadence="95"/>
+        <SteadyState Duration="60" Power="1.05" pace="1125572608" Cadence="105"/>
+        <SteadyState Duration="120" Power="0.64999998" pace="1125572608" Cadence="85"/>
+        <Ramp Duration="30" PowerLow="1.5545" PowerHigh="1.0445" pace="1125572608"/>
+        <SteadyState Duration="240" Power="1.0445" pace="1125572608" Cadence="95"/>
+        <Ramp Duration="60" PowerLow="1.04" PowerHigh="1.2" pace="1125572608" Cadence="115"/>
+        <Cooldown Duration="360" PowerLow="0.75" PowerHigh="0.39028266" pace="1125572608"/>
+    </workout>
+</workout_file>
+                                                

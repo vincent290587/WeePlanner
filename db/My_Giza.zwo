@@ -1,0 +1,30 @@
+<workout_file>
+    <author>V.Golle</author>
+    <name>My Giza</name>
+    <description></description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="INTERVALS"/>
+    </tags>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.33499998" PowerHigh="0.74981481" pace="1125572608"/>
+        <SteadyState Duration="30" Power="0.94981486" pace="1125572608" Cadence="95"/>
+        <SteadyState Duration="30" Power="0.50166667" pace="1125572608" Cadence="85"/>
+        <SteadyState Duration="30" Power="1.0572222" pace="1125572608" Cadence="105"/>
+        <SteadyState Duration="30" Power="0.50166667" pace="1125572608" Cadence="85"/>
+        <SteadyState Duration="30" Power="1.1498148" pace="1125572608" Cadence="115"/>
+        <SteadyState Duration="120" Power="0.50166667" pace="1125572608"/>
+        <SteadyState Duration="600" Power="0.75" pace="1125572608" Cadence="75"/>
+        <SteadyState Duration="180" Power="0.50166667" pace="1125572608"/>
+        <SteadyState Duration="30" Power="1.5016667" pace="1125572608" Cadence="110"/>
+        <SteadyState Duration="600" Power="0.80166668" pace="1125572608" Cadence="90"/>
+        <SteadyState Duration="180" Power="0.50166667" pace="1125572608"/>
+        <SteadyState Duration="30" Power="1.5016667" pace="1125572608" Cadence="110"/>
+        <SteadyState Duration="540" Power="0.84981483" pace="1125572608" Cadence="100"/>
+        <SteadyState Duration="180" Power="0.50166667" pace="1125572608"/>
+        <SteadyState Duration="30" Power="1.5016667" pace="1125572608" Cadence="110"/>
+        <SteadyState Duration="480" Power="0.90166664" pace="1125572608" Cadence="85"/>
+        <SteadyState Duration="180" Power="0.50166667" pace="1125572608"/>
+        <Cooldown Duration="360" PowerLow="0.74981481" PowerHigh="0.24981481" pace="1125572608"/>
+    </workout>
+</workout_file>

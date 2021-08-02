@@ -1,0 +1,158 @@
+<workout_file>
+    <author>Shayne Gaffney | GC Coaching</author>
+    <name>GC Coaching&apos;s Yellow Unicorn</name>
+    <description>GC Coaching&apos;s Yellow Unicorn is geared towards athletes in their base phase, so if you are looking for a hammerfest, this isn&apos;t your ride.  After a warm-up, we will move into 3x (18 minutes alternating between 2 minutes @83% FTP, and 60 seconds @105% FTP.  We will be mixing up the cadence and position on the bike throughout the course of the workout as well to further challenge your basic skills and on-bike flexibility.  Come and join us!
+
+This workout is 105 minutes in duration, carries ~117 TSS, and has an IF of .82</description>
+    <sportType>bike</sportType>
+    <tags>
+    </tags>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.25" PowerHigh="0.75">
+            <textevent timeoffset="0" message="Welcome, friend!  Let&apos;s get those legs spinning."/>
+            <textevent timeoffset="1" message="Let&apos;s start with a 10 minute warm-up.  Ideally keep your cadence 85-95 RPM."/>
+            <textevent timeoffset="15" message="Throughout this workout, also focus on keeping your shoulders relaxed, elbows bent slightly, and a light grip on the bars."/>
+            <textevent timeoffset="180" message="3 minutes in, bring up that cadence more if you aren&apos;t at 95 RPM yet."/>
+            <textevent timeoffset="300" message="Half-way through the warm up, let&apos;s talk a bit about today&apos;s workout."/>
+            <textevent timeoffset="310" message="We are going to be doing 3 over/under interval sets..."/>
+            <textevent timeoffset="320" message="...The under portion will be at 80% FTP, and the over portion is at 105% FTP..."/>
+            <textevent timeoffset="330" message="...We will be doing 2 minutes under, 1 minute over, 6 times, for a total of 18 minutes per interval..."/>
+            <textevent timeoffset="340" message="...The goal of today is to spend over 60 minutes close to Threshold to really challenge your aerobic system and improve it!"/>
+            <textevent timeoffset="350" message="Expect it to start off &quot;easy&quot; and then become progressively more challenging as the fatigue sets in..."/>
+            <textevent timeoffset="360" message="...Fatigue won&apos;t stop you though, will it?  #mentalpower"/>
+            <textevent timeoffset="370" message="Rest?  Oh sure, 2 minutes between intervals."/>
+            <textevent timeoffset="540" message="One more minute.  We are going to start with 3 primers first..."/>
+            <textevent timeoffset="550" message="...Primers help ready the legs further for the work ahead..."/>
+            <textevent timeoffset="560" message="...The first one is at 95 RPM."/>
+            <textevent timeoffset="590" message="Ready?"/>
+            <textevent timeoffset="380" message="...After the over/unders, we are going to do a 20 minute Zone 2 interval..."/>
+            <textevent timeoffset="390" message="...This interval will feature changes in cadence and position to mix things up a bit more :-)"/>
+        </Warmup>
+        <SteadyState Duration="60" Power="0.8" Cadence="95">
+            <textevent timeoffset="0" message="Bring up the effort a bit."/>
+        </SteadyState>
+        <SteadyState Duration="30" Power="0.95" Cadence="95">
+            <textevent timeoffset="0" message="A little more gas..."/>
+        </SteadyState>
+        <SteadyState Duration="30" Power="0.55" Cadence="85">
+            <textevent timeoffset="0" message="Good, bring the effort and cadence down."/>
+            <textevent timeoffset="20" message="Second primer is at 105 RPM."/>
+        </SteadyState>
+        <SteadyState Duration="60" Power="0.8" Cadence="105">
+            <textevent timeoffset="0" message="Up again, quicker leg speed this time."/>
+        </SteadyState>
+        <SteadyState Duration="30" Power="1.05" Cadence="105">
+            <textevent timeoffset="0" message="Get going!"/>
+        </SteadyState>
+        <SteadyState Duration="30" Power="0.55" Cadence="85">
+            <textevent timeoffset="0" message="Nice!  Back down again..."/>
+            <textevent timeoffset="20" message="Last one is at 110+ RPM, get ready!"/>
+        </SteadyState>
+        <SteadyState Duration="60" Power="0.8" Cadence="110"/>
+        <SteadyState Duration="30" Power="1.15" Cadence="110">
+            <textevent timeoffset="0" message="UP UP UP!"/>
+        </SteadyState>
+        <SteadyState Duration="30" Power="0.55" Cadence="85">
+            <textevent timeoffset="0" message="Excellent!  Take it back down again and take a few minutes easy before we start the main set today."/>
+        </SteadyState>
+        <SteadyState Duration="240" Power="0.55" Cadence="85">
+            <textevent timeoffset="60" message="Deep breaths, lower that heart rate and control your breathing."/>
+            <textevent timeoffset="120" message="Make sure your fan is good, water cold, and start to get your mind right."/>
+            <textevent timeoffset="180" message="Focus on the task at hand, know this is going to be a challenge, but attaintable..."/>
+            <textevent timeoffset="190" message="...and KNOW YOU CAN DO THIS!"/>
+            <textevent timeoffset="210" message="All right, we are going to start off at a self-selected cadence..."/>
+            <textevent timeoffset="220" message="...Pay attention though because I am going to be mixing things up throughout the interval."/>
+            <textevent timeoffset="230" message="Ready?"/>
+        </SteadyState>
+        <IntervalsT Repeat="6" OnDuration="120" OffDuration="60" OnPower="0.83" OffPower="1.05">
+            <textevent timeoffset="0" message="Settle into this first effort, everyone.  Remember, shoulders relaxed, elbows bent, light grip."/>
+            <textevent timeoffset="10" message="Also, spin your legs at whatever feels comfortable."/>
+            <textevent timeoffset="110" message="For this first over, spin your legs up to 110+ RPM"/>
+            <textevent timeoffset="120" message="Spin it up!"/>
+            <textevent timeoffset="180" message="Nice work, back down to a comfortable cadence."/>
+            <textevent timeoffset="290" message="Same deal for this over, 110+ RPM!"/>
+            <textevent timeoffset="300" message="Spin, spin, spin!"/>
+            <textevent timeoffset="360" message="Woot woot!  Back down to a comfortable cadence, all."/>
+            <textevent timeoffset="470" message="We&apos;re going to be standing up and dropping the cadence to 65 RPM for this next over."/>
+            <textevent timeoffset="480" message="All right, everyone stand up, drop the cadence to 65 RPM."/>
+            <textevent timeoffset="540" message="Sit back down, keep the cadence at 65 RPM though :-)"/>
+            <textevent timeoffset="650" message="We&apos;re going to spin those legs up again for the next one, 110+ RPM"/>
+            <textevent timeoffset="660" message="GET THAT GEAR SPUN UP"/>
+            <textevent timeoffset="690" message="Keep it spinning!"/>
+            <textevent timeoffset="720" message="Nice!!  Back to a comfortable cadence"/>
+            <textevent timeoffset="830" message="Keep the cadence comfortable for this next over."/>
+            <textevent timeoffset="900" message="Keep in comfy (zero RPM is comfy, I know, but keep the legs spinning!)"/>
+            <textevent timeoffset="1010" message="For the last over, we&apos;re going to stand up and drop the cadence to 65 RPM agan"/>
+            <textevent timeoffset="1020" message="Stand up!"/>
+        </IntervalsT>
+        <SteadyState Duration="120" Power="0.5">
+            <textevent timeoffset="0" message="Nice work, all!  1 down and 2 to go."/>
+            <textevent timeoffset="10" message="Spin easy for a couple of minutes and get ready for the next one."/>
+            <textevent timeoffset="90" message="For the next over/under, we are going to be dropping the cadence to 65-75 RPM for the under..."/>
+            <textevent timeoffset="100" message="...And spinning up to 110+ RPM for the over."/>
+            <textevent timeoffset="110" message="Ready?"/>
+        </SteadyState>
+        <IntervalsT Repeat="6" OnDuration="120" OffDuration="60" OnPower="0.83" OffPower="1.05" Cadence="70" CadenceResting="110">
+            <textevent timeoffset="0" message="Bring up the effort again, but bring the cadence to ~70 RPM...Push, scrape, pull."/>
+            <textevent timeoffset="15" message="Shoulders relaxed, elbows bent, light grip, good form!"/>
+            <textevent timeoffset="110" message="Remember, we are going to spinning up to 110+ RPM for the overs!  Get ready."/>
+            <textevent timeoffset="120" message="Spin &apos;em up!"/>
+            <textevent timeoffset="180" message="Nicely done.  Slow that cadence back down again."/>
+            <textevent timeoffset="290" message="Spin-up coming in hot!"/>
+            <textevent timeoffset="300" message="Spin, spin, spin!"/>
+            <textevent timeoffset="360" message="Back down again...push, scrape, pull."/>
+            <textevent timeoffset="540" message="Half way done with this one :-)"/>
+            <textevent timeoffset="550" message="You all look GREAT!"/>
+            <textevent timeoffset="750" message="Everybody STAND UP for 1 minute"/>
+            <textevent timeoffset="810" message="Back down :-)"/>
+            <textevent timeoffset="900" message="Last one!!!"/>
+        </IntervalsT>
+        <SteadyState Duration="120" Power="0.5">
+            <textevent timeoffset="0" message="Phew!  2 down 1 more to go..."/>
+            <textevent timeoffset="30" message="Deep breaths, slow the heart rate, easy."/>
+            <textevent timeoffset="80" message="For this last over/under set, we are going to pick the cadence up to 90-100 for the under, and drop it to 60 for the under..."/>
+            <textevent timeoffset="90" message="...If you experience joint discomfort during, please increase your cadence..."/>
+            <textevent timeoffset="100" message="...Muscle burning and some discomfort is expected though :-)"/>
+            <textevent timeoffset="110" message="Ready?"/>
+        </SteadyState>
+        <IntervalsT Repeat="6" OnDuration="120" OffDuration="60" OnPower="0.83" OffPower="1.05" Cadence="95" CadenceResting="60">
+            <textevent timeoffset="0" message="Here we go, last over/under!  Bring that cadence up."/>
+            <textevent timeoffset="110" message="Remember, cadence is going to drop to ~60 RPM for the over.  Stay seated for this one."/>
+            <textevent timeoffset="120" message="Cadence down, push, scrape, pull!"/>
+            <textevent timeoffset="180" message="Nice work!  Cadence back up!"/>
+            <textevent timeoffset="300" message="Stand up!"/>
+            <textevent timeoffset="360" message="Back to sitting."/>
+            <textevent timeoffset="480" message="Stay seated here, push, scrape, pull."/>
+            <textevent timeoffset="540" message="Half way done!  Let&apos;s get more aero now; use your drops / aero bars."/>
+            <textevent timeoffset="550" message="Get LOW :-)"/>
+            <textevent timeoffset="720" message="Stay low, all.  Work on that flexibility.  Any neck pain though, please assume a comfy position."/>
+            <textevent timeoffset="900" message="Last one!!!"/>
+        </IntervalsT>
+        <SteadyState Duration="120" Power="0.5">
+            <textevent timeoffset="0" message="Nice!!  Over/unders are done and dusted..."/>
+            <textevent timeoffset="10" message="...Next up we are doing a 20 minute Zone 2 effort and modifying the cadence/position throughout the interval."/>
+            <textevent timeoffset="20" message="Enjoy your rest break for now though :-)"/>
+            <textevent timeoffset="110" message="All right, all, we are going to start seated at comfy cadence, but in the DROPS or AERO BARS"/>
+        </SteadyState>
+        <SteadyState Duration="300" Power="0.75" Cadence="90">
+            <textevent timeoffset="0" message="Get low, stay low.  We&apos;re here for 5 minutes."/>
+        </SteadyState>
+        <IntervalsT Repeat="5" OnDuration="60" OffDuration="60" OnPower="0.75" OffPower="0.75" Cadence="100" CadenceResting="65">
+            <textevent timeoffset="0" message="All right, now alternate 100 RPM for 1 minute and 60 RPM for 1 minute..."/>
+            <textevent timeoffset="10" message="...Stand up as needed!"/>
+        </IntervalsT>
+        <SteadyState Duration="300" Power="0.75" Cadence="90">
+            <textevent timeoffset="0" message="Back to comfy cadence.  Get low, and stay low again.  We&apos;re here for the last 5 minutes."/>
+        </SteadyState>
+        <Cooldown Duration="300" PowerLow="0.6" PowerHigh="0.25">
+            <textevent timeoffset="0" message="We did it!!!  Awesome work, all.  Let&apos;s cool down for a few minutes."/>
+            <textevent timeoffset="60" message="Slow that cadence down a bit more..."/>
+            <textevent timeoffset="120" message="Even slower cadence now...Really easy."/>
+            <textevent timeoffset="240" message="Last minute :-)"/>
+            <textevent timeoffset="260" message="Thank you all so much for coming today."/>
+            <textevent timeoffset="270" message="You all should be proud of what you accomplished, I know I am of you :-)"/>
+            <textevent timeoffset="280" message="Check out the GC Coaching Facebook page for more Zwift group events."/>
+            <textevent timeoffset="290" message="Until next time, CHEERS!"/>
+        </Cooldown>
+    </workout>
+</workout_file>                                                                                                                                                           

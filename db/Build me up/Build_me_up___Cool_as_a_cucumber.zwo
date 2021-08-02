@@ -1,0 +1,45 @@
+<workout_file>
+    <author>Vincent Golle</author>
+    <name>Build me up - Cool as a cucumber</name>
+    <description></description>
+    <sportType>bike</sportType>
+    <tags>
+    </tags>
+    <workout>
+         <Ramp Duration="300" PowerLow="0.25" PowerHigh="0.60"/>
+         <SteadyState Duration="300" Power="0.60" Cadence="90"/>
+         <SteadyState Duration="180" Power="0.75" Cadence="100"/>
+         <SteadyState Duration="120" Power="0.55" Cadence="85"/>
+         <SteadyState Duration="30" Power="1.00" Cadence="100"/>
+         <SteadyState Duration="30" Power="1.30" Cadence="110"/>
+         <SteadyState Duration="15" Power="1.50" Cadence="115"/>
+         <SteadyState Duration="120" Power="0.55" Cadence="85"/>
+         <SteadyState Duration="600" Power="0.90" Cadence="90"/>
+         <SteadyState Duration="120" Power="0.67" Cadence="85"/>
+         <SteadyState Duration="600" Power="0.90" Cadence="75"/>
+         <SteadyState Duration="120" Power="0.67" Cadence="85"/>
+         <SteadyState Duration="200" Power="0.90" Cadence="90"/>
+         <SteadyState Duration="200" Power="0.90" Cadence="105"/>
+         <SteadyState Duration="200" Power="0.90" Cadence="90"/>
+         <SteadyState Duration="120" Power="0.67" Cadence="85"/>
+         <SteadyState Duration="30" Power="1.00" Cadence="100"/>
+         <SteadyState Duration="30" Power="1.30" Cadence="110"/>
+         <SteadyState Duration="15" Power="1.50" Cadence="115"/>
+         <SteadyState Duration="120" Power="0.55" Cadence="85"/>
+         <SteadyState Duration="300" Power="0.95" Cadence="90"/>
+         <SteadyState Duration="300" Power="0.85" Cadence="90"/>
+         <SteadyState Duration="120" Power="0.67" Cadence="85"/>
+         <SteadyState Duration="150" Power="0.95" Cadence="100"/>
+         <SteadyState Duration="150" Power="0.85" Cadence="80"/>
+         <SteadyState Duration="150" Power="0.95" Cadence="100"/>
+         <SteadyState Duration="150" Power="0.85" Cadence="80"/>
+         <SteadyState Duration="150" Power="0.95" Cadence="100"/>
+         <SteadyState Duration="150" Power="0.85" Cadence="80"/>
+         <SteadyState Duration="30" Power="1.00" Cadence="100"/>
+         <SteadyState Duration="30" Power="1.30" Cadence="110"/>
+         <SteadyState Duration="15" Power="1.50" Cadence="115"/>
+         <Ramp Duration="255" PowerLow="0.60" PowerHigh="0.25"/>
+    </workout>
+</workout_file>
+
+                                            

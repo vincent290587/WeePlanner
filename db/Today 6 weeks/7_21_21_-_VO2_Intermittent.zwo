@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<workout_file xsi:schemaLocation="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <author>Today's Plan</author>
+    <name>Today's Plan - VO2 Intermittent</name>
+    <description>The VO2 max training sessions are high intensity sessions that have a potent training effect. They are aimed at increasing your maximal aerobic capacity which is the highest rate at which you can utilise oxygen in your muscles. An all out VO2max effort could last anywhere from 5-8 minutes, but from a training perspective you can also target VO2max adaptations using shorter hard efforts with short recovery periods.  Whichever type of VO2max session you are completing the most important factor is that you are ready to push yourself to the limit. Reaching VO2max is difficult so to get the correct adaptations you need to be pushing maximally with extremely heavy breathing and a painful amount of lactate build up in the body. If you have VO2max sessions in your training plan they will be one of the most important sessions for the week so make sure you are mentally prepared to commit to the session and focus.  It's best to do these sessions on an uninterrupted stretch of road where you don't need to worry about cars, traffic or any other dangers and can simply focus on getting all your effort out in the specific intervals.&#13;
+</description>
+    <tags>
+        <tag name="Today's Plan"/>
+    </tags>
+    <sportType>ride</sportType>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.6" PowerHigh="0.852632">
+            <textevent timeoffset="0" message="Warmup - Endurance, medium load, regular breathing, talking more difficult"/>
+        </Warmup>
+        <SteadyState Duration="300" Power="0.94386">
+            <textevent timeoffset="0" message="Threshold - Threshold, very deep rhythmic breathing, high concentration in effort"/>
+        </SteadyState>
+        <IntervalsT Repeat="20" OnDuration="15" OffDuration="15" OnPower="1.501754" OffPower="0.6">
+            <textevent timeoffset="0" message="Intermittent Interval - Full gas, frothing at the nostrils, high fatigue"/>
+        </IntervalsT>
+        <SteadyState Duration="300" Power="0.908772">
+            <textevent timeoffset="0" message="Threshold - Threshold, very deep rhythmic breathing, high concentration in effort"/>
+        </SteadyState>
+        <SteadyState Duration="300" Power="0.6">
+            <textevent timeoffset="0" message="Recovery - Low endurance, easy very little load, you can talk easily"/>
+        </SteadyState>
+        <SteadyState Duration="300" Power="0.94386">
+            <textevent timeoffset="0" message="Threshold - Threshold, very deep rhythmic breathing, high concentration in effort"/>
+        </SteadyState>
+        <IntervalsT Repeat="20" OnDuration="15" OffDuration="15" OnPower="1.501754" OffPower="0.6">
+            <textevent timeoffset="0" message="Intermittent Interval - Full gas, frothing at the nostrils, high fatigue"/>
+        </IntervalsT>
+        <SteadyState Duration="300" Power="0.908772">
+            <textevent timeoffset="0" message="Threshold - Threshold, very deep rhythmic breathing, high concentration in effort"/>
+        </SteadyState>
+        <SteadyState Duration="600" Power="0.6">
+            <textevent timeoffset="0" message="Cool Down - Low endurance, easy very little load, you can talk easily"/>
+        </SteadyState>
+    </workout>
+</workout_file>

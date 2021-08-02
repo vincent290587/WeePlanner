@@ -1,0 +1,36 @@
+<workout_file>
+    <author>Vincent Golle</author>
+    <name>Slayer Threshold</name>
+    <description></description>
+    <sportType>bike</sportType>
+    <tags>
+    </tags>
+    <workout>
+         <SteadyState Duration="180" Power="0.50"/>
+         <IntervalsT Repeat="2" OnDuration="10" OffDuration="50" OnPower="1.35" OffPower="0.50"/>
+         <SteadyState Duration="180" Power="0.70"/>
+         <SteadyState Duration="120" Power="0.50"/>
+         <SteadyState Duration="180" Power="0.85"/>
+         <SteadyState Duration="180" Power="0.50"/>
+         <Ramp Duration="180" PowerLow="0.91" PowerHigh="1.05"/>
+         <SteadyState Duration="60" Power="1.05"/>
+         <Ramp Duration="180" PowerLow="1.05" PowerHigh="0.91"/>
+         <SteadyState Duration="180" Power="0.91"/>
+         <Ramp Duration="180" PowerLow="0.91" PowerHigh="1.05"/>
+         <SteadyState Duration="60" Power="1.05"/>
+         <Ramp Duration="180" PowerLow="1.05" PowerHigh="0.91"/>
+         <SteadyState Duration="180" Power="0.91"/>
+         <SteadyState Duration="300" Power="0.50"/>
+         <Ramp Duration="180" PowerLow="0.91" PowerHigh="1.05"/>
+         <SteadyState Duration="60" Power="1.05"/>
+         <Ramp Duration="180" PowerLow="1.05" PowerHigh="0.91"/>
+         <SteadyState Duration="180" Power="0.91"/>
+         <Ramp Duration="180" PowerLow="0.91" PowerHigh="1.05"/>
+         <SteadyState Duration="60" Power="1.05"/>
+         <Ramp Duration="180" PowerLow="1.05" PowerHigh="0.91"/>
+         <SteadyState Duration="180" Power="0.91"/>
+         <SteadyState Duration="300" Power="0.50"/>
+    </workout>
+</workout_file>
+
+                                   

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<workout_file xsi:schemaLocation="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <author>Today's Plan</author>
+    <name>Today's Plan - Recovery</name>
+    <description>The recovery ride is an enjoyable part of the training week, it is not intended to be a training session. The recovery ride is a form of active recovery and should not be adding fatigue, it is similar to going for an easy walk. You should look closely at the power or heat rate targets in the interval prescription and make sure you do not go over them, even when going up a climb.  You should still consider bringing some food and drink for these sessions, especially if you have a training session on the following day. You don’t need to fuel specifically for these rides, but it’s a good opportunity to continue refueling your body for the upcoming training days. Be sure to enjoy these rides, it’s a great opportunity to ride to a cafe and meet up with friends, or do your usual routes at a relaxed pace to take in more of the scenery.  As the recovery rides do not directly contribute a training benefit we suggest being flexible with them. If you are busy on the day, are simply too tired to get on the bike or perhaps have a slight muscular niggle, cold or saddle sore we suggest skipping the recovery ride and going for an easy walk or other light activity instead.&#13;
+</description>
+    <tags>
+        <tag name="Today's Plan"/>
+    </tags>
+    <sportType>ride</sportType>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.298246" PowerHigh="0.424561">
+            <textevent timeoffset="0" message="Warmup - Recovery, very easy no load, like an easy walk on the bike"/>
+        </Warmup>
+        <SteadyState Duration="6000" Power="0.424561" Cadence="100">
+            <textevent timeoffset="0" message="Main interval - Recovery, very easy no load, like an easy walk on the bike"/>
+        </SteadyState>
+        <Cooldown Duration="600" PowerLow="0.424561" PowerHigh="0.298246">
+            <textevent timeoffset="0" message="Cool down - Recovery, very easy no load, like an easy walk on the bike"/>
+        </Cooldown>
+    </workout>
+</workout_file>

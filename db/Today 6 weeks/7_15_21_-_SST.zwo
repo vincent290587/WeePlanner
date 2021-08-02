@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<workout_file xsi:schemaLocation="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <author>Today's Plan</author>
+    <name>Today's Plan - SST</name>
+    <description>SST refers to Sweet Spot Training, the training intensity which sits between tempo and threshold. This intensity is effective at increasing your threshold but is less fatiguing both physically and mentally than training at threshold. For this reason SST sessions can be completed more often during the week, or in the days before or after other key sessions without impacting the quality of them.  These SST efforts are completed at a very meaningful pace and require considerable mental focus and concentration to complete in the longer durations. These sessions are suitable to be completed indoors or outdoors, if using a smart trainer indoors it’s a good opportunity to make use of ERG mode and lock in directly on the power targets. Be aware that SST sessions can require a lot of fuel, so make sure you are eating and drinking plenty throughout the session. This will also increase your ability to recover from the efforts and be ready to go for your other key sessions throughout the week. &#13;
+</description>
+    <tags>
+        <tag name="Today's Plan"/>
+    </tags>
+    <sportType>ride</sportType>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.459649" PowerHigh="0.8">
+            <textevent timeoffset="0" message="Warmup"/>
+        </Warmup>
+        <IntervalsT Repeat="2" OnDuration="1260" OffDuration="300" OnPower="0.891228" OffPower="0.459649" Cadence="85">
+            <textevent timeoffset="0" message="SST"/>
+        </IntervalsT>
+        <SteadyState Duration="600" Power="0.6">
+            <textevent timeoffset="0" message="Cool down"/>
+        </SteadyState>
+    </workout>
+</workout_file>

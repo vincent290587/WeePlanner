@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<workout_file xsi:schemaLocation="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <author>Today's Plan</author>
+    <name>Today's Plan - Threshold</name>
+    <description>The threshold sessions are intended to increase your functional threshold power which is the effort you can sustain for an hour in a maximal effort. These are a key component of your training week and therefore require full focus for each effort, you should start these sessions prepared to work and give it your all.  There is no specific terrain that the session needs to be completed on but you should ensure you have an uninterrupted stretch of road or trail to get the full specific effort completed with your full attention. If you want to be more specific with your training you can choose to do the threshold efforts on the same terrain as you will be racing on. So for flat criterium races it can be beneficial to do your threshold efforts on the flat, whereas if you are training for a hilly gran fondo it can be good to do the efforts up a sustained climb. If you are completing this on an indoor trainer or a safe stretch of road outdoors you may wish to have music playing to assist with motivation and give you an extra boost.  If you are using a cycling head unit to record the activity we suggest displaying 3 second average power to show your current power, lap average power to see if you are on track to hit your interval target and 30 second average power which you should aim to keep in the target range to ensure you are not surging too hard over hills or backing off too much on downhills.&#13;
+</description>
+    <tags>
+        <tag name="Today's Plan"/>
+    </tags>
+    <sportType>ride</sportType>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.6" PowerHigh="0.852632">
+            <textevent timeoffset="0" message="Warmup"/>
+        </Warmup>
+        <SteadyState Duration="600" Power="0.705263">
+            <textevent timeoffset="0" message="Main interval"/>
+        </SteadyState>
+        <IntervalsT Repeat="3" OnDuration="600" OffDuration="300" OnPower="0.957895" OffPower="0.6" Cadence="87">
+            <textevent timeoffset="0" message="Threshold interval"/>
+        </IntervalsT>
+        <SteadyState Duration="600" Power="0.705263">
+            <textevent timeoffset="0" message="Main interval"/>
+        </SteadyState>
+        <SteadyState Duration="600" Power="0.449123">
+            <textevent timeoffset="0" message="Cool down"/>
+        </SteadyState>
+    </workout>
+</workout_file>

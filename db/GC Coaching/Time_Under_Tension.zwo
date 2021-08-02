@@ -1,0 +1,30 @@
+<workout_file>
+    <author>S.Gaffney (GC Coaching)</author>
+    <name>Time Under Tension</name>
+    <description>WARM-UP
+-Start with 10 minutes gradually increasing your power and cadence, then 3x 30 seconds @110+ RPM @115% FTP with 3 minutes active recovery to ready the legs, and finally 2 minutes free ride to ready the mind. 
+
+TIME UNDER TENSION
+-This is a strength workout, but it will train your legs in a pedaling specific range of motion #win!
+-We are doing 4 x 8 minutes seated @Tempo @55 RPM with a 5 minute "rest" @Endurance @85+ RPM.
+-Focus on pedaling nice big circles here and repeat to yourself "push, scrape, pull" to engage all muscles involved in pedaling.
+-5 minutes cool-down then stretch!</description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="Strength"/>
+    </tags>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.3790566" PowerHigh="0.75449997" pace="1125572608"/>
+        <IntervalsT Repeat="3" OnDuration="30.000002" OffDuration="30.000002" OnPower="1.1544999" OffPower="0.50449997" pace="1125572608"/>
+        <FreeRide Duration="120.00001" FlatRoad="1"/>
+        <SteadyState Duration="480" Power="0.81449997" pace="1125572608" Cadence="55"/>
+        <SteadyState Duration="240" Power="0.65449995" pace="1125572608" Cadence="85"/>
+        <SteadyState Duration="480" Power="0.81449997" pace="1125572608" Cadence="55"/>
+        <SteadyState Duration="240" Power="0.65449995" pace="1125572608" Cadence="85"/>
+        <SteadyState Duration="480" Power="0.81449997" pace="1125572608" Cadence="55"/>
+        <SteadyState Duration="240" Power="0.65449995" pace="1125572608" Cadence="85"/>
+        <SteadyState Duration="480" Power="0.81449997" pace="1125572608" Cadence="55"/>
+        <Cooldown Duration="300" PowerLow="0.74886793" PowerHigh="0.36018866" pace="1125572608"/>
+    </workout>
+</workout_file>
+                             

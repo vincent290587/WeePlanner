@@ -1,0 +1,32 @@
+<workout_file>
+    <author>Vincent Golle</author>
+    <name>Build me up - Malevolent</name>
+    <description></description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.37261483" PowerHigh="0.75" pace="1125572608"/>
+        <SteadyState Duration="30" Power="0.94999999" pace="1125572608" Cadence="95"/>
+        <SteadyState Duration="30" Power="0.5" pace="1125572608" Cadence="85"/>
+        <SteadyState Duration="30" Power="1.05" pace="1125572608" Cadence="105"/>
+        <SteadyState Duration="30" Power="0.5" pace="1125572608" Cadence="85"/>
+        <SteadyState Duration="30" Power="1.15" pace="1125572608" Cadence="115"/>
+        <SteadyState Duration="30" Power="0.5" pace="1125572608" Cadence="85"/>
+        <SteadyState Duration="120" Power="0.5" pace="1125572608" Cadence="85"/>
+        <SteadyState Duration="900" Power="0.90449995" pace="1125572608" Cadence="90"/>
+        <SteadyState Duration="60" Power="1.15" pace="1125572608" Cadence="110"/>
+        <SteadyState Duration="600" Power="0.90449995" pace="1125572608" Cadence="90"/>
+        <SteadyState Duration="60" Power="1.15" pace="1125572608" Cadence="110"/>
+        <SteadyState Duration="300" Power="0.90449995" pace="1125572608" Cadence="90"/>
+        <SteadyState Duration="60" Power="1.15" pace="1125572608" Cadence="110"/>
+        <SteadyState Duration="150" Power="0.90449995" pace="1125572608" Cadence="90"/>
+        <SteadyState Duration="60" Power="1.15" pace="1125572608" Cadence="110"/>
+        <SteadyState Duration="60" Power="0.90449995" pace="1125572608" Cadence="90"/>
+        <SteadyState Duration="60" Power="1.15" pace="1125572608" Cadence="110"/>
+        <SteadyState Duration="30" Power="0.90449995" pace="1125572608" Cadence="90"/>
+        <SteadyState Duration="60" Power="1.15" pace="1125572608" Cadence="110"/>
+        <SteadyState Duration="15" Power="0.90449995" pace="1125572608" Cadence="90"/>
+        <SteadyState Duration="60" Power="1.15" pace="1125572608" Cadence="110"/>
+        <Cooldown Duration="225" PowerLow="0.77897525" PowerHigh="0.31961131" pace="1125572608"/>
+    </workout>
+</workout_file>
