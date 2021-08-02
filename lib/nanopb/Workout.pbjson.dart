@@ -28,14 +28,14 @@ const RawInterval$json = const {
   '1': 'RawInterval',
   '2': const [
     const {'1': 'duration', '3': 1, '4': 1, '5': 13, '10': 'duration'},
-    const {'1': 'powerStart', '3': 2, '4': 1, '5': 13, '10': 'powerStart'},
-    const {'1': 'powerEnd', '3': 3, '4': 1, '5': 13, '10': 'powerEnd'},
+    const {'1': 'powerStart', '3': 2, '4': 1, '5': 1, '10': 'powerStart'},
+    const {'1': 'powerEnd', '3': 3, '4': 1, '5': 1, '10': 'powerEnd'},
     const {'1': 'cadence', '3': 4, '4': 1, '5': 13, '10': 'cadence'},
   ],
 };
 
 /// Descriptor for `RawInterval`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List rawIntervalDescriptor = $convert.base64Decode('CgtSYXdJbnRlcnZhbBIaCghkdXJhdGlvbhgBIAEoDVIIZHVyYXRpb24SHgoKcG93ZXJTdGFydBgCIAEoDVIKcG93ZXJTdGFydBIaCghwb3dlckVuZBgDIAEoDVIIcG93ZXJFbmQSGAoHY2FkZW5jZRgEIAEoDVIHY2FkZW5jZQ==');
+final $typed_data.Uint8List rawIntervalDescriptor = $convert.base64Decode('CgtSYXdJbnRlcnZhbBIaCghkdXJhdGlvbhgBIAEoDVIIZHVyYXRpb24SHgoKcG93ZXJTdGFydBgCIAEoAVIKcG93ZXJTdGFydBIaCghwb3dlckVuZBgDIAEoAVIIcG93ZXJFbmQSGAoHY2FkZW5jZRgEIAEoDVIHY2FkZW5jZQ==');
 @$core.Deprecated('Use repetitionDescriptor instead')
 const Repetition$json = const {
   '1': 'Repetition',

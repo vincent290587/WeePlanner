@@ -1,7 +1,6 @@
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:wee_planner/Workout.dart';
-import 'package:wee_planner/constants.dart';
 
 import 'package:wee_planner/nanopb/Workout.pb.dart';
 
@@ -9,15 +8,12 @@ void main() {
   group('WorkoutSimple', () {
     List<Repetition> reps = [
       Repetition(intervals: [
-        RawInterval(duration: 3600, powerStart: FTP, powerEnd: FTP, cadence: 85),
+        RawInterval(duration: 3600, powerStart: 1.00, powerEnd: 1.00, cadence: 85),
       ]),
     ];
     Workout workout = Workout(RawWorkout(reps: reps));
     test('Duration', () {
       expect(workout.duration, equals(3600));
-    });
-    test('NP', () {
-      expect(workout.NP, equals(FTP));
     });
     test('TSS', () {
       expect(workout.TSS, equals(100));
@@ -30,56 +26,76 @@ void main() {
   group('WorkoutRamp1', () {
     List<Repetition> reps = [
       Repetition(intervals: [
-        RawInterval(duration: 3600, powerStart: 0, powerEnd: FTP, cadence: 85),
+        RawInterval(duration: 3600, powerStart: 0.00, powerEnd: 1.00, cadence: 85),
       ]),
     ];
     Workout workout = Workout(RawWorkout(reps: reps));
     test('Duration', () {
       expect(workout.duration, equals(3600));
     });
-    test('NP', () {
-      expect(workout.NP, equals(185));
+    test('IF', () {
+      expect(workout.IF, equals(67));
     });
   });
 
   group('WorkoutRamp2', () {
     List<Repetition> reps = [
       Repetition(intervals: [
-        RawInterval(duration: 3600, powerStart: FTP, powerEnd: 0, cadence: 85),
+        RawInterval(duration: 3600, powerStart: 1.00, powerEnd: 0, cadence: 85),
       ]),
     ];
     Workout workout = Workout(RawWorkout(reps: reps));
     test('Duration', () {
       expect(workout.duration, equals(3600));
     });
-    test('NP', () {
-      expect(workout.NP, equals(185));
+    test('IF', () {
+      expect(workout.IF, equals(67));
     });
   });
 
   group('Workout1', () {
     List<Repetition> reps = [
       Repetition(intervals: [
-        RawInterval(duration: 360, powerStart: 252, powerEnd: 252, cadence: 85),
-        RawInterval(duration: 180, powerStart: 154, powerEnd: 154, cadence: 85),
-        RawInterval(duration: 360, powerStart: 252, powerEnd: 252, cadence: 85),
-        RawInterval(duration: 180, powerStart: 154, powerEnd: 154, cadence: 85),
-        RawInterval(duration: 360, powerStart: 252, powerEnd: 252, cadence: 85),
-        RawInterval(duration: 180, powerStart: 154, powerEnd: 154, cadence: 85),
+        RawInterval(duration: 360, powerStart: 1.20, powerEnd: 1.20, cadence: 85),
+        RawInterval(duration: 180, powerStart: 0.55, powerEnd: 0.55, cadence: 85),
+        RawInterval(duration: 360, powerStart: 1.20, powerEnd: 1.20, cadence: 85),
+        RawInterval(duration: 180, powerStart: 0.55, powerEnd: 0.55, cadence: 85),
+        RawInterval(duration: 360, powerStart: 1.20, powerEnd: 1.20, cadence: 85),
+        RawInterval(duration: 180, powerStart: 0.55, powerEnd: 0.55, cadence: 85),
       ]),
     ];
     Workout workout = Workout(RawWorkout(reps: reps));
     test('Duration', () {
       expect(workout.duration, equals(1620));
     });
-    test('NP', () {
-      expect(workout.NP, equals(232));
-    });
     test('TSS', () {
-      expect(workout.TSS, equals(32));
+      expect(workout.TSS, equals(53));
     });
     test('IF', () {
-      expect(workout.IF, equals(84));
+      expect(workout.IF, equals(109));
+    });
+  });
+
+  group('Workout2', () {
+    List<Repetition> reps = [
+      Repetition(intervals: [
+        RawInterval(duration: 30, powerStart: 1.40, powerEnd: 1.40, cadence: 85),
+        RawInterval(duration: 240, powerStart: 0.55, powerEnd: 0.55, cadence: 85),
+        RawInterval(duration: 30, powerStart: 1.40, powerEnd: 1.40, cadence: 85),
+        RawInterval(duration: 240, powerStart: 0.55, powerEnd: 0.55, cadence: 85),
+        RawInterval(duration: 30, powerStart: 1.40, powerEnd: 1.40, cadence: 85),
+        RawInterval(duration: 240, powerStart: 0.55, powerEnd: 0.55, cadence: 85),
+      ]),
+    ];
+    Workout workout = Workout(RawWorkout(reps: reps));
+    test('Duration', () {
+      expect(workout.duration, equals(810));
+    });
+    test('TSS', () {
+      expect(workout.TSS, equals(13));
+    });
+    test('IF', () {
+      expect(workout.IF, equals(75));
     });
   });
 

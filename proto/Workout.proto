@@ -11,8 +11,8 @@ enum WorkoutFocus {
 
 message RawInterval {
   uint32 duration = 1;
-  uint32 powerStart = 2;
-  uint32 powerEnd = 3;
+  double powerStart = 2;
+  double powerEnd = 3;
   uint32 cadence = 4;
 }
 

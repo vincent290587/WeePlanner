@@ -16,8 +16,8 @@ export 'Workout.pbenum.dart';
 class RawInterval extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'RawInterval', createEmptyInstance: create)
     ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'duration', $pb.PbFieldType.OU3)
-    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'powerStart', $pb.PbFieldType.OU3, protoName: 'powerStart')
-    ..a<$core.int>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'powerEnd', $pb.PbFieldType.OU3, protoName: 'powerEnd')
+    ..a<$core.double>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'powerStart', $pb.PbFieldType.OD, protoName: 'powerStart')
+    ..a<$core.double>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'powerEnd', $pb.PbFieldType.OD, protoName: 'powerEnd')
     ..a<$core.int>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'cadence', $pb.PbFieldType.OU3)
     ..hasRequiredFields = false
   ;
@@ -25,8 +25,8 @@ class RawInterval extends $pb.GeneratedMessage {
   RawInterval._() : super();
   factory RawInterval({
     $core.int? duration,
-    $core.int? powerStart,
-    $core.int? powerEnd,
+    $core.double? powerStart,
+    $core.double? powerEnd,
     $core.int? cadence,
   }) {
     final _result = create();
@@ -75,18 +75,18 @@ class RawInterval extends $pb.GeneratedMessage {
   void clearDuration() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.int get powerStart => $_getIZ(1);
+  $core.double get powerStart => $_getN(1);
   @$pb.TagNumber(2)
-  set powerStart($core.int v) { $_setUnsignedInt32(1, v); }
+  set powerStart($core.double v) { $_setDouble(1, v); }
   @$pb.TagNumber(2)
   $core.bool hasPowerStart() => $_has(1);
   @$pb.TagNumber(2)
   void clearPowerStart() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.int get powerEnd => $_getIZ(2);
+  $core.double get powerEnd => $_getN(2);
   @$pb.TagNumber(3)
-  set powerEnd($core.int v) { $_setUnsignedInt32(2, v); }
+  set powerEnd($core.double v) { $_setDouble(2, v); }
   @$pb.TagNumber(3)
   $core.bool hasPowerEnd() => $_has(2);
   @$pb.TagNumber(3)

@@ -7,8 +7,9 @@ import 'nanopb/Workout.pb.dart';
 Repetition convertZwo(XmlElement elmnt) {
 
   //debugPrint('Interval name ' + elmnt.name.toString());
+  String name = elmnt.name.local;
 
-  if (elmnt.name == 'IntervalsT') {
+  if (name == 'IntervalsT') {
 
     XmlAttribute? nbReps = elmnt.getAttributeNode('Repeat');
     XmlAttribute? onDuration = elmnt.getAttributeNode('OnDuration');
@@ -24,22 +25,22 @@ Repetition convertZwo(XmlElement elmnt) {
 
     int? durOn;
     int? durOff;
-    int? powerOn;
-    int? powerOff;
+    double? powerOn;
+    double? powerOff;
     int? cadenceOn;
     int? cadenceOff;
 
     if (onDuration != null) {
-      durOn = int.parse(onDuration.value);
+      durOn = double.parse(onDuration.value).round();
     }
     if (offDuration != null) {
-      durOff = int.parse(offDuration.value);
+      durOff = double.parse(offDuration.value).round();
     }
     if (onPower != null) {
-      powerOn = (double.parse(onPower.value) * 100).round();
+      powerOn = double.parse(onPower.value);
     }
     if (offPower != null) {
-      powerOff = (double.parse(offPower.value) * 100).round();
+      powerOff = double.parse(offPower.value);
     }
     if (cadence_ != null) {
       cadenceOn = int.parse(cadence_.value);
@@ -56,9 +57,9 @@ Repetition convertZwo(XmlElement elmnt) {
     Repetition rep = new Repetition(intervals: intervals);
     return rep;
 
-  } else if (elmnt.name == 'Warmup' ||
-      elmnt.name == 'Cooldown' ||
-      elmnt.name == 'Ramp'
+  } else if (name == 'Warmup' ||
+      name == 'Cooldown' ||
+      name == 'Ramp'
   ) {
 
     XmlAttribute? duration = elmnt.getAttributeNode('Duration');
@@ -66,17 +67,17 @@ Repetition convertZwo(XmlElement elmnt) {
     XmlAttribute? powerHigh = elmnt.getAttributeNode('PowerHigh');
 
     int? durOn;
-    int? powerStart;
-    int? powerEnd;
+    double? powerStart;
+    double? powerEnd;
 
     if (duration != null) {
-      durOn = int.parse(duration.value);
+      durOn = double.parse(duration.value).round();
     }
     if (powerLow != null) {
-      powerStart = (double.parse(powerLow.value) * 100).round();
+      powerStart = double.parse(powerLow.value);
     }
     if (powerHigh != null) {
-      powerEnd = (double.parse(powerHigh.value) * 100).round();
+      powerEnd = double.parse(powerHigh.value);
     }
 
     Repetition rep = new Repetition(intervals: [
@@ -93,14 +94,14 @@ Repetition convertZwo(XmlElement elmnt) {
     XmlAttribute? cadence_ = elmnt.getAttributeNode('Cadence');
 
     int? durOn;
-    int? powerOn;
+    double? powerOn;
     int? cadenceOn;
 
     if (duration != null) {
       durOn = (double.parse(duration.value)).round();
     }
     if (powerLow != null) {
-      powerOn = (double.parse(powerLow.value) * 100).round();
+      powerOn = double.parse(powerLow.value);
     }
     if (cadence_ != null) {
       cadenceOn = (double.parse(cadence_.value)).round();

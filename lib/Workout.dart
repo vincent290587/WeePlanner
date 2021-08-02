@@ -4,7 +4,6 @@ import 'dart:math';
 
 import 'package:flutter/foundation.dart';
 
-import 'constants.dart';
 import 'nanopb/Workout.pb.dart';
 
 // int getIntervalTSS(Interval interval)
@@ -22,14 +21,14 @@ double calculateNP(RawWorkout rawWorkout)
   for (var rep in rawWorkout.reps) {
     for (var interval in rep.intervals) {
       int? duri = interval.getField(1);
-      int? pow1 = interval.getField(2);
-      int? pow2 = interval.getField(3);
+      double? pow1 = interval.getField(2);
+      double? pow2 = interval.getField(3);
       if (duri != null && pow1 != null && pow2 != null) {
         if (pow1 == pow2) {
-          np += duri * pow(pow1.toDouble(), 4);
+          np += duri * pow(pow1, 4);
         } else {
-          double b = pow2.toDouble() - pow1.toDouble();
-          np += duri * (pow(pow2.toDouble(), 5) - pow(pow1.toDouble(), 5)) / (5 * b);
+          double b = pow2 - pow1;
+          np += duri * (pow(pow2, 5) - pow(pow1, 5)) / (5 * b);
         }
         dur += duri;
       }
@@ -61,7 +60,7 @@ class Workout {
 
   late int duration;
   late int TSS;
-  late int NP;
+  late int _NP;
   late int IF;
   late WorkoutFocus focus;
 
@@ -70,9 +69,9 @@ class Workout {
   Workout(this.rawWorkout) {
 
     duration = calculateDuration(rawWorkout);
-    NP = calculateNP(rawWorkout).round();
-    IF = ((100 * NP) / FTP).round();
-    TSS = (duration * NP * IF / (FTP * 3600)).round();
+    _NP = (100 * calculateNP(rawWorkout)).round();
+    IF = _NP;
+    TSS = (duration * _NP * IF / 360000).round();
 
     debugPrint('Computed TSS: ${TSS}');
   }

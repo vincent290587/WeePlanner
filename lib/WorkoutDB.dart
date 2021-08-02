@@ -17,6 +17,8 @@ class WorkoutDB extends ChangeNotifier {
 
   Future<void> startDB() async {
 
+    workoutDB.clear();
+
     Directory dir = Directory('db');
     //print('Listing ' + dir.path);
     // execute an action on each entry
