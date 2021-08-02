@@ -27,14 +27,15 @@ final $typed_data.Uint8List workoutFocusDescriptor = $convert.base64Decode('CgxX
 const Interval$json = const {
   '1': 'Interval',
   '2': const [
-    const {'1': 'powerStart', '3': 1, '4': 1, '5': 13, '10': 'powerStart'},
-    const {'1': 'powerEnd', '3': 2, '4': 1, '5': 13, '10': 'powerEnd'},
-    const {'1': 'cadence', '3': 3, '4': 1, '5': 13, '10': 'cadence'},
+    const {'1': 'duration', '3': 1, '4': 1, '5': 13, '10': 'duration'},
+    const {'1': 'powerStart', '3': 2, '4': 1, '5': 13, '10': 'powerStart'},
+    const {'1': 'powerEnd', '3': 3, '4': 1, '5': 13, '10': 'powerEnd'},
+    const {'1': 'cadence', '3': 4, '4': 1, '5': 13, '10': 'cadence'},
   ],
 };
 
 /// Descriptor for `Interval`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List intervalDescriptor = $convert.base64Decode('CghJbnRlcnZhbBIeCgpwb3dlclN0YXJ0GAEgASgNUgpwb3dlclN0YXJ0EhoKCHBvd2VyRW5kGAIgASgNUghwb3dlckVuZBIYCgdjYWRlbmNlGAMgASgNUgdjYWRlbmNl');
+final $typed_data.Uint8List intervalDescriptor = $convert.base64Decode('CghJbnRlcnZhbBIaCghkdXJhdGlvbhgBIAEoDVIIZHVyYXRpb24SHgoKcG93ZXJTdGFydBgCIAEoDVIKcG93ZXJTdGFydBIaCghwb3dlckVuZBgDIAEoDVIIcG93ZXJFbmQSGAoHY2FkZW5jZRgEIAEoDVIHY2FkZW5jZQ==');
 @$core.Deprecated('Use repetitionDescriptor instead')
 const Repetition$json = const {
   '1': 'Repetition',
@@ -63,3 +64,13 @@ const RawWorkout$json = const {
 
 /// Descriptor for `RawWorkout`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List rawWorkoutDescriptor = $convert.base64Decode('CgpSYXdXb3Jrb3V0EhIKBG5hbWUYASABKAlSBG5hbWUSFgoGYXV0aG9yGAIgASgJUgZhdXRob3ISIAoLZGVzY3JpcHRpb24YAyABKAlSC2Rlc2NyaXB0aW9uEhAKA1RTUxgEIAEoDVIDVFNTEhoKCGR1cmF0aW9uGAUgASgNUghkdXJhdGlvbhIjCgVmb2N1cxgGIAEoDjINLldvcmtvdXRGb2N1c1IFZm9jdXMSIQoGd2FybXVwGAogASgLMgkuSW50ZXJ2YWxSBndhcm11cBIfCgRyZXBzGAsgAygLMgsuUmVwZXRpdGlvblIEcmVwcxIlCghjb29sZG93bhgMIAEoCzIJLkludGVydmFsUghjb29sZG93bg==');
+@$core.Deprecated('Use rawWorkoutDBDescriptor instead')
+const RawWorkoutDB$json = const {
+  '1': 'RawWorkoutDB',
+  '2': const [
+    const {'1': 'rawDB', '3': 1, '4': 3, '5': 11, '6': '.RawWorkout', '10': 'rawDB'},
+  ],
+};
+
+/// Descriptor for `RawWorkoutDB`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List rawWorkoutDBDescriptor = $convert.base64Decode('CgxSYXdXb3Jrb3V0REISIQoFcmF3REIYASADKAsyCy5SYXdXb3Jrb3V0UgVyYXdEQg==');

@@ -15,19 +15,24 @@ export 'Workout.pbenum.dart';
 
 class Interval extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Interval', createEmptyInstance: create)
-    ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'powerStart', $pb.PbFieldType.OU3, protoName: 'powerStart')
-    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'powerEnd', $pb.PbFieldType.OU3, protoName: 'powerEnd')
-    ..a<$core.int>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'cadence', $pb.PbFieldType.OU3)
+    ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'duration', $pb.PbFieldType.OU3)
+    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'powerStart', $pb.PbFieldType.OU3, protoName: 'powerStart')
+    ..a<$core.int>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'powerEnd', $pb.PbFieldType.OU3, protoName: 'powerEnd')
+    ..a<$core.int>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'cadence', $pb.PbFieldType.OU3)
     ..hasRequiredFields = false
   ;
 
   Interval._() : super();
   factory Interval({
+    $core.int? duration,
     $core.int? powerStart,
     $core.int? powerEnd,
     $core.int? cadence,
   }) {
     final _result = create();
+    if (duration != null) {
+      _result.duration = duration;
+    }
     if (powerStart != null) {
       _result.powerStart = powerStart;
     }
@@ -61,31 +66,40 @@ class Interval extends $pb.GeneratedMessage {
   static Interval? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.int get powerStart => $_getIZ(0);
+  $core.int get duration => $_getIZ(0);
   @$pb.TagNumber(1)
-  set powerStart($core.int v) { $_setUnsignedInt32(0, v); }
+  set duration($core.int v) { $_setUnsignedInt32(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasPowerStart() => $_has(0);
+  $core.bool hasDuration() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPowerStart() => clearField(1);
+  void clearDuration() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.int get powerEnd => $_getIZ(1);
+  $core.int get powerStart => $_getIZ(1);
   @$pb.TagNumber(2)
-  set powerEnd($core.int v) { $_setUnsignedInt32(1, v); }
+  set powerStart($core.int v) { $_setUnsignedInt32(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasPowerEnd() => $_has(1);
+  $core.bool hasPowerStart() => $_has(1);
   @$pb.TagNumber(2)
-  void clearPowerEnd() => clearField(2);
+  void clearPowerStart() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.int get cadence => $_getIZ(2);
+  $core.int get powerEnd => $_getIZ(2);
   @$pb.TagNumber(3)
-  set cadence($core.int v) { $_setUnsignedInt32(2, v); }
+  set powerEnd($core.int v) { $_setUnsignedInt32(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasCadence() => $_has(2);
+  $core.bool hasPowerEnd() => $_has(2);
   @$pb.TagNumber(3)
-  void clearCadence() => clearField(3);
+  void clearPowerEnd() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get cadence => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set cadence($core.int v) { $_setUnsignedInt32(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasCadence() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCadence() => clearField(4);
 }
 
 class Repetition extends $pb.GeneratedMessage {
@@ -284,5 +298,46 @@ class RawWorkout extends $pb.GeneratedMessage {
   void clearCooldown() => clearField(12);
   @$pb.TagNumber(12)
   Interval ensureCooldown() => $_ensure(8);
+}
+
+class RawWorkoutDB extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'RawWorkoutDB', createEmptyInstance: create)
+    ..pc<RawWorkout>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'rawDB', $pb.PbFieldType.PM, protoName: 'rawDB', subBuilder: RawWorkout.create)
+    ..hasRequiredFields = false
+  ;
+
+  RawWorkoutDB._() : super();
+  factory RawWorkoutDB({
+    $core.Iterable<RawWorkout>? rawDB,
+  }) {
+    final _result = create();
+    if (rawDB != null) {
+      _result.rawDB.addAll(rawDB);
+    }
+    return _result;
+  }
+  factory RawWorkoutDB.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RawWorkoutDB.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  RawWorkoutDB clone() => RawWorkoutDB()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RawWorkoutDB copyWith(void Function(RawWorkoutDB) updates) => super.copyWith((message) => updates(message as RawWorkoutDB)) as RawWorkoutDB; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static RawWorkoutDB create() => RawWorkoutDB._();
+  RawWorkoutDB createEmptyInstance() => create();
+  static $pb.PbList<RawWorkoutDB> createRepeated() => $pb.PbList<RawWorkoutDB>();
+  @$core.pragma('dart2js:noInline')
+  static RawWorkoutDB getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RawWorkoutDB>(create);
+  static RawWorkoutDB? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<RawWorkout> get rawDB => $_getList(0);
 }
 

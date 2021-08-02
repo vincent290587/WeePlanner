@@ -10,9 +10,10 @@ enum WorkoutFocus {
 }
 
 message Interval {
-  uint32 powerStart = 1;
-  uint32 powerEnd = 2;
-  uint32 cadence = 3;
+  uint32 duration = 1;
+  uint32 powerStart = 2;
+  uint32 powerEnd = 3;
+  uint32 cadence = 4;
 }
 
 message Repetition {
@@ -30,4 +31,8 @@ message RawWorkout {
   Interval warmup = 10;
   repeated Repetition reps = 11;
   Interval cooldown = 12;
+}
+
+message RawWorkoutDB {
+  repeated RawWorkout rawDB = 1;
 }

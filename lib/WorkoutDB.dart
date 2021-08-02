@@ -6,5 +6,5 @@ class WorkoutDB {
 
   List<Workout> workoutDB = [];
 
-
+  WorkoutDB();
 }
