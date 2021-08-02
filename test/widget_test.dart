@@ -22,8 +22,40 @@ void main() {
     test('TSS', () {
       expect(workout.TSS, equals(100));
     });
+    test('IF', () {
+      expect(workout.IF, equals(100));
+    });
   });
 
+  group('WorkoutRamp1', () {
+    List<Repetition> reps = [
+      Repetition(intervals: [
+        Interval(duration: 3600, powerStart: 0, powerEnd: FTP, cadence: 85),
+      ]),
+    ];
+    Workout workout = Workout(RawWorkout(reps: reps));
+    test('Duration', () {
+      expect(workout.duration, equals(3600));
+    });
+    test('NP', () {
+      expect(workout.NP, equals(185));
+    });
+  });
+
+  group('WorkoutRamp2', () {
+    List<Repetition> reps = [
+      Repetition(intervals: [
+        Interval(duration: 3600, powerStart: FTP, powerEnd: 0, cadence: 85),
+      ]),
+    ];
+    Workout workout = Workout(RawWorkout(reps: reps));
+    test('Duration', () {
+      expect(workout.duration, equals(3600));
+    });
+    test('NP', () {
+      expect(workout.NP, equals(185));
+    });
+  });
 
   group('Workout1', () {
     List<Repetition> reps = [
@@ -45,6 +77,9 @@ void main() {
     });
     test('TSS', () {
       expect(workout.TSS, equals(32));
+    });
+    test('IF', () {
+      expect(workout.IF, equals(84));
     });
   });
 

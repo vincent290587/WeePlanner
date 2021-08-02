@@ -21,9 +21,14 @@ double calculateNP(RawWorkout rawWorkout)
     for (var interval in rep.intervals) {
       int? duri = interval.getField(1);
       int? pow1 = interval.getField(2);
-      int? pow2 = interval.getField(3); // TODO
+      int? pow2 = interval.getField(3);
       if (duri != null && pow1 != null && pow2 != null) {
-        np += duri * pow(pow1.toDouble(), 4);
+        if (pow1 == pow2) {
+          np += duri * pow(pow1.toDouble(), 4);
+        } else {
+          double b = pow2.toDouble() - pow1.toDouble();
+          np += duri * (pow(pow2.toDouble(), 5) - pow(pow1.toDouble(), 5)) / (5 * b);
+        }
         dur += duri;
       }
     }
