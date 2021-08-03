@@ -1,6 +1,9 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'Planner.dart';
 import 'Workout.dart';
 import 'WorkoutDB.dart';
 
@@ -56,8 +59,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _score = 400;
-  int _amount = 5;
+
+  PlannerSettings settings = PlannerSettings(workoutsNb: 5, targetScore: 400);
 
   Widget getCard(Widget? icon, String text, String value) {
     return Card(
@@ -86,7 +89,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
 
     var widgets = <Widget>[];
-    List<Workout> workouts = Provider.of<WorkoutDB>(context, listen: false).ComputeWeek(_score, _amount);
+    List<Workout> workouts = Provider.of<WorkoutDB>(context, listen: false).showWeek(settings);
 
     List<Widget> cards = workouts.map((item) {
 
@@ -178,7 +181,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   Text(' '),
                   //Text('Target TSS:'),
                   TextFormField(
-                    initialValue: _score.toString(),
+                    initialValue: settings.targetScore.toString(),
                     textInputAction: TextInputAction.newline,
                     keyboardType: TextInputType.numberWithOptions(),
                     decoration: InputDecoration(
@@ -187,14 +190,14 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     onChanged: (text) {
                       setState(() {
-                        _score = int.parse(text);
+                        settings.targetScore = int.parse(text);
                       });
                     },
                   ),
                   Text(' '),
                   //Text('# days:'),
                   TextFormField(
-                    initialValue: _amount.toString(),
+                    initialValue: settings.workoutsNb.toString(),
                     textInputAction: TextInputAction.newline,
                     keyboardType: TextInputType.numberWithOptions(),
                     decoration: InputDecoration(
@@ -203,9 +206,18 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     onChanged: (text) {
                       setState(() {
-                        _amount = int.parse(text);
+                        settings.workoutsNb = int.parse(text);
                       });
                     },
+                  ),
+                  Text(' '),
+                  Center(
+                    child: OutlinedButton(
+                      child: Text('Compute'),
+                      onPressed: () {
+                        Provider.of<WorkoutDB>(context, listen: false).computeWeek(settings);
+                      },
+                    ),
                   ),
                 ],
               ),
@@ -225,7 +237,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Provider.of<WorkoutDB>(context, listen: false).startDB();
+          Provider.of<WorkoutDB>(context, listen: false).startDB(Directory('db'));
         },
         tooltip: 'Increment',
         child: Icon(Icons.refresh),

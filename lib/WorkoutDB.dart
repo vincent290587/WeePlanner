@@ -5,6 +5,7 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:xml/xml.dart';
 
+import 'Planner.dart';
 import 'Workout.dart';
 import 'ZwoConverter.dart';
 import 'nanopb/Workout.pb.dart';
@@ -15,7 +16,19 @@ class WorkoutDB extends ChangeNotifier {
 
   WorkoutDB();
 
-  List<Workout> ComputeWeek(int targetScore, int amount) {
+  Future<List<Workout>> computeWeek(PlannerSettings settings) async {
+    if (workoutDB.length > 0) {
+       var ret = await plan(workoutDB, settings);
+       if (ret != null) {
+          debugPrint(ret.toString());
+         return ret;
+       }
+    }
+    List<Workout> ret = [];
+    return ret;
+  }
+
+  List<Workout> showWeek(PlannerSettings settings) {
 
     // TODO
     List<Repetition> reps = [
@@ -28,18 +41,18 @@ class WorkoutDB extends ChangeNotifier {
         RawInterval(duration: 240, powerStart: 0.55, powerEnd: 0.55, cadence: 85),
       ]),
     ];
-    Workout workout = Workout(RawWorkout(name: 'Workout1',reps: reps));
+    Workout workout = Workout(rawWorkout: RawWorkout(name: 'Workout1',reps: reps));
 
     List<Workout> ret = [workout, workout, workout, workout, workout];
 
     return ret;
   }
 
-  Future<void> startDB() async {
+  Future<void> startDB(Directory dir) async {
 
     workoutDB.clear();
 
-    Directory dir = Directory('db');
+    //Directory dir = Directory('db');
     //print('Listing ' + dir.path);
     // execute an action on each entry
     dir.list(recursive: true).forEach((entity) {
@@ -48,7 +61,7 @@ class WorkoutDB extends ChangeNotifier {
 
         debugPrint('File ' + entity.path);
 
-        XmlDocument document = XmlDocument.parse((entity as File).readAsStringSync());
+        XmlDocument document = XmlDocument.parse(entity.readAsStringSync());
 
         XmlElement root = document.rootElement;
         //debugPrint('Root name ' + root.name.toString());
@@ -81,7 +94,7 @@ class WorkoutDB extends ChangeNotifier {
               reps: intervals,
             );
 
-            workoutDB.add(Workout(rawWorkout));
+            workoutDB.add(Workout(rawWorkout: rawWorkout));
           }
         }
       }

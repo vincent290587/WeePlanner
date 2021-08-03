@@ -2,8 +2,6 @@
 
 import 'dart:math';
 
-import 'package:flutter/foundation.dart';
-
 import 'nanopb/Workout.pb.dart';
 
 // int getIntervalTSS(Interval interval)
@@ -64,9 +62,9 @@ class Workout {
   late int IF;
   late WorkoutFocus focus;
 
-  final RawWorkout rawWorkout;
+  late RawWorkout rawWorkout;
 
-  Workout(this.rawWorkout) {
+  Workout({required this.rawWorkout}) {
 
     duration = calculateDuration(rawWorkout);
     _NP = (100 * calculateNP(rawWorkout)).round();
@@ -77,7 +75,25 @@ class Workout {
   }
 
   String toString() {
-    return rawWorkout.toDebugString();
+    String ret = '${rawWorkout.name}: TSS= ${TSS}: IF= ${IF} \n';
+    return ret;
+  }
+
+  Workout.fromJson(Map<String, dynamic> json)
+      : duration = json['dur'],
+        TSS = json['tss'],
+        _NP = json['np'],
+        IF = json['if'],
+        rawWorkout = RawWorkout.fromJson(json['proto']);
+
+  Map<String, dynamic> toJson() {
+    return {
+      'dur': duration,
+      'tss': TSS,
+      'np': _NP,
+      'if': IF,
+      'proto': rawWorkout.writeToJson(),
+    };
   }
 
 }

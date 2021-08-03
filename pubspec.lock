@@ -50,6 +50,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.3"
+  darwin:
+    dependency: "direct main"
+    description:
+      name: darwin
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.5.1"
   fake_async:
     dependency: transitive
     description:
