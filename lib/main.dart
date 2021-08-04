@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -103,7 +104,8 @@ class _MyHomePageState extends State<MyHomePage> {
               leading: null,
               dense:false,
               isThreeLine: false,
-              title: Text(item.rawWorkout.name,
+              title: AutoSizeText(item.rawWorkout.name,
+                  maxLines: 2,
                   style: TextStyle(fontSize: 15)
               ),
               subtitle: Column(
