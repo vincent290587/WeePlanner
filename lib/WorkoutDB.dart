@@ -1,5 +1,6 @@
 
 
+import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
@@ -14,13 +15,24 @@ class WorkoutDB extends ChangeNotifier {
 
   List<Workout> workoutDB = [];
 
+  StreamController<List<Workout>> potentialWeek = new StreamController<List<Workout>>.broadcast();
+  Stream<List<Workout>> get getComputation => (potentialWeek.stream);
+
   WorkoutDB();
 
   Future<List<Workout>> computeWeek(PlannerSettings settings) async {
     if (workoutDB.length > 0) {
        var ret = await plan(workoutDB, settings);
        if (ret != null) {
-          debugPrint(ret.toString());
+
+         double sumTSS = 0;
+         ret.forEach((Workout v) {
+           sumTSS += v.TSS;
+         });
+         debugPrint('Best TSS match: ${sumTSS}');
+
+         potentialWeek.add(ret);
+         debugPrint(ret.toString());
          return ret;
        }
     }

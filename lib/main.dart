@@ -85,35 +85,32 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  @override
-  Widget build(BuildContext context) {
+  Widget buildWeek(BuildContext context, List<Workout> workouts) {
 
-    var widgets = <Widget>[];
-    List<Workout> workouts = Provider.of<WorkoutDB>(context, listen: false).showWeek(settings);
+    double sumTSS = 0;
+    double sumDuration = 0;
+    workouts.forEach((Workout v) {
+      sumTSS += v.TSS;
+      sumDuration += v.duration;
+    });
 
     List<Widget> cards = workouts.map((item) {
-
-      // return Card(
-      //   child: ListTile(
-      //     key: ObjectKey(item.rawWorkout.name),
-      //     leading: Text(item.rawWorkout.name),
-      //     title: Text('Dur.: ${item.duration}'),
-      //     subtitle: Text('IF:  ${item.IF}'),
-      //   ),
-      // );
-
       return Card(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             ListTile(
               leading: null,
+              dense:false,
               isThreeLine: false,
-              title: Text(item.rawWorkout.name, style: TextStyle(fontSize: 20)),
+              title: Text(item.rawWorkout.name,
+                  style: TextStyle(fontSize: 15)
+              ),
               subtitle: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Dur.: ${item.duration/60} min', style: TextStyle(fontSize: 12)),
+                  Text('Dur.: ${(item.duration / 60).toInt()} min',
+                      style: TextStyle(fontSize: 12)),
                   Text('IF:  ${item.IF}'),
                   Text('TSS:  ${item.TSS}'),
                 ],
@@ -131,35 +128,88 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       );
+    }).toList()
+      ..add(Card(
+        color: Colors.grey.shade200,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            ListTile(
+              leading: null,
+              isThreeLine: false,
+              //title: Text(item.rawWorkout.name, style: TextStyle(fontSize: 20)),
+              subtitle: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Dur.: ${(sumDuration / 3600).toStringAsFixed(1)} hrs',
+                      style: TextStyle(fontSize: 12)),
+                  Text('TSS :  ${sumTSS.toStringAsFixed(1)}'),
+                ],
+              ),
+            ),
+            // Expanded(
+            //     child: Container(
+            //       padding: const EdgeInsets.all(20.0),
+            //       child: FittedBox(
+            //           fit: BoxFit.fitWidth,
+            //           child: Text('Filler')
+            //       ),
+            //     )
+            // ),
+          ],
+        ),
+      ));
 
-    }).toList();
-
-    widgets.add(
-        Expanded(
-          child: GridView.count(
-            primary: false,
-            padding: const EdgeInsets.all(5.0),
-            crossAxisSpacing: 1.0,
-            crossAxisCount: 7,
-            children: cards,
-          ),
-        )
+    return Expanded(
+      child: GridView.count(
+        primary: false,
+        padding: const EdgeInsets.all(5.0),
+        crossAxisSpacing: 1.0,
+        crossAxisCount: 7,
+        children: cards,
+      ),
     );
+  }
 
-    widgets.add(Text('-- Summary --', style: TextStyle(fontSize: 20)));
 
-    num sum = 0;
-    workouts.forEach((var w){sum += w.TSS;});
-    widgets.add(Text('Total TSS: ${sum}', style: TextStyle(fontSize: 20)));
+  @override
+  Widget build(BuildContext context) {
 
-    sum = 0;
-    workouts.forEach((var w){sum += w.duration;});
-    sum /= 3600;
-    widgets.add(Text('Total time: ${sum.toStringAsFixed(1)} hours', style: TextStyle(fontSize: 20)));
+    List<Workout> workouts = Provider.of<WorkoutDB>(context, listen: false).showWeek(settings);
 
-    var plannedWeek = Column(
-      children: widgets,
-    );
+    // /widgets.add( buildWeek(context, workouts) );
+
+    // widgets.add(Text('-- Summary --', style: TextStyle(fontSize: 20)));
+    //
+    // num sum = 0;
+    // workouts.forEach((var w){sum += w.TSS;});
+    // widgets.add(Text('Total TSS: ${sum}', style: TextStyle(fontSize: 20)));
+    //
+    // sum = 0;
+    // workouts.forEach((var w){sum += w.duration;});
+    // sum /= 3600;
+    // widgets.add(Text('Total time: ${sum.toStringAsFixed(1)} hours', style: TextStyle(fontSize: 20)));
+
+    // var plannedWeeks = StreamBuilder<List<Workout>>(
+    //     stream: Provider.of<WorkoutDB>(context, listen: false).getComputation,
+    //     initialData: workouts,
+    //     builder: (c, snapshot) {
+    //       if (snapshot.data != null) {
+    //         var widgets = [buildWeek(context, workouts)];
+    //         return Column(
+    //           children: widgets,
+    //         );
+    //       }
+    //       return Column(
+    //         children: [
+    //           Text('Sample text'),
+    //         ],
+    //       );
+    // });
+
+    // var plannedWeeks = Column(
+    //   children: widgets,
+    // );
 
     return Scaffold(
       appBar: AppBar(
@@ -202,7 +252,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     keyboardType: TextInputType.numberWithOptions(),
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
-                      labelText: 'TSS',
+                      labelText: 'Nb',
                     ),
                     onChanged: (text) {
                       setState(() {
@@ -229,7 +279,22 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Container(
               // width: 600.0,
               // height: 800.0,
-              child: plannedWeek,
+              child: StreamBuilder<List<Workout>>(
+                stream: Provider.of<WorkoutDB>(context, listen: false).getComputation,
+                //initialData: workouts,
+                builder: (c, snapshot) {
+                  if (snapshot.data != null) {
+                    var widgets = [buildWeek(context, snapshot.data!)];
+                    return Column(
+                      children: widgets,
+                    );
+                  }
+                  return Column(
+                    children: [
+                      Text('Sample text'),
+                    ],
+                  );
+                }),
             ),
           ),
         ],
