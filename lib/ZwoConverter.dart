@@ -9,6 +9,10 @@ Repetition convertZwo(XmlElement elmnt) {
   //debugPrint('Interval name ' + elmnt.name.toString());
   String name = elmnt.name.local;
 
+  XmlAttribute? powerLow = elmnt.getAttributeNode('PowerLow');
+  XmlAttribute? powerHigh = elmnt.getAttributeNode('PowerHigh');
+  XmlAttribute? power = elmnt.getAttributeNode('Power');
+
   if (name == 'IntervalsT') {
 
     XmlAttribute? nbReps = elmnt.getAttributeNode('Repeat');
@@ -63,8 +67,6 @@ Repetition convertZwo(XmlElement elmnt) {
   ) {
 
     XmlAttribute? duration = elmnt.getAttributeNode('Duration');
-    XmlAttribute? powerLow = elmnt.getAttributeNode('PowerLow');
-    XmlAttribute? powerHigh = elmnt.getAttributeNode('PowerHigh');
 
     int? durOn;
     double? powerStart;
@@ -90,7 +92,6 @@ Repetition convertZwo(XmlElement elmnt) {
   } else {
 
     XmlAttribute? duration = elmnt.getAttributeNode('Duration');
-    XmlAttribute? powerLow = elmnt.getAttributeNode('Power');
     XmlAttribute? cadence_ = elmnt.getAttributeNode('Cadence');
 
     int? durOn;
@@ -100,7 +101,9 @@ Repetition convertZwo(XmlElement elmnt) {
     if (duration != null) {
       durOn = (double.parse(duration.value)).round();
     }
-    if (powerLow != null) {
+    if (power != null) {
+      powerOn = double.parse(power.value);
+    } else if (powerLow != null) {
       powerOn = double.parse(powerLow.value);
     }
     if (cadence_ != null) {
