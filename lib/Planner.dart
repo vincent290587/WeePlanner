@@ -20,7 +20,7 @@ Future<List<Workout>> plan(List<Workout> wDB, PlannerSettings settings) async {
   // Create first generation, either by random or by continuing with existing
   // progress.
   var firstGeneration = Generation<MyPhenotype, Workout, SingleObjectiveResult>()
-    ..members.addAll(List.generate(10, (_) => MyPhenotype.Random(wDB: wDB, settings: settings)));
+    ..members.addAll(List.generate(50, (_) => MyPhenotype.Random(wDB: wDB, settings: settings)));
 
   // Evaluators take each phenotype and assign a fitness value to it according
   // to some fitness function.
