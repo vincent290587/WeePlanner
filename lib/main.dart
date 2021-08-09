@@ -86,16 +86,9 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  Widget buildWeek(BuildContext context, List<Workout> workouts) {
+  Widget buildWeek(BuildContext context, PlannedWeek week) {
 
-    double sumTSS = 0;
-    double sumDuration = 0;
-    workouts.forEach((Workout v) {
-      sumTSS += v.TSS;
-      sumDuration += v.duration;
-    });
-
-    List<Widget> cards = workouts.map((item) {
+    List<Widget> cards = week.workouts.map((item) {
       return Card(
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -143,9 +136,19 @@ class _MyHomePageState extends State<MyHomePage> {
               subtitle: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Dur.: ${(sumDuration / 3600).toStringAsFixed(1)} hrs',
+                  Text('Dur.: ${(week.sumDuration / 3600).toStringAsFixed(1)} hrs',
                       style: TextStyle(fontSize: 12)),
-                  Text('TSS :  ${sumTSS.toStringAsFixed(1)}'),
+                  Text('TSS :  ${week.sumTSS.toStringAsFixed(1)}'),
+                  Text('Z6 :  ${(week.distribution.bins[5]*100).toInt()}%',
+                      style: TextStyle(fontSize: 12)),
+                  Text('Z5 :  ${(week.distribution.bins[4]*100).toInt()}%',
+                      style: TextStyle(fontSize: 12)),
+                  Text('Z4 :  ${(week.distribution.bins[3]*100).toInt()}%',
+                      style: TextStyle(fontSize: 12)),
+                  Text('Z3 :  ${(week.distribution.bins[2]*100).toInt()}%',
+                      style: TextStyle(fontSize: 12)),
+                  Text('Z2 :  ${(week.distribution.bins[1]*100).toInt()}%',
+                      style: TextStyle(fontSize: 12)),
                 ],
               ),
             ),
@@ -281,12 +284,13 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Container(
               // width: 600.0,
               // height: 800.0,
-              child: StreamBuilder<List<Workout>>(
+              child: StreamBuilder<PlannedWeek>(
                 stream: Provider.of<WorkoutDB>(context, listen: false).getComputation,
                 //initialData: workouts,
                 builder: (c, snapshot) {
                   if (snapshot.data != null) {
-                    var widgets = [buildWeek(context, snapshot.data!)];
+                    PlannedWeek week = snapshot.data!;
+                    var widgets = [ buildWeek(context, week) ];
                     return Column(
                       children: widgets,
                     );

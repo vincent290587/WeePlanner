@@ -11,12 +11,38 @@ import 'Workout.dart';
 import 'ZwoConverter.dart';
 import 'nanopb/Workout.pb.dart';
 
+class PlannedWeek {
+
+  List<Workout> workouts;
+  late Distribution distribution = Distribution.empty();
+
+  double sumTSS = 0;
+  double sumDuration = 0;
+
+  PlannedWeek(this.workouts) {
+
+    for (var workout in workouts) {
+      distribution.cumulate(workout.distribution);
+    }
+
+    workouts.forEach((Workout v) {
+      sumTSS += v.TSS;
+      sumDuration += v.duration;
+    });
+
+    for (int i=0; i < distribution.bins.length; i++) {
+      distribution.bins[i] /= sumDuration;
+    }
+
+  }
+}
+
 class WorkoutDB extends ChangeNotifier {
 
   List<Workout> workoutDB = [];
 
-  StreamController<List<Workout>> potentialWeek = new StreamController<List<Workout>>.broadcast();
-  Stream<List<Workout>> get getComputation => (potentialWeek.stream);
+  StreamController<PlannedWeek> potentialWeek = new StreamController<PlannedWeek>.broadcast();
+  Stream<PlannedWeek> get getComputation => (potentialWeek.stream);
 
   WorkoutDB();
 
@@ -31,7 +57,7 @@ class WorkoutDB extends ChangeNotifier {
          });
          debugPrint('Best TSS match: ${sumTSS}');
 
-         potentialWeek.add(ret);
+         potentialWeek.add(PlannedWeek(ret));
          debugPrint(ret.toString());
          return ret;
        }

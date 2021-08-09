@@ -50,18 +50,68 @@ int calculateDuration(RawWorkout rawWorkout)
   return dur;
 }
 
+class Distribution {
+
+  static const List<double> _pwLims = [
+    -100.0,
+    0.55,
+    0.75,
+    0.90,
+    1.05,
+    1.20,
+    1.50,
+    100.0
+  ];
+
+  late List<double> bins;
+
+  Distribution.empty() {
+    bins = [0,0,0,0,0,0];
+  }
+
+  Distribution(RawWorkout _rawWorkout) {
+
+    bins = [0,0,0,0,0,0];
+
+    for (var rep in _rawWorkout.reps) {
+      for (var interval in rep.intervals) {
+        int duri = interval.getField(1);
+        double pow1 = interval.getField(2);
+        double pow2 = interval.getField(3);
+        double pw_meas = (pow1 + pow2) / 2;
+        // find the bin
+        for (int i=0; i < bins.length; i++) {
+          if (pw_meas >= _pwLims[i] &&
+              pw_meas < _pwLims[i+1]) {
+            // update bin i
+            bins[i] += duri;
+          }
+        }
+      }
+    }
+  }
+
+  void cumulate(Distribution other) {
+    for (int i=0; i < bins.length; i++) {
+      this.bins[i] += other.bins[i];
+    }
+  }
+}
+
 class Workout {
 
   late int duration;
   late int TSS;
   late int _NP;
   late int IF;
-  late WorkoutFocus focus;
+  //late WorkoutFocus focus;
+  late Distribution distribution;
 
   late RawWorkout rawWorkout;
 
   Workout({required this.rawWorkout}) {
 
+    distribution = Distribution(rawWorkout);
     duration = calculateDuration(rawWorkout);
     _NP = (100 * calculateNP(rawWorkout)).round();
     IF = _NP;
