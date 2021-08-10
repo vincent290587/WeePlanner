@@ -61,7 +61,9 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
-  PlannerSettings settings = PlannerSettings(workoutsNb: 5, targetScore: 400);
+  DistributionType distributionType = DistributionType.Phase1;
+
+  PlannerSettings settings = PlannerSettings(DistributionType.Rest, workoutsNb: 5, targetScore: 400); // TODO add phase
 
   Widget getCard(Widget? icon, String text, String value) {
     return Card(
@@ -140,15 +142,17 @@ class _MyHomePageState extends State<MyHomePage> {
                       style: TextStyle(fontSize: 12)),
                   Text('TSS :  ${week.sumTSS.toStringAsFixed(1)}'),
                   Text('Z6 :  ${(week.distribution.bins[5]*100).toInt()}%',
-                      style: TextStyle(fontSize: 12)),
+                      style: TextStyle(fontSize: 10)),
                   Text('Z5 :  ${(week.distribution.bins[4]*100).toInt()}%',
-                      style: TextStyle(fontSize: 12)),
+                      style: TextStyle(fontSize: 10)),
                   Text('Z4 :  ${(week.distribution.bins[3]*100).toInt()}%',
-                      style: TextStyle(fontSize: 12)),
+                      style: TextStyle(fontSize: 10)),
                   Text('Z3 :  ${(week.distribution.bins[2]*100).toInt()}%',
-                      style: TextStyle(fontSize: 12)),
+                      style: TextStyle(fontSize: 10)),
                   Text('Z2 :  ${(week.distribution.bins[1]*100).toInt()}%',
-                      style: TextStyle(fontSize: 12)),
+                      style: TextStyle(fontSize: 10)),
+                  Text('Z1 :  ${(week.distribution.bins[0]*100).toInt()}%',
+                      style: TextStyle(fontSize: 10)),
                 ],
               ),
             ),
@@ -233,6 +237,51 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  RadioListTile<DistributionType>(
+                    title: const Text('Rest'),
+                    value: DistributionType.Rest,
+                    groupValue: distributionType,
+                    onChanged: (DistributionType? value) { setState(() {
+                      distributionType = DistributionType.Rest;
+                      settings.setDistribution(value!); });
+                    },
+                  ),
+                  RadioListTile<DistributionType>(
+                    title: const Text('Phase1'),
+                    value: DistributionType.Phase1,
+                    groupValue: distributionType,
+                    onChanged: (DistributionType? value) {
+                      distributionType = DistributionType.Phase1;
+                      setState(() { settings.setDistribution(value!); });
+                      },
+                  ),
+                  RadioListTile<DistributionType>(
+                    title: const Text('Phase2'),
+                    value: DistributionType.Phase2,
+                    groupValue: distributionType,
+                    onChanged: (DistributionType? value) {
+                      distributionType = DistributionType.Phase2;
+                      setState(() { settings.setDistribution(value!); });
+                      },
+                  ),
+                  RadioListTile<DistributionType>(
+                    title: const Text('Phase3a'),
+                    value: DistributionType.Phase3a,
+                    groupValue: distributionType,
+                    onChanged: (DistributionType? value) {
+                      distributionType = DistributionType.Phase3a;
+                      setState(() { settings.setDistribution(value!); });
+                      },
+                  ),
+                  RadioListTile<DistributionType>(
+                    title: const Text('Phase3b'),
+                    value: DistributionType.Phase3b,
+                    groupValue: distributionType,
+                    onChanged: (DistributionType? value) {
+                      distributionType = DistributionType.Phase3b;
+                      setState(() { settings.setDistribution(value!); });
+                      },
+                  ),
                   Text(' '),
                   //Text('Target TSS:'),
                   TextFormField(

@@ -1,6 +1,7 @@
 
 import 'dart:async';
 import 'dart:math';
+import 'dart:ui';
 
 import 'package:darwin/darwin.dart';
 
@@ -10,8 +11,33 @@ class PlannerSettings {
 
   int targetScore;
   int workoutsNb;
+  late Distribution distribution;
 
-  PlannerSettings({required this.targetScore, required this.workoutsNb});
+  PlannerSettings(DistributionType type, {required this.targetScore, required this.workoutsNb}) {
+
+    setDistribution(type);
+  }
+
+  void setDistribution(DistributionType type) {
+
+    switch (type) {
+      case DistributionType.Rest:
+        distribution = Distribution.rest();
+        break;
+      case DistributionType.Phase1:
+        distribution = Distribution.phase1();
+        break;
+      case DistributionType.Phase2:
+        distribution = Distribution.phase2();
+        break;
+      case DistributionType.Phase3a:
+        distribution = Distribution.phase3a();
+        break;
+      case DistributionType.Phase3b:
+        distribution = Distribution.phase3b();
+        break;
+    }
+  }
 
 }
 
@@ -20,7 +46,7 @@ Future<List<Workout>> plan(List<Workout> wDB, PlannerSettings settings) async {
   // Create first generation, either by random or by continuing with existing
   // progress.
   var firstGeneration = Generation<MyPhenotype, Workout, SingleObjectiveResult>()
-    ..members.addAll(List.generate(50, (_) => MyPhenotype.Random(wDB: wDB, settings: settings)));
+    ..members.addAll(List.generate(500, (_) => MyPhenotype.Random(wDB: wDB, settings: settings)));
 
   // Evaluators take each phenotype and assign a fitness value to it according
   // to some fitness function.
@@ -40,7 +66,7 @@ Future<List<Workout>> plan(List<Workout> wDB, PlannerSettings settings) async {
   );
 
   algo.thresholdResult = SingleObjectiveResult()
-    ..value = 0.025;
+    ..value = 0.05;
 
   // Start the algorithm.
   await algo.runUntilDone();
@@ -71,12 +97,22 @@ class MyEvaluator
 
     final result = SingleObjectiveResult();
 
-    // TODO workout content
     double sum = 0;
     phenotype.genes.forEach((Workout v){sum += v.TSS;});
-    double tssDistance = pow((phenotype.settings.targetScore.toDouble() - sum) / phenotype.settings.targetScore.toDouble(), 2) as double;
+    double tssDistance = pow(1 - sum / phenotype.settings.targetScore.toDouble(), 2) as double;
+    //tssDistance = 0.0;
 
-    result.value = tssDistance;
+    double totDuration = 0.0;
+    Distribution distribution = Distribution.empty();
+    for (var workout in phenotype.genes) {
+      distribution.cumulate(workout.distribution);
+      totDuration += workout.duration;
+    }
+    double affinity = phenotype.settings.distribution.affinity(distribution) * 100.0 / totDuration;
+    double maxAffinity = phenotype.settings.distribution.maxAffinity();
+    tssDistance += 40000 * pow(1 - affinity / maxAffinity, 2) as double;
+
+    result.value = pow(tssDistance, 0.5) as double;
 
     return Future.value(result);
   }

@@ -104,9 +104,24 @@ void main() {
     });
   });
 
+  group('Distribution', () {
+
+    test('Size', () {
+
+      Distribution distribution1 = Distribution.phase1();
+      Distribution distribution3 = Distribution.phase2();
+      double affinity = distribution1.affinity(distribution1);
+      double affinity2 = distribution1.affinity(distribution3);
+
+      expect(affinity.toInt(), equals(2227));
+      expect(affinity2.toInt(), lessThan(distribution1.maxAffinity()));
+    });
+
+  });
+
   group('Darwin', () {
     WorkoutDB workoutDB = WorkoutDB();
-    PlannerSettings settings = PlannerSettings(workoutsNb: 5, targetScore: 300);
+    PlannerSettings settings = PlannerSettings(DistributionType.Phase1, workoutsNb: 5, targetScore: 300);
     Directory dir = Directory('db');
 
     print(dir.toString());

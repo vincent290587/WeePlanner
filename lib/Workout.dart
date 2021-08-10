@@ -50,6 +50,14 @@ int calculateDuration(RawWorkout rawWorkout)
   return dur;
 }
 
+enum DistributionType {
+  Rest,
+  Phase1,
+  Phase2,
+  Phase3a,
+  Phase3b,
+}
+
 class Distribution {
 
   static const List<double> _pwLims = [
@@ -65,8 +73,30 @@ class Distribution {
 
   late List<double> bins;
 
+  Distribution.fixed(this.bins);
+
   Distribution.empty() {
     bins = [0,0,0,0,0,0];
+  }
+
+  Distribution.rest() {
+    bins = [26,30,23,15,3,0]; // build me up week 8
+  }
+
+  Distribution.phase1() {
+    bins = [23,19,25,26,6,0]; // build me up week 2
+  }
+
+  Distribution.phase2() {
+    bins = [31,15,12,33,8,1]; // build me up week 7
+  }
+
+  Distribution.phase3a() {
+    bins = [28,14,31,18,3,6]; // build me up week 10
+  }
+
+  Distribution.phase3b() {
+    bins = [32,17,25,8,13,5]; // build me up week 11
   }
 
   Distribution(RawWorkout _rawWorkout) {
@@ -78,7 +108,7 @@ class Distribution {
         int duri = interval.getField(1);
         double pow1 = interval.getField(2);
         double pow2 = interval.getField(3);
-        double pw_meas = (pow1 + pow2) / 2;
+        double pw_meas = (pow1 + pow2) / 2; // TODO check that
         // find the bin
         for (int i=0; i < bins.length; i++) {
           if (pw_meas >= _pwLims[i] &&
@@ -95,6 +125,22 @@ class Distribution {
     for (int i=0; i < bins.length; i++) {
       this.bins[i] += other.bins[i];
     }
+  }
+
+  double affinity(Distribution other) {
+    double ret = 0.0;
+    for (int i=0; i < bins.length; i++) {
+      ret += bins[i] * other.bins[i];
+    }
+    return ret;
+  }
+
+  double maxAffinity() {
+    double ret = 0.0;
+    for (int i=0; i < bins.length; i++) {
+      ret += bins[i] * bins[i];
+    }
+    return ret;
   }
 }
 

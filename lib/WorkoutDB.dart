@@ -14,7 +14,7 @@ import 'nanopb/Workout.pb.dart';
 class PlannedWeek {
 
   List<Workout> workouts;
-  late Distribution distribution = Distribution.empty();
+  Distribution distribution = Distribution.empty();
 
   double sumTSS = 0;
   double sumDuration = 0;
