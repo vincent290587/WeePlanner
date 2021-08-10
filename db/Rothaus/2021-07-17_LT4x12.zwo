@@ -1,0 +1,33 @@
+<workout_file>
+	<author>vincent golle (via TrainingPeaks)</author>
+	<name>LT: 4x12</name>
+	<description>WARM UP:
+-10 minutes gradually progressing from Active Recovery zone to Endurance zone.
+-3x30 seconds Spin Ups (110+ RPM) @Threshold zone+, 30 seconds easy.
+-2 minutes easy
+———
+MAIN SET:
+-4x 12 minutes @Threshold.
+-Rest for 5 minutes between sets.
+———
+COOL DOWN:
+-Last rest block.</description>
+	<sportType>bike</sportType>
+	<tags/>
+	<workout>
+		<SteadyState Duration="120" Power="0.4">
+		</SteadyState>
+		<SteadyState Duration="120" Power="0.55">
+		</SteadyState>
+		<SteadyState Duration="120" Power="0.7">
+		</SteadyState>
+		<SteadyState Duration="120" Power="0.85">
+		</SteadyState>
+		<SteadyState Duration="120" Power="0.9">
+		</SteadyState>
+		<SteadyState Duration="120" Power="0.5">
+		</SteadyState>
+		<IntervalsT Repeat="4" OnDuration="720" OnPower="1" OffDuration="240" OffPower="0.55">
+		</IntervalsT>
+	</workout>
+</workout_file>

@@ -1,0 +1,61 @@
+<workout_file>
+	<author>vincent golle (via TrainingPeaks)</author>
+	<name>SST OU: 2+1</name>
+	<description>WARM UP:
+-13 minutes gradually progressing from Active Recovery zone to Endurance zone.
+-2 minutes easy
+------
+MAIN SET:
+-3x (2 minutes @93% FTP with 1 minute @103% or 108% FTP). 1 minute easy between. Ideal cadence is 90-100 RPM here.
+-4 minutes easy.
+-3x (2 minutes @93% FTP with 1 minute @103% or 108% with the finale being @115% FTP!). 1 minute easy between. Ideal cadence is 90-100 RPM here.
+------
+COOL DOWN:
+-4 minutes gradually reducing from Endurance zone to Active Recovery zone</description>
+	<sportType>bike</sportType>
+	<tags/>
+	<workout>
+		<Warmup Duration="300" PowerHigh="0.5" PowerLow="0.3">
+		</Warmup>
+		<SteadyState Duration="300" Power="0.65">
+		</SteadyState>
+		<SteadyState Duration="180" Power="0.75">
+		</SteadyState>
+		<SteadyState Duration="120" Power="0.55">
+		</SteadyState>
+		<IntervalsT Repeat="1" OnDuration="120" OnPower="0.93" OffDuration="60" OffPower="1.03">
+		</IntervalsT>
+		<IntervalsT Repeat="1" OnDuration="120" OnPower="0.93" OffDuration="60" OffPower="1.08">
+		</IntervalsT>
+		<SteadyState Duration="60" Power="0.55">
+		</SteadyState>
+		<IntervalsT Repeat="1" OnDuration="120" OnPower="0.93" OffDuration="60" OffPower="1.08">
+		</IntervalsT>
+		<IntervalsT Repeat="1" OnDuration="120" OnPower="0.93" OffDuration="60" OffPower="1.03">
+		</IntervalsT>
+		<SteadyState Duration="60" Power="0.55">
+		</SteadyState>
+		<IntervalsT Repeat="1" OnDuration="120" OnPower="0.93" OffDuration="60" OffPower="1.03">
+		</IntervalsT>
+		<IntervalsT Repeat="1" OnDuration="120" OnPower="0.93" OffDuration="60" OffPower="1.08">
+		</IntervalsT>
+		<SteadyState Duration="240" Power="0.55">
+		</SteadyState>
+		<IntervalsT Repeat="1" OnDuration="120" OnPower="0.93" OffDuration="60" OffPower="1.08">
+		</IntervalsT>
+		<IntervalsT Repeat="1" OnDuration="120" OnPower="0.93" OffDuration="60" OffPower="1.03">
+		</IntervalsT>
+		<SteadyState Duration="60" Power="0.55">
+		</SteadyState>
+		<IntervalsT Repeat="1" OnDuration="120" OnPower="0.93" OffDuration="60" OffPower="1.08">
+		</IntervalsT>
+		<IntervalsT Repeat="1" OnDuration="120" OnPower="0.93" OffDuration="60" OffPower="1.03">
+		</IntervalsT>
+		<SteadyState Duration="60" Power="0.55">
+		</SteadyState>
+		<IntervalsT Repeat="1" OnDuration="120" OnPower="0.93" OffDuration="60" OffPower="1.15">
+		</IntervalsT>
+		<Cooldown Duration="240" PowerHigh="0.35" PowerLow="0.55">
+		</Cooldown>
+	</workout>
+</workout_file>

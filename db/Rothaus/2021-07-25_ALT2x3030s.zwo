@@ -1,0 +1,53 @@
+<workout_file>
+	<author>vincent golle (via TrainingPeaks)</author>
+	<name>A/LT: 2x 30/30s + 2 x 20s</name>
+	<description>WARM UP:
+-10 minutes gradually progressing from Active Recovery zone to Endurance zone.
+-3x30 seconds Spin Ups (110+ RPM) @Threshold zone+, 30 seconds easy.
+-2 minutes easy
+———
+MAIN SET:
+-2 blocks of 10 minutes each:
+-Each block is 30 seconds ON - go 125% of FTP watts - and then 15 seconds OFF.
+(If using HR, this is a hard workout to do correctly, but basically do an 80% sprint for 15 seconds, then pedal easy for 15 seconds.) Repeat continually for 10 minutes. Then 5 minutes of EASY spinning, and then on to the next block. (If your power drops, skip one &quot;on&quot; cycle or make the total interval a little shorter but keep the total work time the same.)
+-1 x 20-min blocks just 10% under THR or 85-90% of FTP
+-Repeat</description>
+	<sportType>bike</sportType>
+	<tags/>
+	<workout>
+		<SteadyState Duration="120" Power="0.6">
+		</SteadyState>
+		<SteadyState Duration="120" Power="0.68">
+		</SteadyState>
+		<SteadyState Duration="120" Power="0.75">
+		</SteadyState>
+		<SteadyState Duration="120" Power="0.83">
+		</SteadyState>
+		<SteadyState Duration="120" Power="0.9">
+		</SteadyState>
+		<SteadyState Duration="120" Power="0.55">
+		</SteadyState>
+		<IntervalsT Repeat="10" OnDuration="30" OnPower="1.25" OffDuration="30" OffPower="0">
+		</IntervalsT>
+		<SteadyState Duration="300" Power="0.55">
+		</SteadyState>
+		<IntervalsT Repeat="10" OnDuration="30" OnPower="1.25" OffDuration="30" OffPower="0">
+		</IntervalsT>
+		<SteadyState Duration="300" Power="0.55">
+		</SteadyState>
+		<IntervalsT Repeat="1" OnDuration="1200" OnPower="0.9" OffDuration="300" OffPower="0.55">
+		</IntervalsT>
+		<IntervalsT Repeat="10" OnDuration="30" OnPower="1.25" OffDuration="30" OffPower="0">
+		</IntervalsT>
+		<SteadyState Duration="300" Power="0.55">
+		</SteadyState>
+		<IntervalsT Repeat="10" OnDuration="30" OnPower="1.25" OffDuration="30" OffPower="0">
+		</IntervalsT>
+		<SteadyState Duration="300" Power="0.55">
+		</SteadyState>
+		<IntervalsT Repeat="1" OnDuration="1200" OnPower="0.9" OffDuration="300" OffPower="0.55">
+		</IntervalsT>
+		<Cooldown Duration="600" PowerHigh="0.3" PowerLow="0.5">
+		</Cooldown>
+	</workout>
+</workout_file>

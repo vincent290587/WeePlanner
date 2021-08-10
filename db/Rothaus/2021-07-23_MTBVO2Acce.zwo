@@ -1,0 +1,43 @@
+<workout_file>
+	<author>vincent golle (via TrainingPeaks)</author>
+	<name>MTB: VO2 Accelerations + 3X O/U</name>
+	<description></description>
+	<sportType>bike</sportType>
+	<tags/>
+	<workout>
+		<SteadyState Duration="120" Power="0.6">
+		</SteadyState>
+		<SteadyState Duration="120" Power="0.7">
+		</SteadyState>
+		<SteadyState Duration="120" Power="0.8">
+		</SteadyState>
+		<SteadyState Duration="120" Power="0.9">
+		</SteadyState>
+		<SteadyState Duration="180" Power="0.45">
+		</SteadyState>
+		<IntervalsT Repeat="5" OnDuration="30" OnPower="1.1" OffDuration="15" OffPower="0.55">
+		</IntervalsT>
+		<IntervalsT Repeat="3" OnDuration="60" OnPower="1.05" OffDuration="30" OffPower="0.9">
+		</IntervalsT>
+		<SteadyState Duration="180" Power="0.55">
+		</SteadyState>
+		<IntervalsT Repeat="5" OnDuration="30" OnPower="1.1" OffDuration="15" OffPower="0.55">
+		</IntervalsT>
+		<IntervalsT Repeat="3" OnDuration="60" OnPower="1.05" OffDuration="30" OffPower="0.9">
+		</IntervalsT>
+		<SteadyState Duration="180" Power="0.55">
+		</SteadyState>
+		<IntervalsT Repeat="5" OnDuration="30" OnPower="1.1" OffDuration="15" OffPower="0.55">
+		</IntervalsT>
+		<IntervalsT Repeat="3" OnDuration="60" OnPower="1.05" OffDuration="30" OffPower="0.9">
+		</IntervalsT>
+		<SteadyState Duration="180" Power="0.55">
+		</SteadyState>
+		<IntervalsT Repeat="5" OnDuration="30" OnPower="1.1" OffDuration="15" OffPower="0.55">
+		</IntervalsT>
+		<IntervalsT Repeat="3" OnDuration="60" OnPower="1.05" OffDuration="30" OffPower="0.9">
+		</IntervalsT>
+		<Cooldown Duration="420" PowerHigh="0.35" PowerLow="0.55">
+		</Cooldown>
+	</workout>
+</workout_file>

@@ -1,0 +1,49 @@
+<workout_file>
+	<author>vincent golle (via TrainingPeaks)</author>
+	<name>A/SST: 5x5 Bursts (Increasing)</name>
+	<description>WARM UP:
+-13 minutes gradually progressing from Z1 to Z3.
+- 2 minutes easy.
+———
+MAIN SET:
+-5x (30 seconds increasing from 150% FTP @110+ RPM. Really work for the first 30 seconds!!!
+
+Then, 5 minutes Z3 (90% FTP) @85-95 RPM).
+
+-Rest for 3 minutes between intervals.
+———
+COOL DOWN:
+-5 minutes gradually reducing from Endurance zone to Active Recovery zone</description>
+	<sportType>bike</sportType>
+	<tags/>
+	<workout>
+		<SteadyState Duration="300" Power="0.5">
+		</SteadyState>
+		<SteadyState Duration="300" Power="0.65">
+		</SteadyState>
+		<SteadyState Duration="180" Power="0.8">
+		</SteadyState>
+		<SteadyState Duration="150" Power="0.55">
+		</SteadyState>
+		<IntervalsT Repeat="1" OnDuration="30" OnPower="1.5" OffDuration="300" OffPower="0.9">
+		</IntervalsT>
+		<SteadyState Duration="180" Power="0.55">
+		</SteadyState>
+		<IntervalsT Repeat="1" OnDuration="30" OnPower="1.6" OffDuration="300" OffPower="0.9">
+		</IntervalsT>
+		<SteadyState Duration="180" Power="0.55">
+		</SteadyState>
+		<IntervalsT Repeat="1" OnDuration="30" OnPower="1.7" OffDuration="300" OffPower="0.9">
+		</IntervalsT>
+		<SteadyState Duration="180" Power="0.55">
+		</SteadyState>
+		<IntervalsT Repeat="1" OnDuration="30" OnPower="1.8" OffDuration="300" OffPower="0.9">
+		</IntervalsT>
+		<SteadyState Duration="180" Power="0.55">
+		</SteadyState>
+		<IntervalsT Repeat="1" OnDuration="30" OnPower="1.9" OffDuration="300" OffPower="0.9">
+		</IntervalsT>
+		<Cooldown Duration="300" PowerHigh="0.3" PowerLow="0.5">
+		</Cooldown>
+	</workout>
+</workout_file>

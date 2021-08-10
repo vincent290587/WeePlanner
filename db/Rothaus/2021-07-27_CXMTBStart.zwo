@@ -1,0 +1,117 @@
+<workout_file>
+	<author>vincent golle (via TrainingPeaks)</author>
+	<name>CX/MTB Starts - 3 x 5 VO2 + SST</name>
+	<description>While quick starts are key, being to sustain that power beyond 15-20 seconds at the start and then find that sweet spot to race in immediately is the key to not blowing up in the first lap.
+
+This workout is designed to have you push hard and then settle in for a minute, then a quick recovery.</description>
+	<sportType>bike</sportType>
+	<tags/>
+	<workout>
+		<SteadyState Duration="180" Power="0.6">
+		</SteadyState>
+		<SteadyState Duration="180" Power="0.7">
+		</SteadyState>
+		<SteadyState Duration="180" Power="0.8">
+		</SteadyState>
+		<SteadyState Duration="180" Power="0.9">
+		</SteadyState>
+		<SteadyState Duration="180" Power="0.55">
+		</SteadyState>
+		<SteadyState Duration="30" Power="1.5">
+		</SteadyState>
+		<SteadyState Duration="60" Power="0.95">
+		</SteadyState>
+		<SteadyState Duration="30" Power="0.55">
+		</SteadyState>
+		<SteadyState Duration="30" Power="1.5">
+		</SteadyState>
+		<SteadyState Duration="60" Power="0.95">
+		</SteadyState>
+		<SteadyState Duration="30" Power="0.55">
+		</SteadyState>
+		<SteadyState Duration="30" Power="1.5">
+		</SteadyState>
+		<SteadyState Duration="60" Power="0.95">
+		</SteadyState>
+		<SteadyState Duration="30" Power="0.55">
+		</SteadyState>
+		<SteadyState Duration="30" Power="1.5">
+		</SteadyState>
+		<SteadyState Duration="60" Power="0.95">
+		</SteadyState>
+		<SteadyState Duration="30" Power="0.55">
+		</SteadyState>
+		<SteadyState Duration="30" Power="1.5">
+		</SteadyState>
+		<SteadyState Duration="60" Power="0.95">
+		</SteadyState>
+		<SteadyState Duration="30" Power="0.55">
+		</SteadyState>
+		<SteadyState Duration="240" Power="0.55">
+		</SteadyState>
+		<SteadyState Duration="30" Power="1.5">
+		</SteadyState>
+		<SteadyState Duration="60" Power="0.95">
+		</SteadyState>
+		<SteadyState Duration="30" Power="0.55">
+		</SteadyState>
+		<SteadyState Duration="30" Power="1.5">
+		</SteadyState>
+		<SteadyState Duration="60" Power="0.95">
+		</SteadyState>
+		<SteadyState Duration="30" Power="0.55">
+		</SteadyState>
+		<SteadyState Duration="30" Power="1.5">
+		</SteadyState>
+		<SteadyState Duration="60" Power="0.95">
+		</SteadyState>
+		<SteadyState Duration="30" Power="0.55">
+		</SteadyState>
+		<SteadyState Duration="30" Power="1.5">
+		</SteadyState>
+		<SteadyState Duration="60" Power="0.95">
+		</SteadyState>
+		<SteadyState Duration="30" Power="0.55">
+		</SteadyState>
+		<SteadyState Duration="30" Power="1.5">
+		</SteadyState>
+		<SteadyState Duration="60" Power="0.95">
+		</SteadyState>
+		<SteadyState Duration="30" Power="0.55">
+		</SteadyState>
+		<SteadyState Duration="240" Power="0.55">
+		</SteadyState>
+		<SteadyState Duration="30" Power="1.5">
+		</SteadyState>
+		<SteadyState Duration="60" Power="0.95">
+		</SteadyState>
+		<SteadyState Duration="30" Power="0.55">
+		</SteadyState>
+		<SteadyState Duration="30" Power="1.5">
+		</SteadyState>
+		<SteadyState Duration="60" Power="0.95">
+		</SteadyState>
+		<SteadyState Duration="30" Power="0.55">
+		</SteadyState>
+		<SteadyState Duration="30" Power="1.5">
+		</SteadyState>
+		<SteadyState Duration="60" Power="0.95">
+		</SteadyState>
+		<SteadyState Duration="30" Power="0.55">
+		</SteadyState>
+		<SteadyState Duration="30" Power="1.5">
+		</SteadyState>
+		<SteadyState Duration="60" Power="0.95">
+		</SteadyState>
+		<SteadyState Duration="30" Power="0.55">
+		</SteadyState>
+		<SteadyState Duration="30" Power="1.5">
+		</SteadyState>
+		<SteadyState Duration="60" Power="0.95">
+		</SteadyState>
+		<SteadyState Duration="30" Power="0.55">
+		</SteadyState>
+		<Cooldown Duration="420" PowerHigh="0.35" PowerLow="0.55">
+		</Cooldown>
+	</workout>
+</workout_file>

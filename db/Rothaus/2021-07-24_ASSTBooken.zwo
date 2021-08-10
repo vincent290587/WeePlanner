@@ -1,0 +1,46 @@
+<workout_file>
+	<author>vincent golle (via TrainingPeaks)</author>
+	<name>A/SST: Bookend Bursts (Increasing)</name>
+	<description>WARM UP:
+-13 minutes gradually progressing from Z1 to Z3.
+- 2 minutes easy.
+———
+MAIN SET:
+-3x (30 seconds Z6 (150% FTP) @110+ RPM. Really work for the first 30 seconds!!! Then, 8 minutes Z3 (90% FTP) @85-95 RPM).
+---Interval #2 is 30 seconds + 10:30.
+---Interval #3 is 30 seconds + 12:30.
+-Rest for 3 minutes between intervals.
+———
+COOL DOWN:
+-5 minutes gradually reducing from Endurance zone to Active Recovery zone</description>
+	<sportType>bike</sportType>
+	<tags/>
+	<workout>
+		<SteadyState Duration="300" Power="0.5">
+		</SteadyState>
+		<SteadyState Duration="300" Power="0.65">
+		</SteadyState>
+		<SteadyState Duration="180" Power="0.8">
+		</SteadyState>
+		<SteadyState Duration="120" Power="0.55">
+		</SteadyState>
+		<IntervalsT Repeat="1" OnDuration="30" OnPower="1.5" OffDuration="540" OffPower="0.9">
+		</IntervalsT>
+		<SteadyState Duration="30" Power="1.3">
+		</SteadyState>
+		<SteadyState Duration="180" Power="0.55">
+		</SteadyState>
+		<IntervalsT Repeat="1" OnDuration="30" OnPower="1.5" OffDuration="600" OffPower="0.9">
+		</IntervalsT>
+		<SteadyState Duration="30" Power="1.3">
+		</SteadyState>
+		<SteadyState Duration="180" Power="0.55">
+		</SteadyState>
+		<IntervalsT Repeat="1" OnDuration="30" OnPower="1.5" OffDuration="720" OffPower="0.9">
+		</IntervalsT>
+		<SteadyState Duration="30" Power="1.3">
+		</SteadyState>
+		<Cooldown Duration="300" PowerHigh="0.3" PowerLow="0.5">
+		</Cooldown>
+	</workout>
+</workout_file>
