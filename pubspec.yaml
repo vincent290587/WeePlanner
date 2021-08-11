@@ -33,6 +33,7 @@ dependencies:
   xml: ^5.1.2
   darwin: ^0.5.1
   http: ^0.13.3
+  syncfusion_flutter_charts: ^19.2.49
 
 dev_dependencies:
   flutter_test:

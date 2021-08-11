@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 import 'Planner.dart';
 import 'Workout.dart';
 import 'WorkoutDB.dart';
+import 'ZonesGraph.dart';
 
 void main() {
   runApp(
@@ -141,18 +142,22 @@ class _MyHomePageState extends State<MyHomePage> {
                   Text('Dur.: ${(week.sumDuration / 3600).toStringAsFixed(1)} hrs',
                       style: TextStyle(fontSize: 12)),
                   Text('TSS :  ${week.sumTSS.toStringAsFixed(1)}'),
-                  Text('Z6 :  ${(week.distribution.bins[5]*100).toInt()}%',
-                      style: TextStyle(fontSize: 10)),
-                  Text('Z5 :  ${(week.distribution.bins[4]*100).toInt()}%',
-                      style: TextStyle(fontSize: 10)),
-                  Text('Z4 :  ${(week.distribution.bins[3]*100).toInt()}%',
-                      style: TextStyle(fontSize: 10)),
-                  Text('Z3 :  ${(week.distribution.bins[2]*100).toInt()}%',
-                      style: TextStyle(fontSize: 10)),
-                  Text('Z2 :  ${(week.distribution.bins[1]*100).toInt()}%',
-                      style: TextStyle(fontSize: 10)),
-                  Text('Z1 :  ${(week.distribution.bins[0]*100).toInt()}%',
-                      style: TextStyle(fontSize: 10)),
+                  // Text('Z6 :  ${(week.distribution.bins[5]*100).toInt()}%',
+                  //     style: TextStyle(fontSize: 10)),
+                  // Text('Z5 :  ${(week.distribution.bins[4]*100).toInt()}%',
+                  //     style: TextStyle(fontSize: 10)),
+                  // Text('Z4 :  ${(week.distribution.bins[3]*100).toInt()}%',
+                  //     style: TextStyle(fontSize: 10)),
+                  // Text('Z3 :  ${(week.distribution.bins[2]*100).toInt()}%',
+                  //     style: TextStyle(fontSize: 10)),
+                  // Text('Z2 :  ${(week.distribution.bins[1]*100).toInt()}%',
+                  //     style: TextStyle(fontSize: 10)),
+                  // Text('Z1 :  ${(week.distribution.bins[0]*100).toInt()}%',
+                  //     style: TextStyle(fontSize: 10)),
+                  Container(
+                      height: 90,
+                      child: getGraph(week.workouts)
+                  ),
                 ],
               ),
             ),
