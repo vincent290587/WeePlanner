@@ -337,7 +337,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 stream: Provider.of<WorkoutDB>(context, listen: false).getComputation,
                 //initialData: workouts,
                 builder: (c, snapshot) {
-                  if (snapshot.data != null) {
+                  if (snapshot.hasData) {
                     PlannedWeek week = snapshot.data!;
                     var widgets = [ buildWeek(context, week) ];
                     return Column(
@@ -346,7 +346,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   }
                   return Column(
                     children: [
-                      Text('Sample text'),
+                      Text('Empty, please load DB and start a computation'),
                     ],
                   );
                 }),

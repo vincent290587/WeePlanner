@@ -4,6 +4,7 @@ import 'dart:io';
 
 import 'package:http/http.dart' as http;
 
+const String auth_key = 'test_auth_key';
 
 // GET /api/v1/athlete/{id}/folders List all folders and workouts
 // POST /api/v1/athlete/{id}/folders Create a folder
@@ -47,7 +48,7 @@ Future<Album> fetchAlbum() async {
     Uri.parse('https://intervals.icu/api/v1/athlete/i30899/calendars'),
     // Send authorization headers to the backend.
     headers: {
-      HttpHeaders.authorizationHeader: 'Basic QVBJX0tFWTo1YW5ka2w2bW1xd3FodGFuZDF4a3dpemF2',
+      HttpHeaders.authorizationHeader: 'Basic ${auth_key}',
     },
   );
   final responseJson = jsonDecode(response.body);
