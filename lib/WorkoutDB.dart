@@ -32,6 +32,7 @@ class PlannedWeek {
 
     for (int i=0; i < distribution.bins.length; i++) {
       distribution.bins[i] /= sumDuration;
+      distribution.bins[i] *= 100.0;
     }
 
   }

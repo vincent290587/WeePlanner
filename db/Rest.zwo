@@ -1,0 +1,12 @@
+<workout_file>
+    <author>Vincent Golle</author>
+    <name>Rest</name>
+    <description></description>
+    <sportType>bike</sportType>
+    <tags>
+    </tags>
+    <workout>
+        <SteadyState Duration="10" Power="0.5"/>
+    </workout>
+</workout_file>
+                        

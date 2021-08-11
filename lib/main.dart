@@ -158,7 +158,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             Expanded(
-              child: getGraph(week.workouts),
+              child: getGraph(week.distribution),
             ),
           ],
         ),
@@ -229,9 +229,14 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Container(
               // width: 600.0,
               // height: 800.0,
+              margin: const EdgeInsets.all(5.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  Container(
+                    height: 120,
+                    child: getGraph(settings.distribution),
+                  ),
                   RadioListTile<DistributionType>(
                     title: const Text('Rest'),
                     value: DistributionType.Rest,

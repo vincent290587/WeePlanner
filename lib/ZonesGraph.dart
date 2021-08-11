@@ -34,20 +34,12 @@ Color getZoneColor(double val, int pos) {
   return Colors.grey;
 }
 
-Widget getGraph(List<Workout> workouts) {
+Widget getGraph(Distribution distribution) {
 
-  double sumDuration = 0;
   double maxValue = 0;
   dynamic spots ;
-  Distribution distribution = Distribution.empty();
-
-  for (var workout in workouts) {
-    distribution.cumulate(workout.distribution);
-    sumDuration += workout.duration;
-  }
 
   for (int i=0; i < distribution.bins.length; i++) {
-    distribution.bins[i] /= sumDuration;
 
     if (maxValue < distribution.bins[i]) {
       maxValue = distribution.bins[i];
@@ -84,7 +76,7 @@ Widget getGraph(List<Workout> workouts) {
       // Y axis is hidden now
       isVisible: false,
       minimum: 0.0,
-      maximum: maxValue,
+      maximum: 40.0,
     ),
   );
 }

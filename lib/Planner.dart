@@ -4,6 +4,7 @@ import 'dart:math';
 import 'dart:ui';
 
 import 'package:darwin/darwin.dart';
+import 'package:flutter/cupertino.dart';
 
 import 'Workout.dart';
 
@@ -75,14 +76,14 @@ Future<List<Workout>> plan(List<Workout> wDB, PlannerSettings settings) async {
   algo.generations.last.members
       .forEach((Phenotype ph) {
 
-    print('Score: ${ph.result!.evaluate()}');
-    print('${ph.genesAsString}');
+    debugPrint('Score: ${ph.result!.evaluate()}');
+    debugPrint('${ph.genesAsString}');
   });
 
   var phenotypes = algo.generations.last.members;
   phenotypes.sort((Phenotype p1, Phenotype p2) => p1.result!.evaluate()!.compareTo(p2.result!.evaluate()!));
 
-  print('Best score: ${phenotypes.first.result!.evaluate()}');
+  debugPrint('Best score: ${phenotypes.first.result!.evaluate()}');
 
   return phenotypes.first.genes;
 }
