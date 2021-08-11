@@ -154,22 +154,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   //     style: TextStyle(fontSize: 10)),
                   // Text('Z1 :  ${(week.distribution.bins[0]*100).toInt()}%',
                   //     style: TextStyle(fontSize: 10)),
-                  Container(
-                      height: 90,
-                      child: getGraph(week.workouts)
-                  ),
                 ],
               ),
             ),
-            // Expanded(
-            //     child: Container(
-            //       padding: const EdgeInsets.all(20.0),
-            //       child: FittedBox(
-            //           fit: BoxFit.fitWidth,
-            //           child: Text('Filler')
-            //       ),
-            //     )
-            // ),
+            Expanded(
+              child: getGraph(week.workouts),
+            ),
           ],
         ),
       ));

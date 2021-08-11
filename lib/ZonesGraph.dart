@@ -37,6 +37,7 @@ Color getZoneColor(double val, int pos) {
 Widget getGraph(List<Workout> workouts) {
 
   double sumDuration = 0;
+  double maxValue = 0;
   dynamic spots ;
   Distribution distribution = Distribution.empty();
 
@@ -47,6 +48,10 @@ Widget getGraph(List<Workout> workouts) {
 
   for (int i=0; i < distribution.bins.length; i++) {
     distribution.bins[i] /= sumDuration;
+
+    if (maxValue < distribution.bins[i]) {
+      maxValue = distribution.bins[i];
+    }
   }
 
   try {
@@ -69,18 +74,17 @@ Widget getGraph(List<Workout> workouts) {
     );
   }
 
-  return FittedBox(
-    fit: BoxFit.fitHeight,
-    child: SfCartesianChart(
-      series: spots,
-      primaryXAxis: CategoryAxis(
-        // X axis is hidden now
-        isVisible: false
-      ),
-      primaryYAxis: NumericAxis(
-        // X axis is hidden now
-        isVisible: false
-      ),
+  return SfCartesianChart(
+    series: spots,
+    primaryXAxis: CategoryAxis(
+      // X axis is hidden now
+      isVisible: false
+    ),
+    primaryYAxis: NumericAxis(
+      // Y axis is hidden now
+      isVisible: false,
+      minimum: 0.0,
+      maximum: maxValue,
     ),
   );
 }
