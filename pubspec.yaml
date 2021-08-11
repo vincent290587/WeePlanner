@@ -32,6 +32,7 @@ dependencies:
   provider: ^5.0.0
   xml: ^5.1.2
   darwin: ^0.5.1
+  http: ^0.13.3
 
 dev_dependencies:
   flutter_test:
