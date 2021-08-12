@@ -2,9 +2,15 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 const String auth_key = 'test_auth_key';
+import 'Workout.dart';
+import 'WorkoutDB.dart';
+
+const String athleteID = 'i30899';
 
 // GET /api/v1/athlete/{id}/folders List all folders and workouts
 // POST /api/v1/athlete/{id}/folders Create a folder
@@ -20,48 +26,12 @@ const String auth_key = 'test_auth_key';
 // POST /api/v1/download-workout{ext} Download a workout in .zwo .mrc or .erg format
 
 
-Future<http.Response> postAlbum(Album album) async {
-
-  return http.post(
-    Uri.parse('https://intervals.icu/api/v1/athlete/i30899/calendars'),
-    headers: <String, String>{
-      'Content-Type': 'application/json; charset=UTF-8',
-    },
-    body: album.toJson(),
-  );
-
-  // if (response.statusCode == 201) {
-  //   // If the server did return a 201 CREATED response,
-  //   // then parse the JSON.
-  //   return Album.fromJson(jsonDecode(response.body));
-  // } else {
-  //   // If the server did not return a 201 CREATED response,
-  //   // then throw an exception.
-  //   throw Exception('Failed to create album.');
-  // }
-}
-
-
-Future<Album> fetchAlbum() async {
-
-  final response = await http.post(
-    Uri.parse('https://intervals.icu/api/v1/athlete/i30899/calendars'),
-    // Send authorization headers to the backend.
-    headers: {
-      HttpHeaders.authorizationHeader: 'Basic ${auth_key}',
-    },
-  );
-  final responseJson = jsonDecode(response.body);
-
-  return Album.fromJson(responseJson);
-}
-
 // {
 //   "category": "WORKOUT",
-//   "start_date_local": "2021-04-29T00:00:00",
+//   "start_date_local": "2021-08-15T00:00:00",
 //   "type": "Ride",
 //   "filename": "4x8m.zwo",
-//   "file_contents": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<workout_file>..."
+//   "file_contents": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><workout_file><author></author><name>test</name><description></description><sportType>bike</sportType><tags></tags><workout><Warmup Duration=\"600\" PowerLow=\"0.25\" PowerHigh=\"0.75\"/><Ramp Duration=\"600\" PowerLow=\"0.75\" PowerHigh=\"0.25\"/><FreeRide Duration=\"600\" FlatRoad=\"1\"/></workout></workout_file>"
 // }
 
 // reponse:
@@ -87,30 +57,62 @@ Future<Album> fetchAlbum() async {
 //   "icu_intensity": 86.04798
 // }
 
-class Album {
-  final int userId;
-  final int id;
-  final String title;
+Map<String, String> workoutToIcuJson(Workout workout, String date) {
 
-  Album({
-    required this.userId,
-    required this.id,
-    required this.title,
-  });
-
-  factory Album.fromJson(Map<String, dynamic> json) {
-    return Album(
-      userId: json['userId'],
-      id: json['id'],
-      title: json['title'],
-    );
+  String content = '';
+  if (!workout.rawContent.startsWith('<?xml')) {
+    content = '<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n';
   }
+  content += workout.rawContent;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'userId': userId,
-      'id': id,
-      'title': title,
-    };
+  return {
+    'category': 'WORKOUT',
+    'start_date_local': date,
+    'type': 'Ride',
+    'filename': workout.rawWorkout.name + '.zwo',
+    'file_contents': content,
+  };
+}
+
+Future<void> postSingleCalendar(Workout workout, String date) async {
+
+  final response = await http.post(
+    Uri.parse('https://intervals.icu/api/v1/athlete/${athleteID}/events'),
+    // Send authorization headers to the backend.
+    headers: {
+      HttpHeaders.contentTypeHeader: "application/json",
+      HttpHeaders.authorizationHeader: 'Basic ${auth_key}',
+    },
+    body: json.encode(workoutToIcuJson(workout, date)),
+  );
+
+  debugPrint('Response code: ${response.statusCode}');
+  if (response.statusCode != 200) {
+    // If the server did not return a 201 CREATED response,
+    // then throw an exception.
+    print('Failed to create calendar entry.');
+    print(workoutToIcuJson(workout, date).toString());
+  }
+}
+
+Future<void> postWeekCalendar(BuildContext context, PlannedWeek week) async {
+
+  Future<DateTime?> selectedDate = showDatePicker(
+    context: context,
+    initialDate: DateTime.now(),
+    firstDate: DateTime(2018),
+    lastDate: DateTime(2030),
+  );
+
+  DateTime? time = await selectedDate;
+
+  if (time == null) return;
+
+  for (var workout in week.workouts) {
+    String date = time!.toIso8601String();
+    print('Date upload: ${date}');
+    //print(workoutToIcuJson(workout, date).toString());
+    await postSingleCalendar(workout, date); //
+    time = time.add(Duration(days: 1));
   }
 }
