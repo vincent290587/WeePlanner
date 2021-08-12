@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:io';
 
 import 'package:auto_size_text/auto_size_text.dart';
@@ -8,6 +9,7 @@ import 'Connector.dart';
 import 'Planner.dart';
 import 'Workout.dart';
 import 'WorkoutDB.dart';
+import 'WorkoutGraph.dart';
 import 'ZonesGraph.dart';
 
 void main() {
@@ -69,6 +71,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   PlannedWeek week = PlannedWeek.empty();
 
+  StreamController<Workout> potentialWorkout = new StreamController<Workout>.broadcast();
+
   Widget getCard(Widget? icon, String text, String value) {
     return Card(
       child: Column(
@@ -116,6 +120,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   Text('TSS:  ${item.TSS}'),
                 ],
               ),
+              onTap: () {
+                potentialWorkout.add(item);
+              },
             ),
             // Expanded(
             //     child: Container(
@@ -361,7 +368,17 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   Flexible(
                     flex: 2,
-                    child: Placeholder(),
+                    child: StreamBuilder<Workout>(
+                      stream: potentialWorkout.stream,
+                      //initialData: workouts,
+                      builder: (c, snapshot) {
+                        if (snapshot.hasData) {
+                          Workout workout = snapshot.data!;
+                          return getWorkoutGraph(workout);
+                        }
+                        return Placeholder();
+                      }
+                    ),
                   ),
                 ],
               ),
