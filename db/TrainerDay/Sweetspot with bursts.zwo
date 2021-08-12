@@ -1,0 +1,25 @@
+<workout_file>
+	<author>TrainerDay.com</author>
+	<name>Sweetspot with bursts - TrainerDay.com</name>
+	<description>2x20 min sweetspot intervals with 10 second bursts</description>
+	<sportType>bike</sportType>
+	<tags></tags>
+	<workout>
+		<SteadyState Duration="240" Power="0.45"/>
+		<SteadyState Duration="120" Power="0.6"/>
+		<SteadyState Duration="120" Power="0.75"/>
+		<SteadyState Duration="60" Power="0.85"/>
+		<SteadyState Duration="60" Power="1"/>
+		<SteadyState Duration="300" Power="0.6"/>
+		<SteadyState Duration="110" Power="0.9"/>
+		<IntervalsT Repeat="9" OnDuration="10" OnPower="1.2" OffDuration="60" OffPower="0.9"/>
+		<SteadyState Duration="10" Power="1.2"/>
+		<SteadyState Duration="360" Power="0.6"/>
+		<SteadyState Duration="60" Power="0.9"/>
+		<IntervalsT Repeat="9" OnDuration="10" OnPower="1.2" OffDuration="60" OffPower="0.9"/>
+		<SteadyState Duration="10" Power="1.2"/>
+		<SteadyState Duration="120" Power="0.6"/>
+		<SteadyState Duration="300" Power="1"/>
+		<SteadyState Duration="300" Power="0.5"/>
+	</workout>
+</workout_file>

@@ -1,0 +1,42 @@
+<workout_file>
+	<author>TrainerDay.com</author>
+	<name>Home work - TrainerDay.com</name>
+	<description></description>
+	<sportType>bike</sportType>
+	<tags></tags>
+	<workout>
+		<SteadyState Duration="210" Power="0.5"/>
+		<SteadyState Duration="60" Power="0.65"/>
+		<SteadyState Duration="60" Power="0.75"/>
+		<SteadyState Duration="60" Power="0.85"/>
+		<SteadyState Duration="60" Power="0.95"/>
+		<SteadyState Duration="30" Power="1"/>
+		<SteadyState Duration="60" Power="0.5"/>
+		<SteadyState Duration="30" Power="1.2"/>
+		<SteadyState Duration="60" Power="0.45"/>
+		<SteadyState Duration="15" Power="1.9"/>
+		<SteadyState Duration="105" Power="0.45"/>
+		<SteadyState Duration="20" Power="0.5"/>
+		<IntervalsT Repeat="5" OnDuration="40" OnPower="1.2" OffDuration="20" OffPower="0.4"/>
+		<SteadyState Duration="40" Power="1.25"/>
+		<SteadyState Duration="20" Power="0.4"/>
+		<SteadyState Duration="40" Power="1.2"/>
+		<SteadyState Duration="20" Power="0.4"/>
+		<SteadyState Duration="240" Power="0.95"/>
+		<SteadyState Duration="300" Power="0.4"/>
+		<IntervalsT Repeat="4" OnDuration="40" OnPower="1.2" OffDuration="20" OffPower="0.4"/>
+		<SteadyState Duration="40" Power="1.25"/>
+		<SteadyState Duration="20" Power="0.4"/>
+		<SteadyState Duration="40" Power="1.2"/>
+		<SteadyState Duration="20" Power="0.4"/>
+		<SteadyState Duration="300" Power="0.95"/>
+		<SteadyState Duration="300" Power="0.4"/>
+		<IntervalsT Repeat="3" OnDuration="40" OnPower="1.2" OffDuration="20" OffPower="0.4"/>
+		<SteadyState Duration="40" Power="1.25"/>
+		<SteadyState Duration="20" Power="0.4"/>
+		<SteadyState Duration="40" Power="1.2"/>
+		<SteadyState Duration="20" Power="0.4"/>
+		<SteadyState Duration="360" Power="0.95"/>
+		<SteadyState Duration="180" Power="0.5"/>
+	</workout>
+</workout_file>
