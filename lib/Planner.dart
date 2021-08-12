@@ -42,6 +42,10 @@ class PlannerSettings {
 
 }
 
+void emptyPrint(Object o) {
+
+}
+
 Future<List<Workout>> plan(List<Workout> wDB, PlannerSettings settings) async {
 
   // Create first generation, either by random or by continuing with existing
@@ -64,6 +68,7 @@ Future<List<Workout>> plan(List<Workout> wDB, PlannerSettings settings) async {
     firstGeneration,
     evaluator,
     breeder,
+    printf: emptyPrint,
   );
 
   algo.thresholdResult = SingleObjectiveResult()
@@ -77,7 +82,7 @@ Future<List<Workout>> plan(List<Workout> wDB, PlannerSettings settings) async {
       .forEach((Phenotype ph) {
 
     debugPrint('Score: ${ph.result!.evaluate()}');
-    debugPrint('${ph.genesAsString}');
+    //debugPrint('${ph.genesAsString}');
   });
 
   var phenotypes = algo.generations.last.members;

@@ -153,9 +153,11 @@ class Workout {
   //late WorkoutFocus focus;
   late Distribution distribution;
 
+  final String rawContent;
+
   late RawWorkout rawWorkout;
 
-  Workout({required this.rawWorkout}) {
+  Workout({required this.rawWorkout, required this.rawContent}) {
 
     distribution = Distribution(rawWorkout);
     duration = calculateDuration(rawWorkout);
@@ -177,6 +179,7 @@ class Workout {
         TSS = json['tss'],
         _NP = json['np'],
         IF = json['if'],
+        rawContent = json['content'],
         rawWorkout = RawWorkout.fromJson(json['proto']);
 
   Map<String, dynamic> toJson() {
@@ -185,6 +188,7 @@ class Workout {
       'tss': TSS,
       'np': _NP,
       'if': IF,
+      'content': rawContent,
       'proto': rawWorkout.writeToJson(),
     };
   }

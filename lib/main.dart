@@ -4,6 +4,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'Connector.dart';
 import 'Planner.dart';
 import 'Workout.dart';
 import 'WorkoutDB.dart';
@@ -64,7 +65,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
   DistributionType distributionType = DistributionType.Phase1;
 
-  PlannerSettings settings = PlannerSettings(DistributionType.Rest, workoutsNb: 5, targetScore: 400); // TODO add phase
+  PlannerSettings settings = PlannerSettings(DistributionType.Rest, workoutsNb: 5, targetScore: 400);
+
+  PlannedWeek week = PlannedWeek.empty();
 
   Widget getCard(Widget? icon, String text, String value) {
     return Card(
@@ -76,13 +79,13 @@ class _MyHomePageState extends State<MyHomePage> {
             title: Text(text, style: TextStyle(fontSize: 30)),
           ),
           Expanded(
-              child: Container(
-                padding: const EdgeInsets.all(20.0),
-                child: FittedBox(
-                    fit: BoxFit.fitWidth,
-                    child: Text(value, style: TextStyle(fontSize: 25))
-                ),
-              )
+            child: Container(
+              padding: const EdgeInsets.all(20.0),
+              child: FittedBox(
+                  fit: BoxFit.fitWidth,
+                  child: Text(value, style: TextStyle(fontSize: 25))
+              ),
+            )
           ),
         ],
       ),
@@ -333,34 +336,59 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Container(
               // width: 600.0,
               // height: 800.0,
-              child: StreamBuilder<PlannedWeek>(
-                stream: Provider.of<WorkoutDB>(context, listen: false).getComputation,
-                //initialData: workouts,
-                builder: (c, snapshot) {
-                  if (snapshot.hasData) {
-                    PlannedWeek week = snapshot.data!;
-                    var widgets = [ buildWeek(context, week) ];
-                    return Column(
-                      children: widgets,
-                    );
-                  }
-                  return Column(
-                    children: [
-                      Text('Empty, please load DB and start a computation'),
-                    ],
-                  );
-                }),
+              child: Column(
+                children: [
+                  Flexible(
+                    flex: 1,
+                    child: StreamBuilder<PlannedWeek>(
+                      stream: Provider.of<WorkoutDB>(context, listen: false).getComputation,
+                      //initialData: workouts,
+                      builder: (c, snapshot) {
+                        if (snapshot.hasData) {
+                          week = snapshot.data!;
+                          PlannedWeek week2 = snapshot.data!;
+                          return Column(
+                            children: [buildWeek(context, week2)],
+                          );
+                        }
+                        return Column(
+                          children: [
+                            Text('Empty, please load DB and start a computation'),
+                          ],
+                        );
+                      }
+                    ),
+                  ),
+                  Flexible(
+                    flex: 2,
+                    child: Placeholder(),
+                  ),
+                ],
+              ),
             ),
           ),
         ],
       ),
 
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Provider.of<WorkoutDB>(context, listen: false).startDB(Directory('db'));
-        },
-        tooltip: 'Increment',
-        child: Icon(Icons.refresh),
+      floatingActionButton: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          FloatingActionButton(
+            onPressed: () {
+              postWeekCalendar(context, week);
+            },
+            tooltip: 'Increment',
+            child: Icon(Icons.calendar_today),
+          ),
+          SizedBox(height: 8,),
+          FloatingActionButton(
+            onPressed: () {
+              Provider.of<WorkoutDB>(context, listen: false).startDB(Directory('db'));
+            },
+            tooltip: 'Increment',
+            child: Icon(Icons.refresh),
+          ),
+        ],
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }

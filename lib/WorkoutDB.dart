@@ -19,6 +19,9 @@ class PlannedWeek {
   double sumTSS = 0;
   double sumDuration = 0;
 
+  PlannedWeek.empty() : this.workouts = [] {
+  }
+
   PlannedWeek(this.workouts) {
 
     for (var workout in workouts) {
@@ -80,7 +83,7 @@ class WorkoutDB extends ChangeNotifier {
         RawInterval(duration: 240, powerStart: 0.55, powerEnd: 0.55, cadence: 85),
       ]),
     ];
-    Workout workout = Workout(rawWorkout: RawWorkout(name: 'Workout1',reps: reps));
+    Workout workout = Workout(rawWorkout: RawWorkout(name: 'Workout1',reps: reps), rawContent: '');
 
     List<Workout> ret = [workout, workout, workout, workout, workout];
 
@@ -100,7 +103,8 @@ class WorkoutDB extends ChangeNotifier {
 
         debugPrint('File ' + entity.path);
 
-        XmlDocument document = XmlDocument.parse(entity.readAsStringSync());
+        String fileContent = entity.readAsStringSync();
+        XmlDocument document = XmlDocument.parse(fileContent);
 
         XmlElement root = document.rootElement;
         //debugPrint('Root name ' + root.name.toString());
@@ -133,7 +137,7 @@ class WorkoutDB extends ChangeNotifier {
               reps: intervals,
             );
 
-            workoutDB.add(Workout(rawWorkout: rawWorkout));
+            workoutDB.add(Workout(rawWorkout: rawWorkout, rawContent: fileContent));
           }
         }
       }

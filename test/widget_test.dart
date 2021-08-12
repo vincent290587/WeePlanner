@@ -16,7 +16,7 @@ void main() {
         RawInterval(duration: 3600, powerStart: 1.00, powerEnd: 1.00, cadence: 85),
       ]),
     ];
-    Workout workout = Workout(rawWorkout: RawWorkout(reps: reps));
+    Workout workout = Workout(rawWorkout: RawWorkout(reps: reps), rawContent: '');
     test('Duration', () {
       expect(workout.duration, equals(3600));
     });
@@ -34,7 +34,7 @@ void main() {
         RawInterval(duration: 3600, powerStart: 0.00, powerEnd: 1.00, cadence: 85),
       ]),
     ];
-    Workout workout = Workout(rawWorkout: RawWorkout(reps: reps));
+    Workout workout = Workout(rawWorkout: RawWorkout(reps: reps), rawContent: '');
     test('Duration', () {
       expect(workout.duration, equals(3600));
     });
@@ -49,7 +49,7 @@ void main() {
         RawInterval(duration: 3600, powerStart: 1.00, powerEnd: 0, cadence: 85),
       ]),
     ];
-    Workout workout = Workout(rawWorkout: RawWorkout(reps: reps));
+    Workout workout = Workout(rawWorkout: RawWorkout(reps: reps), rawContent: '');
     test('Duration', () {
       expect(workout.duration, equals(3600));
     });
@@ -69,7 +69,7 @@ void main() {
         RawInterval(duration: 180, powerStart: 0.55, powerEnd: 0.55, cadence: 85),
       ]),
     ];
-    Workout workout = Workout(rawWorkout: RawWorkout(reps: reps));
+    Workout workout = Workout(rawWorkout: RawWorkout(reps: reps), rawContent: '');
     test('Duration', () {
       expect(workout.duration, equals(1620));
     });
@@ -92,7 +92,7 @@ void main() {
         RawInterval(duration: 240, powerStart: 0.55, powerEnd: 0.55, cadence: 85),
       ]),
     ];
-    Workout workout = Workout(rawWorkout: RawWorkout(reps: reps));
+    Workout workout = Workout(rawWorkout: RawWorkout(reps: reps), rawContent: '');
     test('Duration', () {
       expect(workout.duration, equals(810));
     });
