@@ -1,0 +1,22 @@
+<workout_file>
+	<author>TrainerDay.com</author>
+	<name>8X4 Min 110%  FTP  92% HRMAX - TrainerDay.com</name>
+	<description>Based on Stephen Seiler’s Protocol for Lactate Threshold 2 Training – Following Polarised model.
+Goal is try to attain 92% HRMax within the Intervals. This may require an increase of the intensity or a decrease to solve the equation.
+The idea is to train for sufficient time at LT2
+</description>
+	<sportType>bike</sportType>
+	<tags></tags>
+	<workout>
+		<SteadyState Duration="80" Power="0.5"/>
+		<SteadyState Duration="78" Power="0.65"/>
+		<Ramp Duration="87" PowerLow="0.65" PowerHigh="0.9"/>
+		<SteadyState Duration="69" Power="1.07"/>
+		<SteadyState Duration="78" Power="0.65"/>
+		<SteadyState Duration="87" Power="0.9"/>
+		<SteadyState Duration="240" Power="0.4"/>
+		<IntervalsT Repeat="7" OnDuration="240" OnPower="1.1" OffDuration="120" OffPower="0.4"/>
+		<SteadyState Duration="240" Power="1.1"/>
+		<Ramp Duration="120" PowerLow="0.65" PowerHigh="0.4"/>
+	</workout>
+</workout_file>

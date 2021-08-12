@@ -1,0 +1,63 @@
+<workout_file>
+	<author>TrainerDay.com</author>
+	<name>There is no try - TrainerDay.com</name>
+	<description>Suffer fest
+</description>
+	<sportType>bike</sportType>
+	<tags></tags>
+	<workout>
+		<SteadyState Duration="281" Power="0.5"/>
+		<SteadyState Duration="117" Power="0.6"/>
+		<SteadyState Duration="60" Power="0.8"/>
+		<SteadyState Duration="31" Power="1"/>
+		<SteadyState Duration="23" Power="0.8"/>
+		<SteadyState Duration="40" Power="1"/>
+		<SteadyState Duration="51" Power="0.85"/>
+		<SteadyState Duration="15" Power="1"/>
+		<SteadyState Duration="15" Power="1.05"/>
+		<SteadyState Duration="15" Power="1.1"/>
+		<SteadyState Duration="15" Power="1.4"/>
+		<SteadyState Duration="77" Power="0.5"/>
+		<SteadyState Duration="30" Power="1"/>
+		<SteadyState Duration="30" Power="1.05"/>
+		<SteadyState Duration="30" Power="1.1"/>
+		<SteadyState Duration="32" Power="1.4"/>
+		<SteadyState Duration="81" Power="0.5"/>
+		<SteadyState Duration="45" Power="0.97"/>
+		<SteadyState Duration="45" Power="1.02"/>
+		<SteadyState Duration="45" Power="1.07"/>
+		<SteadyState Duration="27" Power="1.12"/>
+		<SteadyState Duration="15" Power="1.4"/>
+		<SteadyState Duration="77" Power="0.5"/>
+		<SteadyState Duration="60" Power="0.97"/>
+		<SteadyState Duration="60" Power="1.02"/>
+		<SteadyState Duration="60" Power="1.07"/>
+		<SteadyState Duration="61" Power="1.12"/>
+		<SteadyState Duration="109" Power="0.5"/>
+		<SteadyState Duration="120" Power="0.95"/>
+		<SteadyState Duration="120" Power="1"/>
+		<SteadyState Duration="120" Power="1.05"/>
+		<SteadyState Duration="120" Power="1.1"/>
+		<SteadyState Duration="137" Power="0.5"/>
+		<SteadyState Duration="60" Power="0.97"/>
+		<SteadyState Duration="60" Power="1.02"/>
+		<SteadyState Duration="60" Power="1.07"/>
+		<SteadyState Duration="60" Power="1.12"/>
+		<SteadyState Duration="111" Power="0.5"/>
+		<SteadyState Duration="45" Power="0.97"/>
+		<SteadyState Duration="45" Power="1.02"/>
+		<SteadyState Duration="45" Power="1.07"/>
+		<SteadyState Duration="45" Power="1.12"/>
+		<SteadyState Duration="85" Power="0.5"/>
+		<SteadyState Duration="30" Power="1"/>
+		<SteadyState Duration="30" Power="1.05"/>
+		<SteadyState Duration="30" Power="1.1"/>
+		<SteadyState Duration="32" Power="1.15"/>
+		<SteadyState Duration="77" Power="0.5"/>
+		<SteadyState Duration="14" Power="1"/>
+		<SteadyState Duration="15" Power="1.05"/>
+		<SteadyState Duration="14" Power="1.1"/>
+		<SteadyState Duration="20" Power="1.4"/>
+		<SteadyState Duration="342" Power="0.5"/>
+	</workout>
+</workout_file>

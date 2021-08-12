@@ -1,0 +1,18 @@
+<workout_file>
+	<author>TrainerDay.com</author>
+	<name>4020s 120% x3 - TrainerDay.com</name>
+	<description>3 sets of 40/20s @ 120% FTP</description>
+	<sportType>bike</sportType>
+	<tags></tags>
+	<workout>
+		<Ramp Duration="300" PowerLow="0.5" PowerHigh="0.75"/>
+		<SteadyState Duration="180" Power="0.65"/>
+		<IntervalsT Repeat="10" OnDuration="40" OnPower="1.2" OffDuration="20" OffPower="0.65"/>
+		<SteadyState Duration="180" Power="0.65"/>
+		<IntervalsT Repeat="10" OnDuration="40" OnPower="1.2" OffDuration="20" OffPower="0.65"/>
+		<SteadyState Duration="180" Power="0.65"/>
+		<IntervalsT Repeat="10" OnDuration="40" OnPower="1.2" OffDuration="20" OffPower="0.65"/>
+		<SteadyState Duration="180" Power="0.65"/>
+		<Ramp Duration="300" PowerLow="0.75" PowerHigh="0.5"/>
+	</workout>
+</workout_file>

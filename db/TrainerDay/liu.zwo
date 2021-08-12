@@ -1,0 +1,28 @@
+<workout_file>
+	<author>TrainerDay.com</author>
+	<name>liu - TrainerDay.com</name>
+	<description>95，8min+110%1min*3
+</description>
+	<sportType>bike</sportType>
+	<tags></tags>
+	<workout>
+		<SteadyState Duration="120" Power="0.45"/>
+		<SteadyState Duration="120" Power="0.5"/>
+		<SteadyState Duration="120" Power="0.55"/>
+		<SteadyState Duration="120" Power="0.6"/>
+		<SteadyState Duration="120" Power="0.65"/>
+		<SteadyState Duration="120" Power="0.7"/>
+		<SteadyState Duration="120" Power="0.75"/>
+		<SteadyState Duration="120" Power="0.55"/>
+		<SteadyState Duration="480" Power="0.95"/>
+		<SteadyState Duration="60" Power="1.1"/>
+		<SteadyState Duration="300" Power="0.55"/>
+		<SteadyState Duration="480" Power="0.95"/>
+		<SteadyState Duration="60" Power="1.1"/>
+		<SteadyState Duration="300" Power="0.55"/>
+		<SteadyState Duration="480" Power="0.95"/>
+		<SteadyState Duration="60" Power="1.1"/>
+		<SteadyState Duration="150" Power="0.55"/>
+		<SteadyState Duration="150" Power="0.5"/>
+	</workout>
+</workout_file>

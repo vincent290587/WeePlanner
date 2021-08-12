@@ -1,0 +1,21 @@
+<workout_file>
+	<author>TrainerDay.com</author>
+	<name>HIIT Anaerobic for Garmin - TrainerDay.com</name>
+	<description>45 second high power intervals with 1 minute recovery should deplete your W’
+This is a hard session and you’ll need to be well recovered, before and after.
+This workout will hit the Anaerobic capacity category for Garmin’s Primary benefit section of training effect. Not only, that, your aerobic system gets a good workout too.
+If you want sprint work check out my HIIT anaerobic ski preparation workout.
+</description>
+	<sportType>bike</sportType>
+	<tags></tags>
+	<workout>
+		<Warmup Duration="300" PowerLow="0.57" PowerHigh="0.75"/>
+		<SteadyState Duration="300" Power="0.81"/>
+		<IntervalsT Repeat="8" OnDuration="45" OnPower="1.61" OffDuration="60" OffPower="0.5"/>
+		<SteadyState Duration="300" Power="0.81"/>
+		<IntervalsT Repeat="4" OnDuration="60" OnPower="0.75" OffDuration="45" OffPower="0.5"/>
+		<IntervalsT Repeat="8" OnDuration="45" OnPower="1.61" OffDuration="60" OffPower="0.5"/>
+		<IntervalsT Repeat="2" OnDuration="60" OnPower="0.75" OffDuration="45" OffPower="0.5"/>
+		<SteadyState Duration="180" Power="0.81"/>
+	</workout>
+</workout_file>

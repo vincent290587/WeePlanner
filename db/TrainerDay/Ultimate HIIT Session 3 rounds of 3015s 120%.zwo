@@ -1,0 +1,21 @@
+<workout_file>
+	<author>TrainerDay.com</author>
+	<name>Ultimate HIIT Session 3 rounds of 3015s 120% - TrainerDay.com</name>
+	<description>3 sets of 10 repeats of:
+ – 30s at 120%
+ – 15s at 40%
+Brief 3 minute spins between sets.
+</description>
+	<sportType>bike</sportType>
+	<tags></tags>
+	<workout>
+		<Ramp Duration="900" PowerLow="0.4" PowerHigh="0.65"/>
+		<SteadyState Duration="300" Power="0.6"/>
+		<IntervalsT Repeat="10" OnDuration="30" OnPower="1.2" OffDuration="15" OffPower="0.4"/>
+		<SteadyState Duration="180" Power="0.4"/>
+		<IntervalsT Repeat="10" OnDuration="30" OnPower="1.2" OffDuration="15" OffPower="0.4"/>
+		<SteadyState Duration="180" Power="0.4"/>
+		<IntervalsT Repeat="10" OnDuration="30" OnPower="1.2" OffDuration="15" OffPower="0.4"/>
+		<SteadyState Duration="690" Power="0.4"/>
+	</workout>
+</workout_file>

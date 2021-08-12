@@ -1,0 +1,76 @@
+<workout_file>
+	<author>TrainerDay.com</author>
+	<name>Turbo V02 Conditioner - TrainerDay.com</name>
+	<description>12 minutes increase power progressively to 120w/2 mins easy spin.
+
+Then do 4 x sets like this...
+
+1 min @MAX EFFORT/50 secs easy spin
+1 min @MAX EFFORT/40 secs easy spin
+1 min @MAX EFFORT/30 secs easy spin
+1 min @MAX EFFORT/20 secs easy spin
+1 min @MAX EFFORT/10 secs easy spin
+1 min @MAX EFFORT
+*make sure you go SUPER hard in the max efforts each time
+
+3 mins easy spin between sets</description>
+	<sportType>bike</sportType>
+	<tags></tags>
+	<workout>
+		<SteadyState Duration="120" Power="0.4"/>
+		<SteadyState Duration="120" Power="0.5"/>
+		<SteadyState Duration="120" Power="0.6"/>
+		<SteadyState Duration="120" Power="0.7"/>
+		<SteadyState Duration="120" Power="0.8"/>
+		<SteadyState Duration="120" Power="0.9"/>
+		<SteadyState Duration="120" Power="0.4"/>
+		<SteadyState Duration="60" Power="1.14"/>
+		<SteadyState Duration="50" Power="0.4"/>
+		<SteadyState Duration="60" Power="1.14"/>
+		<SteadyState Duration="40" Power="0.4"/>
+		<SteadyState Duration="60" Power="1.14"/>
+		<SteadyState Duration="30" Power="0.4"/>
+		<SteadyState Duration="60" Power="1.14"/>
+		<SteadyState Duration="20" Power="0.4"/>
+		<SteadyState Duration="60" Power="1.14"/>
+		<SteadyState Duration="10" Power="0.4"/>
+		<SteadyState Duration="60" Power="1.14"/>
+		<SteadyState Duration="180" Power="0.4"/>
+		<SteadyState Duration="60" Power="1.14"/>
+		<SteadyState Duration="50" Power="0.4"/>
+		<SteadyState Duration="60" Power="1.14"/>
+		<SteadyState Duration="40" Power="0.4"/>
+		<SteadyState Duration="60" Power="1.14"/>
+		<SteadyState Duration="30" Power="0.4"/>
+		<SteadyState Duration="60" Power="1.14"/>
+		<SteadyState Duration="20" Power="0.4"/>
+		<SteadyState Duration="60" Power="1.14"/>
+		<SteadyState Duration="10" Power="0.4"/>
+		<SteadyState Duration="60" Power="1.14"/>
+		<SteadyState Duration="180" Power="0.4"/>
+		<SteadyState Duration="60" Power="1.14"/>
+		<SteadyState Duration="50" Power="0.4"/>
+		<SteadyState Duration="60" Power="1.14"/>
+		<SteadyState Duration="40" Power="0.4"/>
+		<SteadyState Duration="60" Power="1.14"/>
+		<SteadyState Duration="30" Power="0.4"/>
+		<SteadyState Duration="60" Power="1.14"/>
+		<SteadyState Duration="20" Power="0.4"/>
+		<SteadyState Duration="60" Power="1.14"/>
+		<SteadyState Duration="10" Power="0.4"/>
+		<SteadyState Duration="60" Power="1.14"/>
+		<SteadyState Duration="180" Power="0.4"/>
+		<SteadyState Duration="60" Power="1.14"/>
+		<SteadyState Duration="50" Power="0.4"/>
+		<SteadyState Duration="60" Power="1.14"/>
+		<SteadyState Duration="40" Power="0.4"/>
+		<SteadyState Duration="60" Power="1.14"/>
+		<SteadyState Duration="30" Power="0.4"/>
+		<SteadyState Duration="60" Power="1.14"/>
+		<SteadyState Duration="20" Power="0.4"/>
+		<SteadyState Duration="60" Power="1.14"/>
+		<SteadyState Duration="10" Power="0.4"/>
+		<SteadyState Duration="60" Power="1.14"/>
+		<SteadyState Duration="180" Power="0.4"/>
+	</workout>
+</workout_file>
