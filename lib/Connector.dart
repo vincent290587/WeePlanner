@@ -6,11 +6,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-const String auth_key = 'test_auth_key';
 import 'Workout.dart';
 import 'WorkoutDB.dart';
-
-const String athleteID = 'i30899';
+import 'keys.dart';
 
 // GET /api/v1/athlete/{id}/folders List all folders and workouts
 // POST /api/v1/athlete/{id}/folders Create a folder
