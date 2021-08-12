@@ -28,7 +28,7 @@ Color getZoneColor(gPoint point, int pos) {
     return Colors.green;
   } else if (val < 1.05) {
     return Colors.yellow;
-  } else if (val < 0.90) {
+  } else if (val < 1.2) {
     return Colors.orange;
   } else {
     return Colors.red;
@@ -67,12 +67,12 @@ Widget getWorkoutGraph(Workout workout) {
   try {
     spots = <ChartSeries>[
       // Initialize line series
-      StepAreaSeries<gPoint, num>(
+      AreaSeries<gPoint, num>(
         dataSource: xPoints,
         pointColorMapper: getZoneColor,
         xValueMapper: (gPoint prm, _) => prm.x,
         yValueMapper: (gPoint prm, _) => prm.y*100.0,
-        //name: paramName,
+        animationDuration: 0,
       ),
     ];
   } catch (e) {

@@ -30,6 +30,9 @@ Color getZoneColor(double val, int pos) {
     case 5:
       return Colors.red;
       break;
+    default:
+      return Colors.red;
+      break;
   }
   return Colors.grey;
 }
