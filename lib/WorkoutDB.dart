@@ -142,5 +142,6 @@ class WorkoutDB extends ChangeNotifier {
         }
       }
     });
+    notifyListeners();
   }
 }

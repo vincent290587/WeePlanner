@@ -97,6 +97,7 @@ Future<void> postWeekCalendar(BuildContext context, PlannedWeek week) async {
 
   Future<DateTime?> selectedDate = showDatePicker(
     context: context,
+    locale: const Locale('en', 'GB'),
     initialDate: DateTime.now(),
     firstDate: DateTime(2018),
     lastDate: DateTime(2030),

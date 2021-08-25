@@ -58,6 +58,23 @@ enum DistributionType {
   Phase3b,
 }
 
+class ThreeZonesDistribution {
+
+  late List<double> bins;
+
+  ThreeZonesDistribution.empty() {
+    bins = [0,0,0];
+  }
+
+  ThreeZonesDistribution(Distribution dist) {
+
+    bins = [0,0,0];
+    bins[0] = dist.bins[0] + dist.bins[1];
+    bins[1] = dist.bins[2] + dist.bins[3];
+    bins[2] = dist.bins[4] + dist.bins[5];
+  }
+}
+
 class Distribution {
 
   static const List<double> _pwLims = [

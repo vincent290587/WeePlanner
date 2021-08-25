@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 
 import 'Connector.dart';
 import 'Planner.dart';
+import 'PolarizedGraph.dart';
 import 'Workout.dart';
 import 'WorkoutDB.dart';
 import 'WorkoutGraph.dart';
@@ -67,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   DistributionType distributionType = DistributionType.Phase1;
 
-  PlannerSettings settings = PlannerSettings(DistributionType.Rest, workoutsNb: 5, targetScore: 400);
+  PlannerSettings settings = PlannerSettings(DistributionType.Phase1, workoutsNb: 5, targetScore: 400);
 
   PlannedWeek week = PlannedWeek.empty();
 
@@ -97,6 +98,8 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Widget buildWeek(BuildContext context, PlannedWeek week) {
+
+    ThreeZonesDistribution threeZones = ThreeZonesDistribution(week.distribution);
 
     List<Widget> cards = week.workouts.map((item) {
       return Card(
@@ -137,7 +140,45 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       );
     }).toList()
-      ..add(Card(
+      ..add(
+        Card(
+          color: Colors.grey.shade200,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              ListTile(
+                leading: null,
+                isThreeLine: false,
+                //title: Text(item.rawWorkout.name, style: TextStyle(fontSize: 20)),
+                subtitle: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('Dur.: ${(week.sumDuration / 3600).toStringAsFixed(1)} hrs',
+                        style: TextStyle(fontSize: 12)),
+                    Text('TSS :  ${week.sumTSS.toStringAsFixed(1)}'),
+                    // Text('Z6 :  ${(week.distribution.bins[5]*100).toInt()}%',
+                    //     style: TextStyle(fontSize: 10)),
+                    // Text('Z5 :  ${(week.distribution.bins[4]*100).toInt()}%',
+                    //     style: TextStyle(fontSize: 10)),
+                    // Text('Z4 :  ${(week.distribution.bins[3]*100).toInt()}%',
+                    //     style: TextStyle(fontSize: 10)),
+                    // Text('Z3 :  ${(week.distribution.bins[2]*100).toInt()}%',
+                    //     style: TextStyle(fontSize: 10)),
+                    // Text('Z2 :  ${(week.distribution.bins[1]*100).toInt()}%',
+                    //     style: TextStyle(fontSize: 10)),
+                    // Text('Z1 :  ${(week.distribution.bins[0]*100).toInt()}%',
+                    //     style: TextStyle(fontSize: 10)),
+                  ],
+                ),
+              ),
+              Expanded(
+                child: getGraph(week.distribution),
+              ),
+            ],
+          ),
+      )
+    )..add(
+      Card(
         color: Colors.grey.shade200,
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -149,9 +190,12 @@ class _MyHomePageState extends State<MyHomePage> {
               subtitle: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Dur.: ${(week.sumDuration / 3600).toStringAsFixed(1)} hrs',
-                      style: TextStyle(fontSize: 12)),
-                  Text('TSS :  ${week.sumTSS.toStringAsFixed(1)}'),
+                  Text('Z1+2: ${threeZones.bins[0].toInt()} %',
+                      style: TextStyle(fontSize: 12),
+                  ),
+                  Text('Z2+3 : ${threeZones.bins[1].toInt()} %',
+                      style: TextStyle(fontSize: 12),
+                  ),
                   // Text('Z6 :  ${(week.distribution.bins[5]*100).toInt()}%',
                   //     style: TextStyle(fontSize: 10)),
                   // Text('Z5 :  ${(week.distribution.bins[4]*100).toInt()}%',
@@ -168,11 +212,12 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             Expanded(
-              child: getGraph(week.distribution),
+              child: getThreeZoneGraph(week.distribution),
             ),
           ],
         ),
-      ));
+      )
+    );
 
     return Expanded(
       child: GridView.count(
@@ -247,17 +292,19 @@ class _MyHomePageState extends State<MyHomePage> {
                     height: 120,
                     child: getGraph(settings.distribution),
                   ),
-                  RadioListTile<DistributionType>(
-                    title: const Text('Rest'),
-                    value: DistributionType.Rest,
-                    groupValue: distributionType,
-                    onChanged: (DistributionType? value) { setState(() {
-                      distributionType = DistributionType.Rest;
-                      settings.setDistribution(value!); });
-                    },
-                  ),
+                  // RadioListTile<DistributionType>(
+                  //   title: const Text('Rest'),
+                  //   dense: true,
+                  //   value: DistributionType.Rest,
+                  //   groupValue: distributionType,
+                  //   onChanged: (DistributionType? value) { setState(() {
+                  //     distributionType = DistributionType.Rest;
+                  //     settings.setDistribution(value!); });
+                  //   },
+                  // ),
                   RadioListTile<DistributionType>(
                     title: const Text('Phase1'),
+                    dense: true,
                     value: DistributionType.Phase1,
                     groupValue: distributionType,
                     onChanged: (DistributionType? value) {
@@ -267,6 +314,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   RadioListTile<DistributionType>(
                     title: const Text('Phase2'),
+                    dense: true,
                     value: DistributionType.Phase2,
                     groupValue: distributionType,
                     onChanged: (DistributionType? value) {
@@ -276,6 +324,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   RadioListTile<DistributionType>(
                     title: const Text('Phase3a'),
+                    dense: true,
                     value: DistributionType.Phase3a,
                     groupValue: distributionType,
                     onChanged: (DistributionType? value) {
@@ -285,6 +334,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   RadioListTile<DistributionType>(
                     title: const Text('Phase3b'),
+                    dense: true,
                     value: DistributionType.Phase3b,
                     groupValue: distributionType,
                     onChanged: (DistributionType? value) {
@@ -358,9 +408,14 @@ class _MyHomePageState extends State<MyHomePage> {
                             children: [buildWeek(context, week2)],
                           );
                         }
+                        String text = 'Empty, please load DB and start a computation';
+                        int nbWorkout = Provider.of<WorkoutDB>(context, listen: true).workoutDB.length;
+                        if (nbWorkout > 0) {
+                          text = 'DB loaded: ${nbWorkout} workouts';
+                        }
                         return Column(
                           children: [
-                            Text('Empty, please load DB and start a computation'),
+                            Text(text),
                           ],
                         );
                       }
