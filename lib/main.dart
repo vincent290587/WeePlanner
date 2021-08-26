@@ -196,6 +196,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   Text('Z2+3 : ${threeZones.bins[1].toInt()} %',
                       style: TextStyle(fontSize: 12),
                   ),
+                  Text('Z4+  : ${threeZones.bins[2].toInt()} %',
+                    style: TextStyle(fontSize: 12),
+                  ),
                   // Text('Z6 :  ${(week.distribution.bins[5]*100).toInt()}%',
                   //     style: TextStyle(fontSize: 10)),
                   // Text('Z5 :  ${(week.distribution.bins[4]*100).toInt()}%',
@@ -449,7 +452,7 @@ class _MyHomePageState extends State<MyHomePage> {
             onPressed: () {
               postWeekCalendar(context, week);
             },
-            tooltip: 'Increment',
+            tooltip: 'Schedule in intervals.icu',
             child: Icon(Icons.calendar_today),
           ),
           SizedBox(height: 8,),
@@ -457,7 +460,7 @@ class _MyHomePageState extends State<MyHomePage> {
             onPressed: () {
               Provider.of<WorkoutDB>(context, listen: false).startDB(Directory('db'));
             },
-            tooltip: 'Increment',
+            tooltip: 'Load workout DB',
             child: Icon(Icons.refresh),
           ),
         ],
