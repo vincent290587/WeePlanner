@@ -4,6 +4,7 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:xml/xml.dart';
 
 import 'Planner.dart';
@@ -94,10 +95,11 @@ class WorkoutDB extends ChangeNotifier {
 
     workoutDB.clear();
 
-    //Directory dir = Directory('db');
-    //print('Listing ' + dir.path);
+    final directory = await getApplicationDocumentsDirectory();
+    var endDir = await Directory('${directory.path}/WeePlanner').create(recursive: false);
+
     // execute an action on each entry
-    dir.list(recursive: true).forEach((entity) {
+    endDir.list(recursive: true).forEach((entity) {
       if (entity is File &&
         entity.path.endsWith('.zwo')) {
 
