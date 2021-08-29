@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'Connector.dart';
+import 'ConnectorGetter.dart';
 import 'Planner.dart';
 import 'PolarizedGraph.dart';
 import 'Workout.dart';
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'WeePlanner',
       debugShowCheckedModeBanner: false, // do not display the debug banner
       theme: ThemeData(
         // This is the theme of your application.
@@ -448,6 +449,15 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
+          FloatingActionButton(
+            onPressed: () {
+              getDailyEvent();
+              getWorkoutList();
+            },
+            tooltip: 'Download all workouts',
+            child: Icon(Icons.arrow_circle_down),
+          ),
+          SizedBox(height: 8,),
           FloatingActionButton(
             onPressed: () {
               postWeekCalendar(context, week);
