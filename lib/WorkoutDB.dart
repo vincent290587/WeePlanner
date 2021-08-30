@@ -2,6 +2,7 @@
 
 import 'dart:async';
 import 'dart:io';
+import 'dart:typed_data';
 
 import 'package:flutter/cupertino.dart';
 import 'package:path_provider/path_provider.dart';
@@ -89,6 +90,31 @@ class WorkoutDB extends ChangeNotifier {
     List<Workout> ret = [workout, workout, workout, workout, workout];
 
     return ret;
+  }
+
+  Future<void> prepareSummary() async {
+
+
+    final directory = await getApplicationDocumentsDirectory();
+    var endDir = await Directory('${directory.path}/WeeGetter').create(recursive: true);
+
+    File myFile = File('${endDir.path}/Summary.csv');
+
+    String title = 'Name;Z2;Z3;Z4;Z5;Z6\n';
+    await myFile.writeAsString(
+      title,
+      mode: FileMode.write,
+    );
+
+    for (Workout workout in workoutDB) {
+
+      String line = workout.rawWorkout.name + ';' + workout.distribution.toCSV() + '\n';
+      await myFile.writeAsString(
+        line,
+        mode: FileMode.append,
+      );
+    }
+
   }
 
   Future<void> startDB(Directory dir) async {

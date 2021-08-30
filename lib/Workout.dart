@@ -159,6 +159,11 @@ class Distribution {
     }
     return ret;
   }
+
+  String toCSV() {
+    String ret = '${bins[1]};${bins[2]};${bins[3]};${bins[4]};${bins[5]}';
+    return ret;
+  }
 }
 
 class Workout {

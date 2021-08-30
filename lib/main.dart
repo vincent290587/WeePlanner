@@ -194,10 +194,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   Text('Z1+2: ${threeZones.bins[0].toInt()} %',
                       style: TextStyle(fontSize: 12),
                   ),
-                  Text('Z2+3 : ${threeZones.bins[1].toInt()} %',
+                  Text('Z3+4 : ${threeZones.bins[1].toInt()} %',
                       style: TextStyle(fontSize: 12),
                   ),
-                  Text('Z4+  : ${threeZones.bins[2].toInt()} %',
+                  Text('Z5+  : ${threeZones.bins[2].toInt()} %',
                     style: TextStyle(fontSize: 12),
                   ),
                   // Text('Z6 :  ${(week.distribution.bins[5]*100).toInt()}%',
@@ -451,6 +451,7 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           FloatingActionButton(
             onPressed: () {
+              Provider.of<WorkoutDB>(context, listen: false).prepareSummary();
               getDailyEvent();
               getWorkoutList();
             },
