@@ -1,0 +1,49 @@
+<workout_file>
+	<author>TrainerDay.com</author>
+	<name>DownwardSpriralFR - TrainerDay.com</name>
+	<description>Downward Spiral &#8211; start app and video at same time
+</description>
+	<sportType>bike</sportType>
+	<tags></tags>
+	<workout>
+		<SteadyState Duration="170" Power="0.5"/>
+		<SteadyState Duration="62" Power="0.62"/>
+		<SteadyState Duration="93" Power="0.73"/>
+		<SteadyState Duration="102" Power="0.84"/>
+		<SteadyState Duration="56" Power="1.02"/>
+		<SteadyState Duration="60" Power="0.5"/>
+		<SteadyState Duration="45" Power="1.07"/>
+		<SteadyState Duration="60" Power="0.5"/>
+		<SteadyState Duration="120" Power="1.18"/>
+		<SteadyState Duration="120" Power="0.5"/>
+		<SteadyState Duration="105" Power="1.18"/>
+		<SteadyState Duration="104" Power="0.5"/>
+		<SteadyState Duration="91" Power="1.18"/>
+		<SteadyState Duration="90" Power="0.5"/>
+		<SteadyState Duration="75" Power="1.18"/>
+		<SteadyState Duration="75" Power="0.5"/>
+		<SteadyState Duration="60" Power="1.24"/>
+		<SteadyState Duration="60" Power="0.5"/>
+		<SteadyState Duration="45" Power="1.24"/>
+		<SteadyState Duration="45" Power="0.5"/>
+		<SteadyState Duration="30" Power="1.3"/>
+		<SteadyState Duration="30" Power="0.5"/>
+		<SteadyState Duration="15" Power="1.3"/>
+		<SteadyState Duration="240" Power="0.5"/>
+		<SteadyState Duration="120" Power="1.18"/>
+		<SteadyState Duration="120" Power="0.5"/>
+		<SteadyState Duration="105" Power="1.18"/>
+		<SteadyState Duration="105" Power="0.5"/>
+		<SteadyState Duration="90" Power="1.18"/>
+		<SteadyState Duration="90" Power="0.5"/>
+		<SteadyState Duration="75" Power="1.18"/>
+		<SteadyState Duration="75" Power="0.5"/>
+		<SteadyState Duration="60" Power="1.24"/>
+		<SteadyState Duration="60" Power="0.5"/>
+		<SteadyState Duration="46" Power="1.24"/>
+		<SteadyState Duration="44" Power="0.5"/>
+		<IntervalsT Repeat="3" OnDuration="30" OnPower="1.3" OffDuration="30" OffPower="0.5"/>
+		<SteadyState Duration="15" Power="1.3"/>
+		<SteadyState Duration="240" Power="0.5"/>
+	</workout>
+</workout_file>

@@ -1,0 +1,18 @@
+<workout_file>
+	<author>TrainerDay.com</author>
+	<name>60Minute VO2Max  Classics HIIT - TrainerDay.com</name>
+	<description></description>
+	<sportType>bike</sportType>
+	<tags></tags>
+	<workout>
+		<Ramp Duration="720" PowerLow="0.4" PowerHigh="0.65"/>
+		<SteadyState Duration="180" Power="0.6"/>
+		<IntervalsT Repeat="5" OnDuration="30" OnPower="1" OffDuration="15" OffPower="0.4"/>
+		<IntervalsT Repeat="5" OnDuration="30" OnPower="1.28" OffDuration="15" OffPower="0.4"/>
+		<SteadyState Duration="180" Power="0.4"/>
+		<IntervalsT Repeat="10" OnDuration="60" OnPower="1.15" OffDuration="15" OffPower="0.4"/>
+		<SteadyState Duration="180" Power="0.4"/>
+		<IntervalsT Repeat="10" OnDuration="60" OnPower="1.15" OffDuration="15" OffPower="0.4"/>
+		<SteadyState Duration="390" Power="0.4"/>
+	</workout>
+</workout_file>

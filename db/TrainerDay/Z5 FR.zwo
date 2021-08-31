@@ -1,0 +1,17 @@
+<workout_file>
+	<author>TrainerDay.com</author>
+	<name>Z5 FR - TrainerDay.com</name>
+	<description>Power zone 5 workout
+</description>
+	<sportType>bike</sportType>
+	<tags></tags>
+	<workout>
+		<SteadyState Duration="450" Power="0.55"/>
+		<SteadyState Duration="450" Power="0.6"/>
+		<IntervalsT Repeat="2" OnDuration="180" OnPower="1.06" OffDuration="180" OffPower="0.55"/>
+		<IntervalsT Repeat="2" OnDuration="180" OnPower="1.1" OffDuration="180" OffPower="0.55"/>
+		<SteadyState Duration="180" Power="1.2"/>
+		<SteadyState Duration="180" Power="0.55"/>
+		<SteadyState Duration="450" Power="0.55"/>
+	</workout>
+</workout_file>
