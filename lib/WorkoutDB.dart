@@ -98,7 +98,7 @@ class WorkoutDB extends ChangeNotifier {
     final directory = await getApplicationDocumentsDirectory();
     var endDir = await Directory('${directory.path}/WeeGetter').create(recursive: true);
 
-    File myFile = File('${endDir.path}/Summary.csv');
+    File myFile = File('${endDir.path}/Summary.txt');
 
     String title = 'Name;Z2;Z3;Z4;Z5;Z6\n';
     await myFile.writeAsString(
