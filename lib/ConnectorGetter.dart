@@ -27,10 +27,12 @@ Future<void> getDailyEvent() async {
 
   DateTime currentTime = DateTime.now();
   String strTime = currentTime.toString().substring(0, 10);
+  String strTime1 = currentTime.subtract(Duration(days:1)).toString().substring(0, 10);
+  String strTime2 = currentTime.add(Duration(days:1)).toString().substring(0, 10);
 
   Map<String, String> qParams = {
-    'oldest': '${strTime}',
-    'newest': '${strTime}',
+    'oldest': '${strTime1}',
+    'newest': '${strTime2}',
   };
   Uri uri = Uri.parse('https://intervals.icu/api/v1/athlete/${athleteID}/events');
   uri = uri.replace(queryParameters: qParams); //USE THIS
