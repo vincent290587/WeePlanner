@@ -1,0 +1,24 @@
+<workout_file>
+	<author>TrainerDay.com</author>
+	<name>95m30s15s95mHybridHIIT - TrainerDay.com</name>
+	<description>StephenSeiler's session.
+Zwift 60min race best workout
+</description>
+	<sportType>bike</sportType>
+	<tags></tags>
+	<workout>
+		<Warmup Duration="180" PowerLow="0.5" PowerHigh="0.7"/>
+		<SteadyState Duration="570" Power="1.1"/>
+		<SteadyState Duration="300" Power="0.7"/>
+		<SteadyState Duration="60" Power="1.4"/>
+		<SteadyState Duration="15" Power="0.5"/>
+		<IntervalsT Repeat="12" OnDuration="30" OnPower="1.2" OffDuration="15" OffPower="0.5"/>
+		<SteadyState Duration="300" Power="0.7"/>
+		<SteadyState Duration="60" Power="1.4"/>
+		<SteadyState Duration="15" Power="0.5"/>
+		<IntervalsT Repeat="12" OnDuration="30" OnPower="1.2" OffDuration="15" OffPower="0.5"/>
+		<SteadyState Duration="300" Power="0.7"/>
+		<SteadyState Duration="570" Power="1.1"/>
+		<Cooldown Duration="150" PowerLow="0.5" PowerHigh="0.2"/>
+	</workout>
+</workout_file>
