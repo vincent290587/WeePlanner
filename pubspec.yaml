@@ -29,12 +29,12 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   protobuf: ^2.0.0
-  provider: ^5.0.0
-  xml: ^5.1.2
+  provider: ^6.0.1
+  xml: ^5.3.0
   darwin: ^0.5.1
   http: ^0.13.3
   syncfusion_flutter_charts: ^19.2.49
-  path_provider: ^2.0.2
+  path_provider: ^2.0.5
 
 dev_dependencies:
   flutter_test:
