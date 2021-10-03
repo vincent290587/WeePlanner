@@ -26,9 +26,9 @@ import 'keys.dart';
 Future<void> getDailyEvent() async {
 
   DateTime currentTime = DateTime.now();
-  String strTime = currentTime.toString().substring(0, 10);
-  String strTime1 = currentTime.subtract(Duration(days:1)).toString().substring(0, 10);
-  String strTime2 = currentTime.add(Duration(days:1)).toString().substring(0, 10);
+  String strTime = currentTime.toIso8601String();
+  String strTime1 = currentTime.subtract(Duration(days:1)).toIso8601String().substring(0, 19);
+  String strTime2 = currentTime.add(Duration(days:2)).toIso8601String().substring(0, 19);
 
   Map<String, String> qParams = {
     'oldest': '${strTime1}',
@@ -63,8 +63,7 @@ Future<void> getDailyEvent() async {
 
       IntervalsCalendar event = IntervalsCalendar.fromJson(item);
       //debugPrint('Body: ${album.toString()}');
-      if (event.startDate.contains(strTime) &&
-          event.category == 'WORKOUT') {
+      if (event.category == 'WORKOUT') {
 
         debugPrint('Match -- ${event.toString()}');
 
