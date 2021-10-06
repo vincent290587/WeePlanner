@@ -46,7 +46,7 @@ Widget getThreeZoneGraph(Distribution distribution) {
         pointColorMapper: getZoneColor,
         xValueMapper: getZoneName,
         yValueMapper: (double prm, _) => prm,
-        borderRadius: BorderRadius.all(Radius.circular(15)), // Sets the corner radius
+        borderRadius: BorderRadius.all(Radius.circular(5)), // Sets the corner radius
         //name: paramName,
       ),
     ];
