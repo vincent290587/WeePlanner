@@ -166,10 +166,10 @@ class WorkoutDB extends ChangeNotifier {
             );
 
             workoutDB.add(Workout(rawWorkout: rawWorkout, rawContent: fileContent));
+            notifyListeners();
           }
         }
       }
     });
-    notifyListeners();
   }
 }
