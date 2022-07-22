@@ -129,7 +129,7 @@ void main() {
     test('Size', () async {
 
       //print(Directory.current);
-      await workoutDB.startDB(dir);
+      await workoutDB.startDB('db');
 
       expect(workoutDB.workoutDB.length, greaterThan(50));
 
