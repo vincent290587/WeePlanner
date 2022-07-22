@@ -2,7 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
-import 'package:syncfusion_flutter_charts/sparkcharts.dart';
+import 'dart:ui' as ui;
 
 import 'Workout.dart';
 
@@ -51,6 +51,8 @@ Widget getWorkoutGraph(Workout workout) {
   dynamic spots ;
 
   List<gPoint> xPoints = [];
+  List<Color> intervalColor = [];
+  List<double> intervalStops = [];
 
   double xDuration = 0.0;
   for (var rep in workout.rawWorkout.reps) {
@@ -64,12 +66,38 @@ Widget getWorkoutGraph(Workout workout) {
     }
   }
 
+  // calculate colors
+  double curDur = 1;
+  for (var rep in workout.rawWorkout.reps) {
+    for (var interval in rep.intervals) {
+      int duri = interval.getField(1);
+      double pow1 = interval.getField(2);
+      double pow2 = interval.getField(3);
+      intervalColor.add(getZoneColor(gPoint(x: xDuration, y: 0.5*(pow2+pow1)), 0));
+      if (intervalStops.isNotEmpty) {
+        intervalColor.add(getZoneColor(gPoint(x: xDuration, y: 0.5*(pow2+pow1)), 0));
+        intervalStops.add(curDur / xDuration);
+      }
+      curDur += duri;
+      intervalStops.add(curDur / xDuration);
+    }
+  }
+
   try {
     spots = <ChartSeries>[
       // Initialize line series
       AreaSeries<gPoint, num>(
         dataSource: xPoints,
         pointColorMapper: getZoneColor,
+
+        onCreateShader: (ShaderDetails details) {
+          return ui.Gradient.linear(
+              details.rect.bottomLeft,
+              details.rect.bottomRight,
+              intervalColor,
+              intervalStops
+          );
+        },
         xValueMapper: (gPoint prm, _) => prm.x,
         yValueMapper: (gPoint prm, _) => prm.y*100.0,
         animationDuration: 0,
@@ -85,6 +113,7 @@ Widget getWorkoutGraph(Workout workout) {
 
   return SfCartesianChart(
     series: spots,
+    tooltipBehavior: TooltipBehavior(enable: true),
     primaryXAxis: NumericAxis(
         isVisible: true
     ),
