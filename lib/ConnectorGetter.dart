@@ -222,7 +222,7 @@ Future<void> getWorkoutList() async {
     for (var item in listJsons) {
 
       IcuWorkout event = IcuWorkout.fromJson(item);
-      getWorkoutZwo(event, item);
+      await getWorkoutZwo(event, item);
     }
   }
 }

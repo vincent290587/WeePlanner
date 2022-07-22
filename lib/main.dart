@@ -82,6 +82,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   PlannedWeek week = PlannedWeek.empty();
 
+  int nbWorkout = 0;
+
   StreamController<Workout> potentialWorkout = new StreamController<Workout>.broadcast();
 
   Widget getCard(Widget? icon, String text, String value) {
@@ -247,7 +249,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
 
-    List<Workout> workouts = Provider.of<WorkoutDB>(context, listen: false).showWeek(settings);
+    // List<Workout> workouts = Provider.of<WorkoutDB>(context, listen: false).showWeek(settings);
 
     // /widgets.add( buildWeek(context, workouts) );
 
@@ -355,6 +357,16 @@ class _MyHomePageState extends State<MyHomePage> {
                       setState(() { settings.setDistribution(value!); });
                       },
                   ),
+                  RadioListTile<DistributionType>(
+                    title: const Text('Polarized'),
+                    dense: true,
+                    value: DistributionType.Polarized,
+                    groupValue: distributionType,
+                    onChanged: (DistributionType? value) {
+                      distributionType = DistributionType.Polarized;
+                      setState(() { settings.setDistribution(value!); });
+                    },
+                  ),
                   Text(' '),
                   //Text('Target TSS:'),
                   TextFormField(
@@ -422,7 +434,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           );
                         }
                         String text = 'Empty, please load DB and start a computation';
-                        int nbWorkout = Provider.of<WorkoutDB>(context, listen: true).workoutDB.length;
+                        nbWorkout = Provider.of<WorkoutDB>(context, listen: true).workoutDB.length;
                         if (nbWorkout > 0) {
                           text = 'DB loaded: ${nbWorkout} workouts';
                         }
@@ -460,9 +472,13 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           FloatingActionButton(
             onPressed: () {
-              Provider.of<WorkoutDB>(context, listen: false).prepareSummary();
               getDailyEvent();
-              getWorkoutList();
+              getWorkoutList().then((value) async {
+                await Provider.of<WorkoutDB>(context, listen: false).startDB('WeeGetter');
+                Provider.of<WorkoutDB>(context, listen: false).prepareSummary();
+                int tmpNb = Provider.of<WorkoutDB>(context, listen: false).workoutDB.length;
+                setState(() { nbWorkout = tmpNb; });
+              });
             },
             tooltip: 'Download all workouts',
             child: Icon(Icons.arrow_circle_down),
@@ -478,7 +494,7 @@ class _MyHomePageState extends State<MyHomePage> {
           SizedBox(height: 8,),
           FloatingActionButton(
             onPressed: () {
-              Provider.of<WorkoutDB>(context, listen: false).startDB(Directory('db'));
+              Provider.of<WorkoutDB>(context, listen: false).startDB('WeePlanner');
             },
             tooltip: 'Load workout DB',
             child: Icon(Icons.refresh),

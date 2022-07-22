@@ -56,6 +56,7 @@ enum DistributionType {
   Phase2,
   Phase3a,
   Phase3b,
+  Polarized,
 }
 
 class ThreeZonesDistribution {
@@ -80,11 +81,11 @@ class Distribution {
   static const List<double> _pwLims = [
     -100.0,
     0.55,
-    0.75,
-    0.90,
-    1.05,
-    1.20,
-    1.50,
+    0.78,
+    0.86,
+    0.99,
+    1.12,
+    1.30,
     100.0
   ];
 
@@ -114,6 +115,10 @@ class Distribution {
 
   Distribution.phase3b() {
     bins = [32,17,25,8,13,5]; // build me up week 11
+  }
+
+  Distribution.polarized() {
+    bins = [17,48,5,8,16,6]; // polarized
   }
 
   Distribution(RawWorkout _rawWorkout) {

@@ -94,13 +94,12 @@ class WorkoutDB extends ChangeNotifier {
 
   Future<void> prepareSummary() async {
 
-
     final directory = await getApplicationDocumentsDirectory();
     var endDir = await Directory('${directory.path}/WeeGetter').create(recursive: true);
 
     File myFile = File('${endDir.path}/Summary.txt');
 
-    String title = 'Name;Z2;Z3;Z4;Z5;Z6\n';
+    String title = 'Name;Z2;Z3;Z4;Z5;Z6;IF\n';
     await myFile.writeAsString(
       title,
       mode: FileMode.write,
@@ -108,7 +107,10 @@ class WorkoutDB extends ChangeNotifier {
 
     for (Workout workout in workoutDB) {
 
-      String line = workout.rawWorkout.name + ';' + workout.distribution.toCSV() + '\n';
+      String line = workout.rawWorkout.name + ';' +
+          workout.distribution.toCSV() + ';' +
+          workout.IF.toStringAsFixed(0) +
+          '\n';
       await myFile.writeAsString(
         line,
         mode: FileMode.append,
@@ -117,12 +119,12 @@ class WorkoutDB extends ChangeNotifier {
 
   }
 
-  Future<void> startDB(Directory dir) async {
+  Future<void> startDB(String subDir) async {
 
     workoutDB.clear();
 
     final directory = await getApplicationDocumentsDirectory();
-    var endDir = await Directory('${directory.path}/WeePlanner').create(recursive: false);
+    var endDir = await Directory('${directory.path}/${subDir}').create(recursive: false);
 
     // execute an action on each entry
     endDir.list(recursive: true).forEach((entity) {

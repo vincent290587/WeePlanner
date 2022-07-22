@@ -37,6 +37,9 @@ class PlannerSettings {
       case DistributionType.Phase3b:
         distribution = Distribution.phase3b();
         break;
+      case DistributionType.Polarized:
+        distribution = Distribution.polarized();
+        break;
     }
   }
 
@@ -104,9 +107,25 @@ class MyEvaluator
     final result = SingleObjectiveResult();
 
     double sum = 0;
-    phenotype.genes.forEach((Workout v){sum += v.TSS;});
+    phenotype.genes.forEach((Workout v){
+      sum += v.TSS;
+    });
     double tssDistance = pow(1 - sum / phenotype.settings.targetScore.toDouble(), 2) as double;
     //tssDistance = 0.0;
+
+    // give penalty to workouts present several times in a week
+    int max_count = 0;
+    var map = Map();
+    phenotype.genes.forEach((element) {
+      String name = element.rawWorkout.name;
+      if(!map.containsKey(name)) {
+        map[name] = 1;
+      } else {
+        map[name] +=1;
+        max_count += 1;
+      }
+    });
+    tssDistance += 100 * max_count; // penalty for non-unique lists
 
     double totDuration = 0.0;
     Distribution distribution = Distribution.empty();
