@@ -2,15 +2,20 @@
 
 import 'dart:math';
 
-import 'package:flutter/cupertino.dart';
+import 'package:moving_average/moving_average.dart';
 
 import 'nanopb/Workout.pb.dart';
 
+double lerpDouble(num a, num b, double t) {
+  return a + (b - a) * t;
+}
 
 double calculateNP(RawWorkout rawWorkout)
 {
   double np = 0;
   double dur = 0;
+
+  List<double> values  = [];
 
   for (var rep in rawWorkout.reps) {
     for (var interval in rep.intervals) {
@@ -18,6 +23,10 @@ double calculateNP(RawWorkout rawWorkout)
       double? pow1 = interval.getField(2);
       double? pow2 = interval.getField(3);
       if (duri != null && pow1 != null && pow2 != null) {
+        for (int i=0; i< duri; i++) {
+          double power = lerpDouble(pow1, pow2, (duri - i) / duri);
+          values.add(power);
+        }
         if (pow1 == pow2) {
           np += duri * pow(pow1, 4);
         } else {
@@ -29,7 +38,20 @@ double calculateNP(RawWorkout rawWorkout)
     }
   }
 
-  np = pow(np / dur, 0.25).toDouble();
+  final simpleMovingAverage = MovingAverage<num>(
+    averageType: AverageType.simple,
+    windowSize: 30,
+    partialStart: true,
+    getValue: (num n) => n,
+    add: (List<num> data, num value) => value,
+  );
+  final movingAverage30 = simpleMovingAverage(values);
+  List<num> movingAverage30quad = movingAverage30.map((val) => pow(val, 4)).toList();
+  num sum_quad = movingAverage30quad.fold(0, (p, c) => p+c);
+  num average_quad = sum_quad / movingAverage30quad.length;
+  np = pow(average_quad, 0.25).toDouble();
+
+  // np = pow(np / dur, 0.25).toDouble();
 
   return np;
 }
