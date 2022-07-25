@@ -112,6 +112,19 @@ Widget getWorkoutGraph(Workout workout) {
   }
 
   return SfCartesianChart(
+
+    title: ChartTitle(
+        text: workout.rawWorkout.name,
+        // borderColor: Colors.black,
+        borderWidth: 2,
+        alignment: ChartAlignment.near, // Aligns the chart title to left
+        textStyle: TextStyle(
+          // color: Colors.red,
+          fontFamily: 'Roboto',
+          fontStyle: FontStyle.italic,
+          fontSize: 12,
+        )
+    ),
     series: spots,
     tooltipBehavior: TooltipBehavior(enable: true),
     primaryXAxis: NumericAxis(
