@@ -151,100 +151,136 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       );
-    }).toList()
-      ..add(
-        Card(
-          color: Colors.grey.shade200,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              ListTile(
-                leading: null,
-                isThreeLine: false,
-                //title: Text(item.rawWorkout.name, style: TextStyle(fontSize: 20)),
-                subtitle: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('Dur.: ${(week.sumDuration / 3600).toStringAsFixed(1)} hrs',
-                        style: TextStyle(fontSize: 12)),
-                    Text('TSS :  ${week.sumTSS.toStringAsFixed(1)}'),
-                    // Text('Z6 :  ${(week.distribution.bins[5]*100).toInt()}%',
-                    //     style: TextStyle(fontSize: 10)),
-                    // Text('Z5 :  ${(week.distribution.bins[4]*100).toInt()}%',
-                    //     style: TextStyle(fontSize: 10)),
-                    // Text('Z4 :  ${(week.distribution.bins[3]*100).toInt()}%',
-                    //     style: TextStyle(fontSize: 10)),
-                    // Text('Z3 :  ${(week.distribution.bins[2]*100).toInt()}%',
-                    //     style: TextStyle(fontSize: 10)),
-                    // Text('Z2 :  ${(week.distribution.bins[1]*100).toInt()}%',
-                    //     style: TextStyle(fontSize: 10)),
-                    // Text('Z1 :  ${(week.distribution.bins[0]*100).toInt()}%',
-                    //     style: TextStyle(fontSize: 10)),
-                  ],
-                ),
-              ),
-              Expanded(
-                child: getGraph(week.distribution),
-              ),
-            ],
-          ),
-      )
-    )..add(
-      Card(
-        color: Colors.grey.shade200,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            ListTile(
-              leading: null,
-              isThreeLine: false,
-              //title: Text(item.rawWorkout.name, style: TextStyle(fontSize: 20)),
-              subtitle: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('Z1+2: ${threeZones.bins[0].toInt()} %',
-                      style: TextStyle(fontSize: 12),
-                  ),
-                  Text('Z3+4 : ${threeZones.bins[1].toInt()} %',
-                      style: TextStyle(fontSize: 12),
-                  ),
-                  Text('Z5+  : ${threeZones.bins[2].toInt()} %',
-                    style: TextStyle(fontSize: 12),
-                  ),
-                  // Text('Z6 :  ${(week.distribution.bins[5]*100).toInt()}%',
-                  //     style: TextStyle(fontSize: 10)),
-                  // Text('Z5 :  ${(week.distribution.bins[4]*100).toInt()}%',
-                  //     style: TextStyle(fontSize: 10)),
-                  // Text('Z4 :  ${(week.distribution.bins[3]*100).toInt()}%',
-                  //     style: TextStyle(fontSize: 10)),
-                  // Text('Z3 :  ${(week.distribution.bins[2]*100).toInt()}%',
-                  //     style: TextStyle(fontSize: 10)),
-                  // Text('Z2 :  ${(week.distribution.bins[1]*100).toInt()}%',
-                  //     style: TextStyle(fontSize: 10)),
-                  // Text('Z1 :  ${(week.distribution.bins[0]*100).toInt()}%',
-                  //     style: TextStyle(fontSize: 10)),
-                ],
-              ),
-            ),
-            Expanded(
-              child: getThreeZoneGraph(week.distribution),
-            ),
-          ],
-        ),
-      )
+    }).toList();
+
+    // return GridView.count(
+    //     childAspectRatio: 1.1,
+    //     primary: false,
+    //     padding: const EdgeInsets.all(5.0),
+    //     crossAxisSpacing: 1.0,
+    //     crossAxisCount: 7,
+    //     children: cards,
+    // );
+
+    return GridView.builder(
+      // physics: NeverScrollableScrollPhysics(),
+      physics: const BouncingScrollPhysics(
+                  parent: AlwaysScrollableScrollPhysics()),
+      shrinkWrap: true,
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 7,
+        crossAxisSpacing: 1.0,
+        mainAxisSpacing: 1.0,
+      ),
+      itemCount: cards.length,
+      itemBuilder: (context, index) {
+        // return Container(
+        //   color: Colors.blue,
+        //   child: Text("index: $index"),
+        // );
+        return cards[index];
+      },
     );
 
-    return Expanded(
-      child: GridView.count(
-        primary: false,
-        padding: const EdgeInsets.all(5.0),
-        crossAxisSpacing: 1.0,
-        crossAxisCount: 7,
-        children: cards,
-      ),
-    );
   }
 
+  Widget buildWeekSummary(BuildContext context, PlannedWeek week) {
+
+    ThreeZonesDistribution threeZones = ThreeZonesDistribution(week.distribution);
+
+    List<Widget> cards = []
+      ..add(
+          Card(
+            color: Colors.grey.shade200,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                ListTile(
+                  leading: null,
+                  isThreeLine: false,
+                  //title: Text(item.rawWorkout.name, style: TextStyle(fontSize: 20)),
+                  subtitle: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('Dur.: ${(week.sumDuration / 3600).toStringAsFixed(1)} hrs',
+                          style: TextStyle(fontSize: 12)),
+                      Text('TSS :  ${week.sumTSS.toStringAsFixed(1)}'),
+                      // Text('Z6 :  ${(week.distribution.bins[5]*100).toInt()}%',
+                      //     style: TextStyle(fontSize: 10)),
+                      // Text('Z5 :  ${(week.distribution.bins[4]*100).toInt()}%',
+                      //     style: TextStyle(fontSize: 10)),
+                      // Text('Z4 :  ${(week.distribution.bins[3]*100).toInt()}%',
+                      //     style: TextStyle(fontSize: 10)),
+                      // Text('Z3 :  ${(week.distribution.bins[2]*100).toInt()}%',
+                      //     style: TextStyle(fontSize: 10)),
+                      // Text('Z2 :  ${(week.distribution.bins[1]*100).toInt()}%',
+                      //     style: TextStyle(fontSize: 10)),
+                      // Text('Z1 :  ${(week.distribution.bins[0]*100).toInt()}%',
+                      //     style: TextStyle(fontSize: 10)),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: getGraph(week.distribution),
+                ),
+              ],
+            ),
+          )
+      )..add(
+          Card(
+            color: Colors.grey.shade200,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                ListTile(
+                  leading: null,
+                  isThreeLine: false,
+                  //title: Text(item.rawWorkout.name, style: TextStyle(fontSize: 20)),
+                  subtitle: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('Z1+2: ${threeZones.bins[0].toInt()} %',
+                        style: TextStyle(fontSize: 12),
+                      ),
+                      Text('Z3+4 : ${threeZones.bins[1].toInt()} %',
+                        style: TextStyle(fontSize: 12),
+                      ),
+                      Text('Z5+  : ${threeZones.bins[2].toInt()} %',
+                        style: TextStyle(fontSize: 12),
+                      ),
+                      // Text('Z6 :  ${(week.distribution.bins[5]*100).toInt()}%',
+                      //     style: TextStyle(fontSize: 10)),
+                      // Text('Z5 :  ${(week.distribution.bins[4]*100).toInt()}%',
+                      //     style: TextStyle(fontSize: 10)),
+                      // Text('Z4 :  ${(week.distribution.bins[3]*100).toInt()}%',
+                      //     style: TextStyle(fontSize: 10)),
+                      // Text('Z3 :  ${(week.distribution.bins[2]*100).toInt()}%',
+                      //     style: TextStyle(fontSize: 10)),
+                      // Text('Z2 :  ${(week.distribution.bins[1]*100).toInt()}%',
+                      //     style: TextStyle(fontSize: 10)),
+                      // Text('Z1 :  ${(week.distribution.bins[0]*100).toInt()}%',
+                      //     style: TextStyle(fontSize: 10)),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: getThreeZoneGraph(week.distribution),
+                ),
+              ],
+            ),
+          )
+      );
+
+    return GridView.count(
+      childAspectRatio: 1.1,
+      primary: false,
+      padding: const EdgeInsets.all(5.0),
+      crossAxisSpacing: 1.0,
+      crossAxisCount: 1,
+      children: cards,
+    );
+
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -420,8 +456,8 @@ class _MyHomePageState extends State<MyHomePage> {
               // height: 800.0,
               child: Column(
                 children: [
-                  Flexible(
-                    flex: 1,
+                  Expanded(
+                    flex: 2,
                     child: StreamBuilder<PlannedWeek>(
                       stream: Provider.of<WorkoutDB>(context, listen: false).getComputation,
                       //initialData: workouts,
@@ -429,25 +465,19 @@ class _MyHomePageState extends State<MyHomePage> {
                         if (snapshot.hasData) {
                           week = snapshot.data!;
                           PlannedWeek week2 = snapshot.data!;
-                          return Column(
-                            children: [buildWeek(context, week2)],
-                          );
+                          return buildWeek(context, week2);
                         }
                         String text = 'Empty, please load DB and start a computation';
                         nbWorkout = Provider.of<WorkoutDB>(context, listen: true).workoutDB.length;
                         if (nbWorkout > 0) {
                           text = 'DB loaded: ${nbWorkout} workouts';
                         }
-                        return Column(
-                          children: [
-                            Text(text),
-                          ],
-                        );
+                        return Text(text);
                       }
                     ),
                   ),
-                  Flexible(
-                    flex: 2,
+                  Expanded(
+                    flex: 3,
                     child: StreamBuilder<Workout>(
                       stream: potentialWorkout.stream,
                       //initialData: workouts,
@@ -461,6 +491,27 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                 ],
+              ),
+            ),
+          ),
+          VerticalDivider(),
+          Flexible(
+            flex: 1,
+            child: Container(
+              // width: 600.0,
+              // height: 800.0,
+              margin: const EdgeInsets.all(5.0),
+              child: StreamBuilder<PlannedWeek>(
+                stream: Provider.of<WorkoutDB>(context, listen: false).getComputation,
+                //initialData: workouts,
+                builder: (c, snapshot) {
+                  if (snapshot.hasData) {
+                    week = snapshot.data!;
+                    PlannedWeek week2 = snapshot.data!;
+                    return buildWeekSummary(context, week2);
+                  }
+                  return Text('');
+                }
               ),
             ),
           ),
