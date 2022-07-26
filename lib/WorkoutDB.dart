@@ -2,8 +2,8 @@
 
 import 'dart:async';
 import 'dart:io';
-import 'dart:typed_data';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:xml/xml.dart';
@@ -54,7 +54,10 @@ class WorkoutDB extends ChangeNotifier {
 
   Future<List<Workout>> computeWeek(PlannerSettings settings) async {
     if (workoutDB.length > 0) {
-       var ret = await plan(workoutDB, settings);
+
+       PlannerInput input = PlannerInput(workoutDB, settings);
+       var ret = await compute(plan, input);
+
        if (ret != null) {
 
          double sumTSS = 0;

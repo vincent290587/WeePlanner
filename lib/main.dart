@@ -83,6 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
   PlannedWeek week = PlannedWeek.empty();
 
   int nbWorkout = 0;
+  bool isComputing = false;
 
   StreamController<Workout> potentialWorkout = new StreamController<Workout>.broadcast();
 
@@ -439,11 +440,24 @@ class _MyHomePageState extends State<MyHomePage> {
                   Center(
                     child: OutlinedButton(
                       child: Text('Compute'),
-                      onPressed: () {
-                        Provider.of<WorkoutDB>(context, listen: false).computeWeek(settings);
+                      onPressed: () async {
+                        setState(() {
+                          isComputing = true;
+                        });
+                        Provider.of<WorkoutDB>(context, listen: false).computeWeek(settings).then((value) {
+                          setState(() {
+                            isComputing = false;
+                          });
+                        });
                       },
                     ),
                   ),
+                  if (isComputing) ...[
+                    Text(' '),
+                    Center(
+                      child: const CircularProgressIndicator(),
+                    ),
+                  ]
                 ],
               ),
             ),

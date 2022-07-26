@@ -1,7 +1,6 @@
 
 import 'dart:async';
 import 'dart:math';
-import 'dart:ui';
 
 import 'package:darwin/darwin.dart';
 import 'package:flutter/cupertino.dart';
@@ -45,11 +44,21 @@ class PlannerSettings {
 
 }
 
+class PlannerInput {
+  final List<Workout> wDB;
+  final PlannerSettings settings;
+
+  PlannerInput(this.wDB, this.settings);
+}
+
 void emptyPrint(Object o) {
 
 }
 
-Future<List<Workout>> plan(List<Workout> wDB, PlannerSettings settings) async {
+Future<List<Workout>> plan(PlannerInput input) async {
+
+  List<Workout> wDB = input.wDB;
+  PlannerSettings settings = input.settings;
 
   // Create first generation, either by random or by continuing with existing
   // progress.
