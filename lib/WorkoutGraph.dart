@@ -67,19 +67,17 @@ Widget getWorkoutGraph(Workout workout) {
   }
 
   // calculate colors
-  double curDur = 1;
+  double curDur = 0;
   for (var rep in workout.rawWorkout.reps) {
     for (var interval in rep.intervals) {
       int duri = interval.getField(1);
       double pow1 = interval.getField(2);
       double pow2 = interval.getField(3);
-      intervalColor.add(getZoneColor(gPoint(x: xDuration, y: 0.5*(pow2+pow1)), 0));
-      if (intervalStops.isNotEmpty) {
-        intervalColor.add(getZoneColor(gPoint(x: xDuration, y: 0.5*(pow2+pow1)), 0));
-        intervalStops.add(curDur / xDuration);
-      }
+      intervalColor.add(getZoneColor(gPoint(x: 0, y: pow1), 0));
+      intervalStops.add(curDur / xDuration);
       curDur += duri;
       intervalStops.add(curDur / xDuration);
+      intervalColor.add(getZoneColor(gPoint(x: 0, y: pow2), 0));
     }
   }
 
