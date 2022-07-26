@@ -21,8 +21,7 @@ class PlannedWeek {
   double sumTSS = 0;
   double sumDuration = 0;
 
-  PlannedWeek.empty() : this.workouts = [] {
-  }
+  PlannedWeek.empty() : this.workouts = [];
 
   PlannedWeek(this.workouts) {
 
