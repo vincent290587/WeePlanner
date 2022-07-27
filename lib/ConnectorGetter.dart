@@ -6,7 +6,7 @@ import 'dart:typed_data';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:path_provider/path_provider.dart';
+import 'package:wee_planner/utils.dart';
 
 import 'keys.dart';
 
@@ -78,6 +78,11 @@ Future<void> saveFile(IcuWorkout wko, String subFolder, String body) async {
   int index = body.indexOf('<workout_file>');
   String wkoBody = body.substring(index);
 
+  if (!isDesktopPlatform()) {
+    savePseudoFile(wko, body);
+    return;
+  }
+
   // FilePickerCross myFile  = FilePickerCross(Uint8List.fromList(wko.codeUnits),
   //     path: '',
   //     type: FileTypeCross.custom,
@@ -86,7 +91,7 @@ Future<void> saveFile(IcuWorkout wko, String subFolder, String body) async {
   // for sharing to other apps you can also specify optional `text` and `subject`
   // await myFile.exportToStorage();
 
-  final directory = await getApplicationDocumentsDirectory();
+  final directory = await getDocumentsDirectory();
   var endDir = await Directory('${directory.path}/WeeGetter/${subFolder}').create(recursive: false);
 
   String fname = wko.name.
@@ -231,11 +236,22 @@ Future<void> getWorkoutList() async {
 class IcuWorkout {
   final int workoutId;
   final String name;
+  String content;
 
   IcuWorkout({
     required this.workoutId,
     required this.name,
+  }) : content = '';
+
+  IcuWorkout.full({
+    required this.workoutId,
+    required this.name,
+    required this.content,
   });
+
+  setBody(String body) {
+    content = body;
+  }
 
   String toString() {
     String ret = 'WKO name: ${name} ID: ${workoutId}';

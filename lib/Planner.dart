@@ -5,7 +5,9 @@ import 'dart:math';
 import 'package:darwin/darwin.dart';
 import 'package:flutter/cupertino.dart';
 
-import 'Workout.dart';
+import 'package:wee_planner/utils.dart';
+import 'package:wee_planner/Workout.dart';
+import 'package:wee_planner/WorkoutDB.dart';
 
 class PlannerSettings {
 
@@ -51,11 +53,7 @@ class PlannerInput {
   PlannerInput(this.wDB, this.settings);
 }
 
-void emptyPrint(Object o) {
-
-}
-
-Future<List<Workout>> plan(PlannerInput input) async {
+Future<List<PlannedWeek>> plan(PlannerInput input) async {
 
   List<Workout> wDB = input.wDB;
   PlannerSettings settings = input.settings;
@@ -90,9 +88,7 @@ Future<List<Workout>> plan(PlannerInput input) async {
   await algo.runUntilDone();
 
   // Print all members of the last generation when done.
-  algo.generations.last.members
-      .forEach((Phenotype ph) {
-
+  algo.generations.last.members.forEach((Phenotype ph) {
     debugPrint('Score: ${ph.result!.evaluate()}');
     //debugPrint('${ph.genesAsString}');
   });
@@ -102,7 +98,19 @@ Future<List<Workout>> plan(PlannerInput input) async {
 
   debugPrint('Best score: ${phenotypes.first.result!.evaluate()}');
 
-  return phenotypes.first.genes;
+  List<PlannedWeek> output = [];
+
+  int lastTSS = 0;
+  while (phenotypes.isNotEmpty && output.length <= 5) {
+    var week = PlannedWeek.full(phenotypes.first.genes, phenotypes.first.result!.evaluate()!);
+    if (week.sumTSS != lastTSS) { // avoid clones
+      output.add(week);
+    }
+    phenotypes.removeAt(0);
+    lastTSS = week.sumTSS;
+  }
+
+  return output;
 }
 
 Random random = Random();

@@ -5,6 +5,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'utils.dart';
 import 'Connector.dart';
 import 'ConnectorGetter.dart';
 import 'Planner.dart';
@@ -86,6 +87,9 @@ class _MyHomePageState extends State<MyHomePage> {
   bool isComputing = false;
 
   StreamController<Workout> potentialWorkout = new StreamController<Workout>.broadcast();
+
+  StreamController<PlannedWeek> potentialWeek = new StreamController<PlannedWeek>.broadcast();
+  Stream<PlannedWeek> get getpotentialWeek => (potentialWeek.stream);
 
   Widget getCard(Widget? icon, String text, String value) {
     return Card(
@@ -185,6 +189,27 @@ class _MyHomePageState extends State<MyHomePage> {
 
   }
 
+  Widget buildComputationSummary(BuildContext context, List<PlannedWeek> weeks) {
+
+    List<Widget> cards = weeks.map((item) {
+      return OutlinedButton(
+        child: AutoSizeText('Sol. ${weeks.indexOf(item)}',
+            maxLines: 2,
+            style: TextStyle(fontSize: 10)
+        ),
+        onPressed: () {
+          potentialWeek.add(item);
+        },
+      );
+    }).toList();
+
+    return Wrap(
+      spacing: 16.0, // gap between adjacent chips
+      runSpacing: 4.0, // gap between lines
+      children: cards,
+    );
+  }
+
   Widget buildWeekSummary(BuildContext context, PlannedWeek week) {
 
     ThreeZonesDistribution threeZones = ThreeZonesDistribution(week.distribution);
@@ -205,7 +230,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     children: [
                       Text('Dur.: ${(week.sumDuration / 3600).toStringAsFixed(1)} hrs',
                           style: TextStyle(fontSize: 12)),
-                      Text('TSS :  ${week.sumTSS.toStringAsFixed(1)}'),
+                      Text('TSS :  ${week.sumTSS}'),
                       // Text('Z6 :  ${(week.distribution.bins[5]*100).toInt()}%',
                       //     style: TextStyle(fontSize: 10)),
                       // Text('Z5 :  ${(week.distribution.bins[4]*100).toInt()}%',
@@ -285,42 +310,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-
-    // List<Workout> workouts = Provider.of<WorkoutDB>(context, listen: false).showWeek(settings);
-
-    // /widgets.add( buildWeek(context, workouts) );
-
-    // widgets.add(Text('-- Summary --', style: TextStyle(fontSize: 20)));
-    //
-    // num sum = 0;
-    // workouts.forEach((var w){sum += w.TSS;});
-    // widgets.add(Text('Total TSS: ${sum}', style: TextStyle(fontSize: 20)));
-    //
-    // sum = 0;
-    // workouts.forEach((var w){sum += w.duration;});
-    // sum /= 3600;
-    // widgets.add(Text('Total time: ${sum.toStringAsFixed(1)} hours', style: TextStyle(fontSize: 20)));
-
-    // var plannedWeeks = StreamBuilder<List<Workout>>(
-    //     stream: Provider.of<WorkoutDB>(context, listen: false).getComputation,
-    //     initialData: workouts,
-    //     builder: (c, snapshot) {
-    //       if (snapshot.data != null) {
-    //         var widgets = [buildWeek(context, workouts)];
-    //         return Column(
-    //           children: widgets,
-    //         );
-    //       }
-    //       return Column(
-    //         children: [
-    //           Text('Sample text'),
-    //         ],
-    //       );
-    // });
-
-    // var plannedWeeks = Column(
-    //   children: widgets,
-    // );
 
     return Scaffold(
       appBar: AppBar(
@@ -473,7 +462,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   Expanded(
                     flex: 2,
                     child: StreamBuilder<PlannedWeek>(
-                      stream: Provider.of<WorkoutDB>(context, listen: false).getComputation,
+                      stream: getpotentialWeek,
                       //initialData: workouts,
                       builder: (c, snapshot) {
                         if (snapshot.hasData) {
@@ -492,16 +481,19 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   Expanded(
                     flex: 3,
-                    child: StreamBuilder<Workout>(
-                      stream: potentialWorkout.stream,
-                      //initialData: workouts,
-                      builder: (c, snapshot) {
-                        if (snapshot.hasData) {
-                          Workout workout = snapshot.data!;
-                          return getWorkoutGraph(workout);
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: StreamBuilder<Workout>(
+                        stream: potentialWorkout.stream,
+                        //initialData: workouts,
+                        builder: (c, snapshot) {
+                          if (snapshot.hasData) {
+                            Workout workout = snapshot.data!;
+                            return getWorkoutGraph(workout);
+                          }
+                          return Placeholder();
                         }
-                        return Placeholder();
-                      }
+                      ),
                     ),
                   ),
                 ],
@@ -511,22 +503,41 @@ class _MyHomePageState extends State<MyHomePage> {
           VerticalDivider(),
           Flexible(
             flex: 1,
-            child: Container(
-              // width: 600.0,
-              // height: 800.0,
-              margin: const EdgeInsets.all(5.0),
-              child: StreamBuilder<PlannedWeek>(
-                stream: Provider.of<WorkoutDB>(context, listen: false).getComputation,
-                //initialData: workouts,
-                builder: (c, snapshot) {
-                  if (snapshot.hasData) {
-                    week = snapshot.data!;
-                    PlannedWeek week2 = snapshot.data!;
-                    return buildWeekSummary(context, week2);
-                  }
-                  return Text('');
-                }
-              ),
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: SizedBox(
+                    // width: 600.0,
+                    height: 100.0,
+                    child: StreamBuilder<List<PlannedWeek>>(
+                        stream: Provider.of<WorkoutDB>(context, listen: false).getComputation,
+                        //initialData: workouts,
+                        builder: (c, snapshot) {
+                          if (snapshot.hasData) {
+                            potentialWeek.add(snapshot.data!.first);
+                            return buildComputationSummary(context, snapshot.data!);
+                          }
+                          return Text('');
+                        }
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: StreamBuilder<PlannedWeek>(
+                    stream: potentialWeek.stream,
+                    //initialData: workouts,
+                    builder: (c, snapshot) {
+                      if (snapshot.hasData) {
+                        week = snapshot.data!;
+                        potentialWorkout.add(week.workouts.first);
+                        return buildWeekSummary(context, snapshot.data!);
+                      }
+                      return Text('');
+                    }
+                  ),
+                ),
+              ],
             ),
           ),
         ],
@@ -545,25 +556,27 @@ class _MyHomePageState extends State<MyHomePage> {
                 setState(() { nbWorkout = tmpNb; });
               });
             },
-            tooltip: 'Download all workouts',
+            tooltip: 'Download all ICU workouts',
             child: Icon(Icons.arrow_circle_down),
           ),
           SizedBox(height: 8,),
-          FloatingActionButton(
-            onPressed: () {
-              postWeekCalendar(context, week);
-            },
-            tooltip: 'Schedule in intervals.icu',
-            child: Icon(Icons.calendar_today),
-          ),
-          SizedBox(height: 8,),
-          FloatingActionButton(
-            onPressed: () {
-              Provider.of<WorkoutDB>(context, listen: false).startDB('WeePlanner');
-            },
-            tooltip: 'Load workout DB',
-            child: Icon(Icons.refresh),
-          ),
+          if (isDesktopPlatform()) ...[
+            FloatingActionButton(
+              onPressed: () {
+                postWeekCalendar(context, week);
+              },
+              tooltip: 'Schedule in intervals.icu',
+              child: Icon(Icons.calendar_today),
+            ),
+            SizedBox(height: 8,),
+            FloatingActionButton(
+              onPressed: () {
+                Provider.of<WorkoutDB>(context, listen: false).startDB('WeePlanner');
+              },
+              tooltip: 'Load workout DB',
+              child: Icon(Icons.refresh),
+            ),
+          ],
         ],
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
