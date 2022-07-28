@@ -133,7 +133,8 @@ void main() {
 
       expect(workoutDB.workoutDB.length, greaterThan(50));
 
-      var plannedWeek = await plan(workoutDB.workoutDB, settings);
+      PlannerInput input = PlannerInput(workoutDB.workoutDB, settings);
+      var plannedWeek = await plan(input);
       debugPrint(plannedWeek.toString());
     });
 
